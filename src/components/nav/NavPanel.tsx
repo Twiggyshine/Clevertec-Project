@@ -30,7 +30,6 @@ const NavPanel = () => (
 
             <Flex mb='16px' justifyContent='center' gap='12px'>
                 <Button
-                    px='24px'
                     border='1px solid rgba(0, 0, 0, 0.48)'
                     borderRadius='6px'
                     p='0px 12px'
@@ -53,7 +52,7 @@ const NavPanel = () => (
 
                 <InputGroup maxW='458px'>
                     <Input
-                        placeholder='Название или ингридиент...'
+                        placeholder='Название или ингредиент...'
                         borderRadius='6px'
                         pr='40px'
                         border='1px solid rgba(0, 0, 0, 0.48)'
@@ -68,35 +67,36 @@ const NavPanel = () => (
                 </InputGroup>
             </Flex>
 
-            <Flex align='center' justifyContent='center' gap='10px'>
-                <FormControl as={Flex} alignItems='center'>
-                    <FormLabel
-                        htmlFor='allergens-toggle'
-                        fontWeight='500'
-                        fontSize='16px'
-                        lineHeight='150%'
-                        color='#000'
-                    >
-                        Исключить мои аллергены
-                    </FormLabel>
-                    <Switch id='allergens-toggle' colorScheme='green' size='lg' mr='12px' />
+            <FormControl as={Flex} alignItems='center' justifyContent='center'>
+                <FormLabel
+                    htmlFor='allergens-toggle'
+                    fontWeight='500'
+                    fontSize='16px'
+                    lineHeight='150%'
+                    color='#000'
+                >
+                    Исключить мои аллергены
+                </FormLabel>
+                <Switch id='allergens-toggle' colorScheme='green' size='lg' mr='12px' />
 
-                    <Select
-                        placeholder='Выберите из списка...'
-                        border='1px solid rgba(0, 0, 0, 0.48)'
-                        borderRadius='6px'
-                        w='234px'
-                        h='40px'
-                        bg='#fff'
-                        color='rgba(0, 0, 0, 0.64)'
-                    >
-                        <option value='option1'>Без глютена</option>
-                        <option value='option2'>Без лактозы</option>
-                        <option value='option3'>Вегетарианские</option>
-                        <option value='option4'>Веганские</option>
-                    </Select>
-                </FormControl>
-            </Flex>
+                <Select
+                    id='diet-filter'
+                    placeholder='Выберите из списка...'
+                    border='1px solid rgba(0, 0, 0, 0.48)'
+                    borderRadius='6px'
+                    minW='200px'
+                    w='100%'
+                    maxW='234px'
+                    h='40px'
+                    bg='#fff'
+                    color='rgba(0, 0, 0, 0.64)'
+                >
+                    <option value='option1'>Без глютена</option>
+                    <option value='option2'>Без лактозы</option>
+                    <option value='option3'>Вегетарианские</option>
+                    <option value='option4'>Веганские</option>
+                </Select>
+            </FormControl>
         </Box>
     </Flex>
 );
