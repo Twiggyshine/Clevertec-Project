@@ -11,7 +11,6 @@ const Aside = () => (
         <Flex direction='column' h='100%' justify='space-between'>
             <Box w='208px' h='208px' borderRadius='12px' p='16px' alignSelf='center'>
                 <Flex direction='column' h='100%' justify='center' align='center'>
-                    {/* Первая иконка с числом */}
                     <Flex
                         justify='center'
                         alignItems='center'
@@ -42,8 +41,6 @@ const Aside = () => (
                         </svg>
                         <Text {...textStyles}>185 </Text>
                     </Flex>
-
-                    {/* Вторая иконка с числом */}
                     <Flex
                         justify='center'
                         alignItems='center'
@@ -80,7 +77,6 @@ const Aside = () => (
                         <Text {...textStyles}>589 </Text>
                     </Flex>
 
-                    {/* Третья иконка с числом */}
                     <Flex
                         alignItems='center'
                         justify='center'

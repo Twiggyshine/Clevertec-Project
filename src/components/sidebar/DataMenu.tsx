@@ -16,6 +16,7 @@ interface menuData {
     title: string;
     items: string[];
     iconSrc: string;
+    testId?: string;
 }
 
 const menuData = [
@@ -61,6 +62,7 @@ const menuData = [
             'Напитки',
         ],
         icon: VeganIcon,
+        testId: 'vegan-cuisine',
     },
     {
         title: 'Детские блюда',
