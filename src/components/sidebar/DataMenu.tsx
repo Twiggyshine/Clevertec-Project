@@ -10,6 +10,7 @@ import SauceIcon from '../../assets/menuIcons/sauce.svg';
 import SecondDishIcon from '../../assets/menuIcons/second dish.svg';
 import SnakesIcon from '../../assets/menuIcons/snakes.svg';
 import VeganIcon from '../../assets/menuIcons/vegan.svg';
+import PreparationsIcon from '../../assets/menuIcons/vegan.svg';
 
 interface menuData {
     title: string;
@@ -85,6 +86,11 @@ const menuData = [
         title: 'Напитки',
         items: [],
         icon: DrinksIcon,
+    },
+    {
+        title: 'Заготовки',
+        items: [],
+        icon: PreparationsIcon,
     },
 ];
 

@@ -18,22 +18,24 @@ const Sidebar = () => (
     <Flex
         direction='column'
         w='256px'
+        // minHeight="100vh"
         h='1040px'
         borderRight='1px'
         borderColor='gray.200'
         bg='white'
         boxShadow='sm'
-        overflow='hidden'
+        //  position="relative"
     >
-        <Box p='24px 0 0 0' flex='1'>
+        <Box p='24px 0 0 0'>
             <Box borderRadius='12px' p='10px 16px 10px 10px' w='100%' maxW='256px'>
                 <VStack align='stretch' spacing={0}>
                     <Accordion allowToggle>
                         {menuData.map((item, index) => (
                             <AccordionItem key={index} border='none'>
                                 <AccordionButton
-                                    _hover={{ bg: '#eaffc7', fontWeight: '700' }}
+                                    _hover={{ bg: '#ecfccb', fontWeight: '700' }}
                                     p={4}
+                                    h='48px'
                                     justifyContent='space-between'
                                 >
                                     <Flex align='center' gap='8px'>

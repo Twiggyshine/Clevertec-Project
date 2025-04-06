@@ -18,7 +18,7 @@ const MenuMarker = ({ children, ...rest }: MenuMarkerProps) => (
             transform: 'translateY(-50%)',
             width: '1px',
             height: '24px',
-            bg: '#c4ff61',
+            bg: '#bef264',
         }}
         py={1}
         _hover={{
@@ -27,7 +27,7 @@ const MenuMarker = ({ children, ...rest }: MenuMarkerProps) => (
             _before: {
                 width: '8px',
                 height: '28px',
-                bg: '#c4ff61',
+                bg: '#bef264',
             },
         }}
         {...rest}

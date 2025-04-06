@@ -1,21 +1,29 @@
 import './App.css';
 
+import { Box, Flex } from '@chakra-ui/react';
+
+import Aside from '~/components/aside/Aside';
+
 import Header from '../components/header/Header';
 import Sidebar from '../components/sidebar/Sidebar';
 
-// import { useGetPostsQuery } from '~/query/services/posts.ts';
-
 function App() {
     return (
-        <div className='app'>
+        <Box className='app' h='100vh' display='flex' flexDirection='column'>
             <Header />
-            <div className='app-content'>
+
+            <Flex flex='1' minH='0'>
+                {/* Левое меню */}
                 <Sidebar />
-                <main className='main-content'>
-                    {/* Основное содержимое страницы будет здесь */}
-                </main>
-            </div>
-        </div>
+
+                {/* Центральная часть (единственный скроллящийся элемент) */}
+                <Box flex='1' overflowY='auto' p='24px'>
+                    {/* основной контент */}
+                </Box>
+
+                <Aside />
+            </Flex>
+        </Box>
     );
 }
 
