@@ -7,9 +7,9 @@ const textStyles = {
     color: '#2db100',
 };
 const Aside = () => (
-    <Box w='280px' h='1040px' bg='white' borderLeft='1px solid' borderColor='gray.200' p='16px'>
+    <Box h='1040px' w='280px' bg='white' borderLeft='1px solid' borderColor='gray.200'>
         <Flex direction='column' h='100%' justify='space-between'>
-            <Box w='208px' h='208px' borderRadius='12px' p='16px' alignSelf='center'>
+            <Box w='208px' h='208px' borderRadius='12px' p='16px' alignSelf='end'>
                 <Flex direction='column' h='100%' justify='center' align='center'>
                     <Flex
                         justify='center'
@@ -114,7 +114,7 @@ const Aside = () => (
                 h='208px'
                 borderRadius='12px'
                 p='16px'
-                alignSelf='center'
+                alignSelf='end'
                 display='flex'
                 flexDirection='column'
                 justifyContent='flex-end'

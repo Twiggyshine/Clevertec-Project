@@ -12,10 +12,15 @@ body {
     margin: 0;
     display: flex;
     place-items: center;
+    overflow-x: hidden;
 }
 
 html {
     scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
 }
 
 *,
