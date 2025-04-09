@@ -19,7 +19,7 @@ function App() {
                 <Sidebar />
                 <Box flex='1' display='flex' flexDirection='column' minH='0'>
                     <NavPanel />
-                    <Box flex='1' overflowY='auto'>
+                    <Box flex='1'>
                         <Routes>
                             <Route path='/' element={<HomePage />} />
                             <Route path='*' element={<HomePage />} />
