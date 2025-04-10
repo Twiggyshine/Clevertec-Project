@@ -1,6 +1,6 @@
 import { Badge, Box, Flex, IconButton, Image, Text } from '@chakra-ui/react';
 
-import { CustomHeartIcon, CustomSmileIcon } from './CustomIcon';
+import { CustomHeartIcon, CustomSmileIcon } from '../customIcon/CustomIcon';
 
 interface RecipeCardProps {
     id: number;
@@ -19,7 +19,14 @@ const RecipeCard = ({
     likesCount,
     favCount,
 }: RecipeCardProps) => (
-    <Box width='322px' height='414px' borderWidth='1px' borderRadius='0px' position='relative'>
+    <Box
+        width='322px'
+        height='414px'
+        borderWidth='1px'
+        borderRadius='0px'
+        position='relative'
+        mb='40px'
+    >
         <Image
             src={`../../../public/recipies/${id}.jpg`}
             alt={title}

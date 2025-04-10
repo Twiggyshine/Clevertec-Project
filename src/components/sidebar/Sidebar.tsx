@@ -10,9 +10,9 @@ import {
     VStack,
 } from '@chakra-ui/react';
 
+import menuData from '../../data/DataMenu';
 import Footer from '../footer/Footer';
-import MenuMarker from '../sidebar/MenuMarker';
-import menuData from './DataMenu';
+import MenuMarker from './MenuMarker';
 
 const Sidebar = () => (
     <Flex

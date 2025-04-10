@@ -1,13 +1,13 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { Box, Heading, IconButton } from '@chakra-ui/react';
 
-import RecipesGrid from '../components/recipeCard/GridContainer';
 import JuicyRecipesSection from '../components/sectionJuciest/sectionJuciest';
+import RecipesGrid from '../components/sectionNewRecipies/GridContainer';
 
 function HomePage() {
     return (
         <Box pl={6} position='relative'>
-            <Heading as='h1' fontWeight={500} fontSize='48px' lineHeight='100%' mb={8}>
+            <Heading as='h1' fontWeight={500} fontSize='48px' mb={8}>
                 Новые рецепты
             </Heading>
 

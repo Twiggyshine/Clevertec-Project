@@ -1,16 +1,16 @@
-import ChildrenIcon from '../../assets/menuIcons/children.svg';
-import DesertsIcon from '../../assets/menuIcons/deserts.svg';
-import DrinksIcon from '../../assets/menuIcons/drinks.svg';
-import FirstDishIcon from '../../assets/menuIcons/first dish.svg';
-import GrillIcon from '../../assets/menuIcons/grill.svg';
-import HealthyIcon from '../../assets/menuIcons/healthy.svg';
-import NationalIcon from '../../assets/menuIcons/national.svg';
-import SalatIcon from '../../assets/menuIcons/salat.svg';
-import SauceIcon from '../../assets/menuIcons/sauce.svg';
-import SecondDishIcon from '../../assets/menuIcons/second dish.svg';
-import SnakesIcon from '../../assets/menuIcons/snakes.svg';
-import VeganIcon from '../../assets/menuIcons/vegan.svg';
-import PreparationsIcon from '../../assets/menuIcons/vegan.svg';
+import ChildrenIcon from '../assets/menuIcons/children.svg';
+import DesertsIcon from '../assets/menuIcons/deserts.svg';
+import DrinksIcon from '../assets/menuIcons/drinks.svg';
+import FirstDishIcon from '../assets/menuIcons/first dish.svg';
+import GrillIcon from '../assets/menuIcons/grill.svg';
+import HealthyIcon from '../assets/menuIcons/healthy.svg';
+import NationalIcon from '../assets/menuIcons/national.svg';
+import PreparationsIcon from '../assets/menuIcons/preparations.svg';
+import SalatIcon from '../assets/menuIcons/salat.svg';
+import SauceIcon from '../assets/menuIcons/sauce.svg';
+import SecondDishIcon from '../assets/menuIcons/second dish.svg';
+import SnakesIcon from '../assets/menuIcons/snakes.svg';
+import VeganIcon from '../assets/menuIcons/vegan.svg';
 
 interface menuData {
     title: string;
