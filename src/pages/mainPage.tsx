@@ -6,7 +6,7 @@ import RecipesGrid from '../components/sectionNewRecipies/GridContainer';
 
 function HomePage() {
     return (
-        <Box pl={6} position='relative'>
+        <Box pl={6} position='relative' maxW='1360px'>
             <Heading as='h1' fontWeight={500} fontSize='48px' mb={8}>
                 Новые рецепты
             </Heading>

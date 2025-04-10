@@ -33,55 +33,65 @@ const RecipeCard = ({
             objectFit='cover'
             h='230px'
             w='322px'
-            mb='24px'
         />
-
         <Box p='16px 24px 20px 24px'>
-            <Text fontWeight='semibold' fontSize='lg' noOfLines={1} mb='1'>
-                {title}
-            </Text>
-            <Text noOfLines={2} color='#000' fontSize='14px'>
-                {description}
-            </Text>
-        </Box>
+            <Box mb='24px'>
+                <Text noOfLines={1} mb='8px' fontSize='20px' fontWeight='500'>
+                    {title}
+                </Text>
+                <Text color='#000' fontSize='14px' noOfLines={{ lg: 1, sm: 3 }}>
+                    {description}
+                </Text>
+            </Box>
 
-        <Flex p='2' align='center' justify='space-between'>
-            <Badge backgroundColor='#d7ff94' px='2' fontSize='xs'>
-                {category}
-            </Badge>
+            <Flex align='center' justify='space-between'>
+                <Badge
+                    backgroundColor='#d7ff94'
+                    px='2'
+                    fontSize='14px'
+                    borderRadius='4px'
+                    p='2px 8px'
+                    w='160px'
+                    h='24px'
+                    textTransform='none'
+                    fontWeight='400'
+                >
+                    {category}
+                </Badge>
 
-            <Flex align='center' gap='8px'>
-                {likesCount !== undefined && likesCount > 0 && (
-                    <Flex align='center'>
-                        <IconButton
-                            aria-label='Лайк'
-                            icon={<CustomHeartIcon />}
-                            variant='ghost'
-                            isRound
-                            size='sm'
-                        />
-                        <Text fontSize='sm' color='#2db100' fontWeight='600'>
-                            {likesCount}
-                        </Text>
-                    </Flex>
-                )}
+                <Flex align='center' gap='8px'>
+                    {likesCount !== undefined && likesCount > 0 && (
+                        <Flex align='center'>
+                            <IconButton
+                                aria-label='Лайк'
+                                icon={<CustomHeartIcon />}
+                                variant='ghost'
+                                isRound
+                                size='sm'
+                            />
+                            <Text fontSize='sm' color='#2db100' fontWeight='600'>
+                                {likesCount}
+                            </Text>
+                        </Flex>
+                    )}
 
-                {favCount !== undefined && favCount > 0 && (
-                    <Flex align='center'>
-                        <IconButton
-                            aria-label='Смайлик'
-                            icon={<CustomSmileIcon />}
-                            variant='ghost'
-                            isRound
-                            size='sm'
-                        />
-                        <Text fontSize='sm' color='#2db100' fontWeight='600'>
-                            {favCount}
-                        </Text>
-                    </Flex>
-                )}
+                    {favCount !== undefined && favCount > 0 && (
+                        <Flex align='center'>
+                            <IconButton
+                                aria-label='Смайлик'
+                                icon={<CustomSmileIcon />}
+                                variant='ghost'
+                                isRound
+                                size='sm'
+                            />
+                            <Text fontSize='sm' color='#2db100' fontWeight='600'>
+                                {favCount}
+                            </Text>
+                        </Flex>
+                    )}
+                </Flex>
             </Flex>
-        </Flex>
+        </Box>
     </Box>
 );
 
