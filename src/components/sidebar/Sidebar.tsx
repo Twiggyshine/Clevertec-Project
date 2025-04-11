@@ -18,13 +18,11 @@ const Sidebar = () => (
     <Flex
         direction='column'
         w='256px'
-        // minHeight="100vh"
         h='1040px'
         borderRight='1px'
         borderColor='gray.200'
         bg='white'
         boxShadow='sm'
-        //  position="relative"
     >
         <Box p='24px 0 0 0'>
             <Box borderRadius='12px' p='10px 16px 10px 10px' w='100%' maxW='256px'>

@@ -26,7 +26,6 @@ const Footer = () => {
                     fontWeight={600}
                     p='0'
                     color='#000'
-                    _hover={{ bg: 'transparent', textDecoration: 'underline' }}
                 >
                     Выйти
                 </Button>

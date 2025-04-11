@@ -1,6 +1,7 @@
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { Box, Heading, IconButton } from '@chakra-ui/react';
 
+import CulinaryVlogsSection from '../components/sectionCookingVlogs/sectionCookingVlogs';
 import JuicyRecipesSection from '../components/sectionJuciest/sectionJuciest';
 import RecipesGrid from '../components/sectionNewRecipies/GridContainer';
 
@@ -58,6 +59,7 @@ function HomePage() {
             </Box>
 
             <JuicyRecipesSection />
+            <CulinaryVlogsSection />
         </Box>
     );
 }

@@ -25,7 +25,6 @@ interface RecipeCardProps {
     favCount?: number;
     imgUrl: string;
 }
-// const recommendedRecipeIds = [6,7];
 
 const recommendedRecipeIds: Record<number, { name: string; avatarSrc: string }> = {
     6: { name: 'Елена Высоцкая', avatarSrc: './../../../public/icons/Avatar1.svg' },
@@ -35,7 +34,7 @@ const JuicyRecipesSection = () => {
     const featuredRecipes = recipesData.theJuciest;
 
     return (
-        <Box>
+        <Box mb='40px'>
             <Flex justify='space-between' align='center'>
                 <Heading as='h1' fontWeight={500} fontSize='48px' mb={8}>
                     Самое сочное
