@@ -4,6 +4,7 @@ import { Box, Heading, IconButton } from '@chakra-ui/react';
 import CulinaryVlogsSection from '../components/sectionCookingVlogs/sectionCookingVlogs';
 import JuicyRecipesSection from '../components/sectionJuciest/sectionJuciest';
 import RecipesGrid from '../components/sectionNewRecipies/GridContainer';
+import VeganKitchenSection from '../components/sectionVeganCuisine/sectionVeganCuisine';
 
 function HomePage() {
     return (
@@ -60,6 +61,7 @@ function HomePage() {
 
             <JuicyRecipesSection />
             <CulinaryVlogsSection />
+            <VeganKitchenSection />
         </Box>
     );
 }

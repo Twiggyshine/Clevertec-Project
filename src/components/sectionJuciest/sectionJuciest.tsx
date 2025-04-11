@@ -178,7 +178,7 @@ const JuicyRecipesSection = () => {
                                         mb='24px'
                                         fontSize='14px'
                                         lineHeight='143%'
-                                        noOfLines={{ lg: 1, sm: 3 }}
+                                        noOfLines={{ lg: 2, sm: 3 }}
                                     >
                                         {recipe.description}
                                     </Text>

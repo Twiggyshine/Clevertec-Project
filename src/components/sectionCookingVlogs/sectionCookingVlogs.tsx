@@ -39,16 +39,15 @@ const CulinaryBlogsSection = () => (
 
         <Grid templateColumns={{ base: '1fr', md: 'repeat(3, 1fr)' }} gap='16px'>
             {/* Автор 1 */}
-            <GridItem border='1px solid rgba(0, 0, 0, 0.08)' borderRadius='8px' h='184px' bg='#fff'>
+            <GridItem borderRadius='8px'>
                 <Box
-                    bg='white'
-                    borderRadius='lg'
-                    boxShadow='md'
-                    p={6}
+                    bg='#fff'
+                    borderRadius='8px'
+                    border='1px solid rgba(0, 0, 0, 0.08)'
                     transition='all 0.2s'
                     _hover={{ transform: 'translateY(-5px)', boxShadow: 'xl' }}
                 >
-                    <Flex gap={4} alignItems='flex-start' mb={4}>
+                    <Flex gap={4} alignItems='flex-start' p='24px 24px 16px 24px'>
                         <Image
                             src='./../../../public/icons/Avatar1.svg'
                             alt='Елена Высоцкая'
@@ -60,12 +59,12 @@ const CulinaryBlogsSection = () => (
                             <Heading as='h3' fontSize='18px' fontWeight='500px' lineHeight='156%'>
                                 Елена Высоцкая
                             </Heading>
-                            <Text fontSize='sm' color='gray.600'>
+                            <Text fontSize='14px' color='rgba(0, 0, 0, 0.64)'>
                                 @elenapovar
                             </Text>
                         </VStack>
                     </Flex>
-                    <Text color='#000'>
+                    <Text color='#000' p='12px 24px 20px 24px'>
                         Как раз после праздников, когда мясные продукты еще остались, но никто их
                         уже не хочет, время варить солянку.
                     </Text>
@@ -75,14 +74,13 @@ const CulinaryBlogsSection = () => (
             {/* Автор 2 */}
             <GridItem>
                 <Box
-                    bg='white'
-                    borderRadius='lg'
-                    boxShadow='md'
-                    p={6}
+                    bg='#fff'
+                    borderRadius='8px'
+                    border='1px solid rgba(0, 0, 0, 0.08)'
                     transition='all 0.2s'
                     _hover={{ transform: 'translateY(-5px)', boxShadow: 'xl' }}
                 >
-                    <Flex gap={4} alignItems='flex-start' mb={4}>
+                    <Flex gap={4} alignItems='flex-start' p='24px 24px 16px 24px'>
                         <Image
                             src='./../../../public/icons/Avatar2.svg'
                             alt='Alex Cook'
@@ -94,12 +92,12 @@ const CulinaryBlogsSection = () => (
                             <Heading as='h3' fontSize='18px' fontWeight='500px' lineHeight='156%'>
                                 Alex Cook
                             </Heading>
-                            <Text fontSize='sm' color='gray.600'>
+                            <Text fontSize='14px' color='rgba(0, 0, 0, 0.64)'>
                                 @funtasticooking
                             </Text>
                         </VStack>
                     </Flex>
-                    <Text color='#000'>
+                    <Text color='#000' p='12px 24px 20px 24px'>
                         Как раз после праздников, когда мясные продукты еще остались, но никто их
                         уже не хочет, время варить солянку.
                     </Text>
@@ -109,14 +107,13 @@ const CulinaryBlogsSection = () => (
             {/* Автор 3 */}
             <GridItem>
                 <Box
-                    bg='white'
-                    borderRadius='lg'
-                    boxShadow='md'
-                    p={6}
+                    bg='#fff'
+                    borderRadius='8px'
+                    border='1px solid rgba(0, 0, 0, 0.08)'
                     transition='all 0.2s'
                     _hover={{ transform: 'translateY(-5px)', boxShadow: 'xl' }}
                 >
-                    <Flex gap={4} alignItems='flex-start' mb={4}>
+                    <Flex gap={4} alignItems='flex-start' p='24px 24px 16px 24px'>
                         <Image
                             src='./../../../public/icons/Avatar3.svg'
                             alt='Екатерина Константинопольская'
@@ -128,12 +125,12 @@ const CulinaryBlogsSection = () => (
                             <Heading as='h3' fontSize='18px' fontWeight='500px' lineHeight='156%'>
                                 Екатерина Константинопольская
                             </Heading>
-                            <Text fontSize='sm' color='gray.600'>
+                            <Text fontSize='14px' color='rgba(0, 0, 0, 0.64)'>
                                 @bake_and_pie
                             </Text>
                         </VStack>
                     </Flex>
-                    <Text color='#000'>
+                    <Text color='#000' p='12px 24px 20px 24px'>
                         Как раз после праздников, когда мясные продукты еще остались, но никто их
                         уже не хочет, время варить солянку.
                     </Text>

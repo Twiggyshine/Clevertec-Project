@@ -4,12 +4,12 @@ import recipesData from '../../data/recipes-data.json';
 import RecipeCard from './RecipeCard';
 
 const RecipesGrid = () => {
-    // Берем только veganCuisine рецепты
-    const veganRecipes = recipesData.veganCuisine;
+    // Берем только newRecipies рецепты
+    const newRecipes = recipesData.newRecipies;
 
     return (
         <SimpleGrid columns={{ base: 1, sm: 2, md: 3, lg: 4 }} gap='24px'>
-            {veganRecipes.map((recipe) => (
+            {newRecipes.map((recipe) => (
                 <RecipeCard key={recipe.id} {...recipe} />
             ))}
         </SimpleGrid>
