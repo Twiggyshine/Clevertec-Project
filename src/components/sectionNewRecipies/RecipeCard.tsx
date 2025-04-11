@@ -1,5 +1,6 @@
 import { Badge, Box, Flex, IconButton, Image, Text } from '@chakra-ui/react';
 
+import * as ImgCards from '../../assets/menuIcons/index';
 import { CustomHeartIcon, CustomSmileIcon } from '../customIcon/CustomIcon';
 
 interface RecipeCardProps {
@@ -9,6 +10,7 @@ interface RecipeCardProps {
     category: string;
     likesCount?: number;
     favCount?: number;
+    imgUrl: string;
 }
 
 const RecipeCard = ({
@@ -18,6 +20,7 @@ const RecipeCard = ({
     category,
     likesCount,
     favCount,
+    imgUrl,
 }: RecipeCardProps) => (
     <Box
         width='322px'
@@ -47,18 +50,23 @@ const RecipeCard = ({
             <Flex align='center' justify='space-between'>
                 <Badge
                     backgroundColor='#d7ff94'
-                    px='2'
                     fontSize='14px'
                     borderRadius='4px'
                     p='2px 8px'
-                    w='160px'
                     h='24px'
                     textTransform='none'
                     fontWeight='400'
                 >
-                    {category}
-                </Badge>
+                    <Flex align='center' gap='8px'>
+                        <Image
+                            src={ImgCards[imgUrl as keyof typeof ImgCards]}
+                            alt={category}
+                            boxSize='16px'
+                        />
 
+                        <Text>{category}</Text>
+                    </Flex>
+                </Badge>
                 <Flex align='center' gap='8px'>
                     {likesCount !== undefined && likesCount > 0 && (
                         <Flex align='center'>
