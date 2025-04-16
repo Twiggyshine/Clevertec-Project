@@ -1,83 +1,130 @@
-import { Badge, Box, Flex, Heading, IconButton, SimpleGrid, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 
-// import * as ImgCards from '../../assets/menuIcons/index';
 import recipesData from '../../data/recipes-data.json';
-import { CustomHeartIcon, CustomSmileIcon } from '../customIcon/CustomIcon';
-
-// interface VeganRecipeCardProps {
-//     id: number;
-//     title: string;
-//     description: string;
-//     category: string;
-//     likesCount?: number;
-//     favCount?: number;
-//   }
+import { CustomCard } from '../customCard/customCard';
+import { CustomInput } from '../sectionVeganCuisine/CookingElement';
 
 const VeganKitchenSection = () => {
-    const veganRecipes = recipesData.newRecipies;
+    const filteredRecipes = [
+        ...recipesData.VeganCuisine.filter((recipe) => recipe.id === 9),
+        ...recipesData.newRecipies.filter((recipe) => recipe.id === 2),
+    ];
 
     return (
-        <Box maxW='1200px' mx='auto' p={5}>
-            <Flex justify='space-between' align='center' mb={8}>
-                <Heading as='h1' size='xl'>
+        <Box maxW='1360px'>
+            <Flex justify='space-between' align='center' mb='24px'>
+                <Heading as='h1' fontSize='48px' fontWeight='500'>
                     Веганская кухня
                 </Heading>
-                <Text maxW='400px' fontSize='lg' color='gray.600'>
+                <Text
+                    maxW='668px'
+                    fontSize='16px'
+                    fontWeight='500'
+                    color='rgba(0, 0, 0, 0.64);'
+                    lineHeight='150%;'
+                    pl='24px'
+                >
                     Интересны не только убеждённым вегетарианцам, но и тем, кто хочет попробовать
                     вегетарианскую диету и готовить вкусные вегетарианские блюда
                 </Text>
             </Flex>
-
-            <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6}>
-                {veganRecipes.map((recipe) => (
-                    <Box
+            <SimpleGrid
+                templateColumns={{
+                    md: '1fr 1fr 2fr',
+                }}
+                gap='24px'
+            >
+                {filteredRecipes.map((recipe) => (
+                    <CustomCard
                         key={recipe.id}
-                        borderWidth='1px'
-                        borderRadius='lg'
-                        p={6}
-                        _hover={{ shadow: 'md' }}
-                    >
-                        <Heading fontSize='xl' mb={2}>
-                            {recipe.title}
-                        </Heading>
-                        <Text mb={4}>{recipe.description}</Text>
-
-                        <Flex justify='space-between' align='center'>
-                            <Badge colorScheme='green' variant='subtle'>
-                                {recipe.category}
-                            </Badge>
-
-                            <Flex gap={2}>
-                                {recipe.likesCount && (
-                                    <Flex align='center'>
-                                        <IconButton
-                                            aria-label='Лайк'
-                                            icon={<CustomHeartIcon />}
-                                            variant='ghost'
-                                            size='sm'
-                                        />
-                                        <Text>{recipe.likesCount}</Text>
-                                    </Flex>
-                                )}
-
-                                {recipe.favCount && (
-                                    <Flex align='center'>
-                                        <IconButton
-                                            aria-label='Сохранено'
-                                            icon={<CustomSmileIcon />}
-                                            variant='ghost'
-                                            size='sm'
-                                        />
-                                        <Text>{recipe.favCount}</Text>
-                                    </Flex>
-                                )}
-                            </Flex>
-                        </Flex>
-                    </Box>
+                        title={recipe.title}
+                        description={recipe.description}
+                        category={recipe.category}
+                        imgUrl={recipe.imgUrl}
+                        likesCount={recipe.likesCount}
+                        favCount={recipe.favCount}
+                        p='24px 24px 20px 24px'
+                        border='1px solid #E6E6E6'
+                        borderRadius='8px'
+                    />
                 ))}
+                <Flex direction='column' gap='12px'>
+                    <CustomInput
+                        text='Стейк для вегетарианцев'
+                        icon={<img src='../../../public/menuIcons/second dish.svg' alt='search' />}
+                    />
+                    <CustomInput
+                        text='Котлеты из гречки и фасоли'
+                        icon={<img src='../../../public/menuIcons/second dish.svg' alt='search' />}
+                    />
+                    <CustomInput
+                        text='Сырный суп с лапшой и брокколи'
+                        icon={<img src='../../../public/menuIcons/first dish.svg' alt='search' />}
+                    />
+                </Flex>
             </SimpleGrid>
         </Box>
     );
 };
+//     return (
+//         <Box maxW='1360px'>
+//             <Grid templateColumns='1fr 1fr' alignItems='center' mb='24px' >
+//                 <Heading as='h1' fontSize='48px' fontWeight='500'  >
+//                     Веганская кухня
+//                 </Heading>
+
+//                 <Text
+//                     fontSize='16px'
+//                     fontWeight='500'
+//                     color='rgba(0, 0, 0, 0.64);'
+//                     lineHeight='150%;'
+//                     justifySelf='end'
+//                     pl='24px'
+
+//                 >
+//                     Интересны не только убеждённым вегетарианцам, но и тем, кто хочет попробовать
+//                     вегетарианскую диету и готовить вкусные вегетарианские блюда
+//                 </Text>
+//             </Grid>
+
+//             <SimpleGrid
+//                 templateColumns={{
+//                     md: '1fr 1fr 2fr',
+//                 }}
+//                 gap='24px'
+//             >
+//                 {filteredRecipes.map((recipe) => (
+//                     <CustomCard
+//                         key={recipe.id}
+//                         title={recipe.title}
+//                         description={recipe.description}
+//                         category={recipe.category}
+//                         imgUrl={recipe.imgUrl}
+//                         likesCount={recipe.likesCount}
+//                         favCount={recipe.favCount}
+//                         p='24px 24px 20px 24px'
+//                         border='1px solid #E6E6E6'
+//                         borderRadius='8px'
+//                     />
+//                 ))}
+
+//                 <Flex direction='column' gap='12px'>
+//                     <CustomInput
+//                         text='Стейк для вегетарианцев'
+//                         icon={<img src='../../../public/menuIcons/second dish.svg' alt='search' />}
+//                     />
+//                     <CustomInput
+//                         text='Котлеты из гречки и фасоли'
+//                         icon={<img src='../../../public/menuIcons/second dish.svg' alt='search' />}
+//                     />
+//                     <CustomInput
+//                         text='Сырный суп с лапшой и брокколи'
+//                         icon={<img src='../../../public/menuIcons/first dish.svg' alt='search' />}
+//                     />
+//                 </Flex>
+//             </SimpleGrid>
+//         </Box>
+//     );
+// };
 
 export default VeganKitchenSection;

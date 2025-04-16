@@ -162,13 +162,14 @@ const JuicyRecipesSection = () => {
                                         )}
                                     </Flex>
                                 </Flex>
-                                <Box w='274px' h='100px'>
+                                <Box>
                                     <Heading
                                         as='h3'
                                         fontSize='20px'
                                         mb='8px'
                                         color='#000'
                                         fontWeight='500'
+                                        noOfLines={1}
                                     >
                                         {recipe.title}
                                     </Heading>
@@ -178,7 +179,7 @@ const JuicyRecipesSection = () => {
                                         mb='24px'
                                         fontSize='14px'
                                         lineHeight='143%'
-                                        noOfLines={{ lg: 2, sm: 3 }}
+                                        noOfLines={3}
                                     >
                                         {recipe.description}
                                     </Text>
