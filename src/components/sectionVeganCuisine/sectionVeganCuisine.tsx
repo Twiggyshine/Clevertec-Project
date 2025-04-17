@@ -46,6 +46,7 @@ const VeganKitchenSection = () => {
                         p='24px 24px 20px 24px'
                         border='1px solid #E6E6E6'
                         borderRadius='8px'
+                        badgeColor='#ffffd3'
                     />
                 ))}
                 <Flex direction='column' gap='12px'>
@@ -66,6 +67,8 @@ const VeganKitchenSection = () => {
         </Box>
     );
 };
+
+export default VeganKitchenSection;
 //     return (
 //         <Box maxW='1360px'>
 //             <Grid templateColumns='1fr 1fr' alignItems='center' mb='24px' >
@@ -126,5 +129,3 @@ const VeganKitchenSection = () => {
 //         </Box>
 //     );
 // };
-
-export default VeganKitchenSection;

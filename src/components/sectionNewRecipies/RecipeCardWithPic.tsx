@@ -31,6 +31,7 @@ const RecipeCard = ({
             favCount={favCount}
             imgUrl={imgUrl}
             p='16px 24px 20px 24px'
+            badgeColor='#d7ff94'
         />
     </Box>
 );
