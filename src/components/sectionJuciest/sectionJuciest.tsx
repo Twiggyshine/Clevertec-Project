@@ -1,5 +1,4 @@
 import {
-    Badge,
     Box,
     Button,
     Flex,
@@ -11,9 +10,9 @@ import {
     Text,
 } from '@chakra-ui/react';
 
-import * as ImgCards from '../../assets/menuIcons/index';
 import recipesData from '../../data/recipes-data.json';
 import RecommendsBadge from '../badgeRecom/badgeRecom';
+import { BadgeWithIcon } from '../CustomBadge/customBadge';
 import { CustomHeartIcon, CustomSmileIcon } from '../customIcon/CustomIcon';
 
 interface RecipeCardProps {
@@ -99,27 +98,10 @@ const JuicyRecipesSection = () => {
                             {/* Блок с текстом и кнопками */}
                             <Box flex='1' p='20px 24px' display='flex' flexDirection='column'>
                                 <Flex justify='space-between' align='flex-start' mb='24px'>
-                                    <Badge
-                                        backgroundColor='#ffffd3'
-                                        fontSize='14px'
-                                        borderRadius='4px'
-                                        p='2px 8px'
-                                        h='24px'
-                                        textTransform='none'
-                                        fontWeight='400'
-                                    >
-                                        <Flex align='center' gap='8px'>
-                                            <Image
-                                                src={
-                                                    ImgCards[recipe.imgUrl as keyof typeof ImgCards]
-                                                }
-                                                alt={recipe.category}
-                                                boxSize='16px'
-                                            />
-
-                                            <Text>{recipe.category}</Text>
-                                        </Flex>
-                                    </Badge>
+                                    <BadgeWithIcon
+                                        category={recipe.category}
+                                        imgUrl={recipe.imgUrl}
+                                    />
 
                                     <Flex align='center' gap='8px'>
                                         {recipe.likesCount !== undefined &&
