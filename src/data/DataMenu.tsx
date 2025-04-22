@@ -14,7 +14,7 @@ import VeganIcon from '../assets/menuIcons/vegan.svg';
 
 interface menuData {
     title: string;
-    items: string[];
+    subcategory: string[];
     iconSrc: string;
     testId?: string;
 }
@@ -22,37 +22,37 @@ interface menuData {
 const menuData = [
     {
         title: 'Салаты',
-        items: [],
+        subcategory: [],
         icon: SalatIcon,
     },
     {
         title: 'Закуски',
-        items: [],
+        subcategory: [],
         icon: SnakesIcon,
     },
     {
         title: 'Первые блюда',
-        items: [],
+        subcategory: [],
         icon: FirstDishIcon,
     },
     {
         title: 'Вторые блюда',
-        items: [],
+        subcategory: [],
         icon: SecondDishIcon,
     },
     {
         title: 'Десерты, выпечка',
-        items: [],
+        subcategory: [],
         icon: DesertsIcon,
     },
     {
         title: 'Блюда на гриле',
-        items: [],
+        subcategory: [],
         icon: GrillIcon,
     },
     {
         title: 'Веганская кухня',
-        items: [
+        subcategory: [
             'Закуски',
             'Первые блюда',
             'Вторые блюда',
@@ -62,36 +62,35 @@ const menuData = [
             'Напитки',
         ],
         icon: VeganIcon,
-        testId: 'vegan-cuisine',
     },
     {
         title: 'Детские блюда',
-        items: [],
+        subcategory: [],
         icon: ChildrenIcon,
     },
     {
         title: 'Лечебное питание',
-        items: [],
+        subcategory: [],
         icon: HealthyIcon,
     },
     {
         title: 'Национальные',
-        items: [],
+        subcategory: [],
         icon: NationalIcon,
     },
     {
         title: 'Соусы',
-        items: [],
+        subcategory: [],
         icon: SauceIcon,
     },
     {
         title: 'Напитки',
-        items: [],
+        subcategory: [],
         icon: DrinksIcon,
     },
     {
         title: 'Заготовки',
-        items: [],
+        subcategory: [],
         icon: PreparationsIcon,
     },
 ];

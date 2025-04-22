@@ -1,17 +1,7 @@
 import { Box, Image } from '@chakra-ui/react';
 
 import { CustomCard } from '../customCard/customCard';
-
-interface RecipeCardProps {
-    id: number;
-    title: string;
-    description: string;
-    category: string;
-    likesCount?: number;
-    favCount?: number;
-    imgUrl: string;
-}
-
+import { RecipeCardProps } from './RecipeCardProps';
 const RecipeCard = ({
     id,
     title,

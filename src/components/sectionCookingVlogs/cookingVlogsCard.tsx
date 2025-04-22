@@ -1,6 +1,6 @@
 import { Box, Flex, Heading, Image, Text, VStack } from '@chakra-ui/react';
 
-import { BlogAuthor } from '../../data/culinaryBlogsData';
+import { BlogAuthor } from '../sectionCookingVlogs/blog';
 
 interface CulinaryBlogCardProps {
     author: BlogAuthor;

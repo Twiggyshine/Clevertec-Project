@@ -1,9 +1,6 @@
 import { Avatar, Badge, Box, Text } from '@chakra-ui/react';
 
-interface RecommendsBadgeProps {
-    name: string;
-    avatarSrc: string;
-}
+import { RecommendsBadgeProps } from './RecomBadgeProps';
 
 const RecommendsBadge = ({ name, avatarSrc }: RecommendsBadgeProps) => (
     <Badge

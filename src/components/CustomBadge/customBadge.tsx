@@ -1,13 +1,7 @@
 import { Badge, Flex, Image, Text } from '@chakra-ui/react';
 
 import * as ImgCards from '../../assets/menuIcons/index';
-
-interface BadgeWithIconProps {
-    category: string;
-    imgUrl: string;
-    bgColor?: string;
-}
-
+import { BadgeWithIconProps } from './CustomBadgeProps';
 export const BadgeWithIcon = ({ category, imgUrl, bgColor = '#ffffd3' }: BadgeWithIconProps) => (
     <Badge
         backgroundColor={bgColor}

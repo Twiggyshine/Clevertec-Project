@@ -10,10 +10,10 @@ import {
     Text,
 } from '@chakra-ui/react';
 
+import { CustomHeartIcon, CustomSmileIcon } from '../../assets/customIcon/CustomIcon';
 import recipesData from '../../data/recipes-data.json';
 import RecommendsBadge from '../badgeRecom/badgeRecom';
 import { BadgeWithIcon } from '../CustomBadge/customBadge';
-import { CustomHeartIcon, CustomSmileIcon } from '../customIcon/CustomIcon';
 
 interface RecipeCardProps {
     id: number;

@@ -28,7 +28,7 @@ const Sidebar = () => (
             <Box borderRadius='12px' p='10px 16px 10px 10px' w='100%' maxW='256px'>
                 <VStack align='stretch' spacing={0}>
                     <Accordion allowToggle>
-                        {menuData.map((item, index) => (
+                        {menuData.map((menuElement, index) => (
                             <AccordionItem key={index} border='none'>
                                 <AccordionButton
                                     _hover={{ bg: '#ecfccb', fontWeight: '700' }}
@@ -37,24 +37,28 @@ const Sidebar = () => (
                                     justifyContent='space-between'
                                 >
                                     <Flex align='center' gap='8px'>
-                                        {item.icon && (
+                                        {menuElement.icon && (
                                             <img
-                                                src={item.icon}
+                                                src={menuElement.icon}
                                                 data-w='24px'
                                                 data-h='24px'
                                                 data-mr={2}
                                             />
                                         )}
-                                        <Text fontWeight='500'>{item.title} </Text>
+                                        <Text fontWeight='500'>{menuElement.title} </Text>
                                     </Flex>
                                     <AccordionIcon />
                                 </AccordionButton>
-                                {item.items.length > 0 && (
+                                {menuElement.subcategory.length > 0 && (
                                     <AccordionPanel pb={4} pl={8} pt={0}>
                                         <VStack align='stretch' spacing={2}>
-                                            {item.items.map((subItem, subIndex) => (
-                                                <MenuMarker key={subIndex}>{subItem}</MenuMarker>
-                                            ))}
+                                            {menuElement.subcategory.map(
+                                                (subMenuElement, subIndex) => (
+                                                    <MenuMarker key={subIndex}>
+                                                        {subMenuElement}
+                                                    </MenuMarker>
+                                                ),
+                                            )}
                                         </VStack>
                                     </AccordionPanel>
                                 )}
