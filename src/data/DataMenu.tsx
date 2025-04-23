@@ -50,6 +50,7 @@ const menuData = [
             'Напитки',
         ],
         icon: NavIcons.VeganIcon,
+        ['data-test-id']: 'vegan-cuisine',
     },
     {
         title: 'Детские блюда',

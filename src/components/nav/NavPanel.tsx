@@ -11,9 +11,18 @@ import {
     InputRightElement,
     Select,
     Switch,
+    Text,
 } from '@chakra-ui/react';
 
-const NavPanel = () => (
+interface NavPanelProps {
+    headingText?: string;
+    subHeadingText?: string;
+}
+
+const NavPanel: React.FC<NavPanelProps> = ({
+    headingText = 'Приятного аппетита!',
+    subHeadingText,
+}) => (
     <Flex>
         <Box flex='1' p='32px 0px 0px 0px' w='898px' h='248px'>
             <Heading
@@ -25,8 +34,21 @@ const NavPanel = () => (
                 textAlign='center'
                 color='#000'
             >
-                Приятного аппетита!
+                {headingText}
             </Heading>
+            {subHeadingText && (
+                <Text
+                    color='rgba(0, 0, 0, 0.48)'
+                    mb='32px'
+                    textAlign='center'
+                    fontSize='16px'
+                    maxW='696px'
+                    mx='auto'
+                    // Добавьте это для горизонтального выравнивания
+                >
+                    {subHeadingText}
+                </Text>
+            )}
 
             <Flex mb='16px' justifyContent='center' gap='12px'>
                 <Button
@@ -56,7 +78,6 @@ const NavPanel = () => (
                         borderRadius='6px'
                         pr='40px'
                         border='1px solid rgba(0, 0, 0, 0.48)'
-                        // p='0px 48px 0px 16px'
                         h='48px'
                         fontSize='18px'
                         _placeholder={{ color: '#134b00' }}

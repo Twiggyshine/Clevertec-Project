@@ -9,6 +9,8 @@ import {
     Text,
     VStack,
 } from '@chakra-ui/react';
+import { Link as ChakraLink } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router-dom';
 
 import menuData from '../../data/DataMenu';
 import Footer from '../footer/Footer';
@@ -45,7 +47,23 @@ const Sidebar = () => (
                                                 data-mr={2}
                                             />
                                         )}
-                                        <Text fontWeight='500'>{menuElement.title} </Text>
+                                        {menuElement.title === 'Веганская кухня' ? (
+                                            <ChakraLink
+                                                as={RouterLink}
+                                                to='/veganCuisinePage'
+                                                style={{
+                                                    fontWeight: 500,
+                                                    textDecoration: 'none',
+                                                    color: 'inherit',
+                                                    cursor: 'pointer',
+                                                }}
+                                                onClick={(e) => e.stopPropagation()}
+                                            >
+                                                {menuElement.title}
+                                            </ChakraLink>
+                                        ) : (
+                                            <Text fontWeight='500'>{menuElement.title}</Text>
+                                        )}
                                     </Flex>
                                     <AccordionIcon />
                                 </AccordionButton>

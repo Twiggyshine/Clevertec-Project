@@ -45,6 +45,7 @@ const JuicyRecipesSection = () => {
                     bg='#b1ff2e'
                     borderRadius='6px'
                     fontSize='18px'
+                    data-test-id='juiciest-link'
                 >
                     Вся подборка
                     <svg
