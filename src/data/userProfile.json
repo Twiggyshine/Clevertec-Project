@@ -1,6 +1,6 @@
 {
     "user": {
-        "avatar": "../assets/icons/Avatar.png",
+        "avatar": "../../public/icons/mainAvatar.svg",
         "name": "Екатерина Константинопольская",
         "email": "bake_and_pie@example.com"
     }

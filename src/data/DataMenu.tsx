@@ -1,16 +1,4 @@
-import ChildrenIcon from '../assets/menuIcons/children.svg';
-import DesertsIcon from '../assets/menuIcons/deserts.svg';
-import DrinksIcon from '../assets/menuIcons/drinks.svg';
-import FirstDishIcon from '../assets/menuIcons/first dish.svg';
-import GrillIcon from '../assets/menuIcons/grill.svg';
-import HealthyIcon from '../assets/menuIcons/healthy.svg';
-import NationalIcon from '../assets/menuIcons/national.svg';
-import PreparationsIcon from '../assets/menuIcons/preparations.svg';
-import SalatIcon from '../assets/menuIcons/salat.svg';
-import SauceIcon from '../assets/menuIcons/sauce.svg';
-import SecondDishIcon from '../assets/menuIcons/second dish.svg';
-import SnakesIcon from '../assets/menuIcons/snakes.svg';
-import VeganIcon from '../assets/menuIcons/vegan.svg';
+import * as NavIcons from '../assets/menuIcons/index';
 
 interface menuData {
     title: string;
@@ -23,32 +11,32 @@ const menuData = [
     {
         title: 'Салаты',
         subcategory: [],
-        icon: SalatIcon,
+        icon: NavIcons.SalatIcon,
     },
     {
         title: 'Закуски',
         subcategory: [],
-        icon: SnakesIcon,
+        icon: NavIcons.SnakesIcon,
     },
     {
         title: 'Первые блюда',
         subcategory: [],
-        icon: FirstDishIcon,
+        icon: NavIcons.FirstDishIcon,
     },
     {
         title: 'Вторые блюда',
         subcategory: [],
-        icon: SecondDishIcon,
+        icon: NavIcons.SecondDishIcon,
     },
     {
         title: 'Десерты, выпечка',
         subcategory: [],
-        icon: DesertsIcon,
+        icon: NavIcons.DesertsIcon,
     },
     {
         title: 'Блюда на гриле',
         subcategory: [],
-        icon: GrillIcon,
+        icon: NavIcons.GrillIcon,
     },
     {
         title: 'Веганская кухня',
@@ -61,37 +49,37 @@ const menuData = [
             'Сыроедческие блюда',
             'Напитки',
         ],
-        icon: VeganIcon,
+        icon: NavIcons.VeganIcon,
     },
     {
         title: 'Детские блюда',
         subcategory: [],
-        icon: ChildrenIcon,
+        icon: NavIcons.ChildrenIcon,
     },
     {
         title: 'Лечебное питание',
         subcategory: [],
-        icon: HealthyIcon,
+        icon: NavIcons.HealthyIcon,
     },
     {
         title: 'Национальные',
         subcategory: [],
-        icon: NationalIcon,
+        icon: NavIcons.NationalIcon,
     },
     {
         title: 'Соусы',
         subcategory: [],
-        icon: SauceIcon,
+        icon: NavIcons.SauceIcon,
     },
     {
         title: 'Напитки',
         subcategory: [],
-        icon: DrinksIcon,
+        icon: NavIcons.DrinksIcon,
     },
     {
         title: 'Заготовки',
         subcategory: [],
-        icon: PreparationsIcon,
+        icon: NavIcons.PreparationsIcon,
     },
 ];
 
