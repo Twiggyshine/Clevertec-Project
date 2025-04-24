@@ -24,7 +24,7 @@ const NavPanel: React.FC<NavPanelProps> = ({
     subHeadingText,
 }) => (
     <Flex>
-        <Box flex='1' p='32px 0px 0px 0px' w='898px' h='248px'>
+        <Box flex='1' p='32px 0px 0px 0px'>
             <Heading
                 as='h1'
                 mb='32px'
@@ -43,8 +43,6 @@ const NavPanel: React.FC<NavPanelProps> = ({
                     textAlign='center'
                     fontSize='16px'
                     maxW='696px'
-                    mx='auto'
-                    // Добавьте это для горизонтального выравнивания
                 >
                     {subHeadingText}
                 </Text>
