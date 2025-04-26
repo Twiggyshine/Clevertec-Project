@@ -51,7 +51,8 @@
             "category": "Вторые блюда",
             "likesCount": 159,
             "favCount": 257,
-            "imgUrl": "SecondDishIcon"
+            "imgUrl": "SecondDishIcon",
+            "recommended": true
         },
         {
             "id": 7,
@@ -60,7 +61,8 @@
             "category": "Вторые блюда",
             "likesCount": 258,
             "favCount": 342,
-            "imgUrl": "SecondDishIcon"
+            "imgUrl": "SecondDishIcon",
+            "recommended": true
         },
         {
             "id": 8,
@@ -83,7 +85,7 @@
             "imgUrl": "SecondDishIcon"
         }
     ],
-    "VegetarianCuisinePage ": [
+    "VegetarianCuisinePage": [
         {
             "id": 10,
             "title": "Картошка, тушенная с болгарским перцем и фасолью в томатном соусе",

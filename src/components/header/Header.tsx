@@ -1,39 +1,28 @@
-import { Box, Flex, Image, Link } from '@chakra-ui/react';
+import { Box, Flex, Image } from '@chakra-ui/react';
 
 import Logo from '../../assets/icons/Logo.png';
+import Breadcrumbs from './Breadcrumbs';
 import UserProfile from './User';
 
 const Header = () => (
     <Box
         as='header'
-        width='100%'
-        // width='100vw'
-        // maxW='1920px'
+        minW='1920px'
         h={{ base: '60px', md: '80px' }}
         bg='#f7fee7'
         px={{ base: 3, md: 4 }}
         border='1px solid #000'
         data-test-id='header'
     >
-        <Flex h='100%' align='center' minW='0'>
-            <Flex align='center' minW='0' flexShrink={1}>
-                <Box w={{ base: '100px', md: '135.2px' }} mr={{ base: 3, md: 4 }} flexShrink={0}>
-                    <Image src={Logo} alt='Логотип' w='100%' h='32px' objectFit='contain' />
+        <Flex h='100%' align='center' justify='space-between'>
+            <Flex align='center'>
+                <Box>
+                    <Image src={Logo} alt='Логотип' h='32px' objectFit='contain' />
                 </Box>
-                <Box ml='128px' height='32px' display='flex' alignItems='center'>
-                    <Link
-                        href='/'
-                        fontSize='16px'
-                        h='24px'
-                        whiteSpace='nowrap'
-                        w={{ base: 'auto', md: '1152px' }}
-                        flexShrink={0}
-                    >
-                        Главная
-                    </Link>
+                <Box display='flex' alignItems='center' ml='128px'>
+                    <Breadcrumbs />
                 </Box>
             </Flex>
-
             <UserProfile />
         </Flex>
     </Box>

@@ -23,7 +23,7 @@ const NavPanel: React.FC<NavPanelProps> = ({
     headingText = 'Приятного аппетита!',
     subHeadingText,
 }) => (
-    <Flex>
+    <Flex mb='32px'>
         <Box flex='1' p='32px 0px 0px 0px'>
             <Heading
                 as='h1'
