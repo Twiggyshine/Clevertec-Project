@@ -4,6 +4,7 @@ import Aside from '~/components/aside/Aside';
 
 import Header from '../components/header/Header';
 import NavPanel from '../components/nav/NavPanel';
+import VeganKitchenSection from '../components/sectionVeganCuisine/sectionVeganCuisine';
 import Sidebar from '../components/sidebar/Sidebar';
 import VegetarianCuisineCards from '../pages/veganCuisineCards';
 
@@ -27,6 +28,13 @@ function veganCuisinePage() {
                         subHeadingText='Интересны не только убеждённым вегетарианцам, но и тем, кто хочет  попробовать вегетарианскую диету и готовить вкусные  вегетарианские блюда.'
                     />
                     <VegetarianCuisineCards />
+                    <VeganKitchenSection
+                        headingText='Десерты, выпечка'
+                        descriptionText='Без них невозможно представить себе ни современную, ни традиционную  кулинарию. Пироги и печенья, блины, пончики, вареники и, конечно, хлеб - рецепты изделий из теста многообразны и невероятно популярны.'
+                        firstInputText='Домашние сырные палочки'
+                        secondInputText='Панкейки'
+                        thirdInputText='Воздушное банановое печенье на сковороде'
+                    />
                 </Box>
                 <Aside />
             </Flex>

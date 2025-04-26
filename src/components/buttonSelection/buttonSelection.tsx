@@ -1,16 +1,34 @@
-import { Button } from '@chakra-ui/react';
+// import { Button } from '@chakra-ui/react';
 
-const JuicyButton = () => (
-    <Button
-        w='197px'
-        h='48px'
-        p='0px 24px'
-        bg='#b1ff2e'
-        borderRadius='6px'
-        fontSize='18px'
-        data-test-id='juiciest-link'
-    >
-        Вся подборка
+// const JuicyButton = ({ children = 'Вся подборка →' }) => (
+//   <Button
+//     w='197px'
+//     h='48px'
+//     p='0px 24px'
+//     bg='#b1ff2e'
+//     borderRadius='6px'
+//     fontSize='18px'
+//     data-test-id='juiciest-link'
+//   >
+//     {children}
+
+//   </Button>
+// );
+
+// export default JuicyButton;
+
+import { Button } from '@chakra-ui/react';
+import { ReactNode } from 'react';
+
+interface JuicyButtonProps {
+    children: ReactNode;
+    icon?: ReactNode;
+    bgColor?: string;
+}
+
+const JuicyButton = ({
+    children = 'Вся подборка',
+    icon = (
         <svg
             width='14'
             height='10'
@@ -26,6 +44,20 @@ const JuicyButton = () => (
                 fill='black'
             />
         </svg>
+    ),
+    bgColor = '#b1ff2e',
+}: JuicyButtonProps) => (
+    <Button
+        w='197px'
+        h='48px'
+        p='0px 24px'
+        bg={bgColor}
+        borderRadius='6px'
+        fontSize='18px'
+        data-test-id='juiciest-link'
+    >
+        {children}
+        {icon}
     </Button>
 );
 

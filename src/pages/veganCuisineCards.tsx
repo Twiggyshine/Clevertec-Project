@@ -1,10 +1,10 @@
 import { Box, Flex, Grid, GridItem, Heading, IconButton, Image, Text } from '@chakra-ui/react';
 
 import { CustomHeartIcon, CustomSmileIcon } from '../assets/customIcon/CustomIcon';
+import JuicyButton from '../components/buttonSelection/buttonSelection';
 import ButtonsGroup from '../components/buttonsGroup.tsx/buttons';
 import { BadgeWithIcon } from '../components/CustomBadge/customBadge';
 import recipesData from '../data/recipes-data.json';
-
 interface RecipeCardProps {
     id: number;
     title: string;
@@ -20,7 +20,7 @@ const VegetarianCuisineCards = () => {
 
     return (
         <Box mb='40px'>
-            <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={8}>
+            <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={8} mb='16px'>
                 {vegRecipes.map((recipe: RecipeCardProps) => (
                     <GridItem key={recipe.id}>
                         <Flex
@@ -120,6 +120,9 @@ const VegetarianCuisineCards = () => {
                     </GridItem>
                 ))}
             </Grid>
+            <Flex justifyContent='center'>
+                <JuicyButton icon={null}>Загрузить ещё</JuicyButton>
+            </Flex>
         </Box>
     );
 };
