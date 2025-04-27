@@ -39,6 +39,15 @@ function veganCuisinePage() {
                             ...recipesData.Deserts.filter((recipe) => recipe.id === 18),
                             ...recipesData.Deserts.filter((recipe) => recipe.id === 19),
                         ]}
+                        firstInputIcon={
+                            <img src='../../public/menuIcons/children.svg' alt='new icon' />
+                        }
+                        secondInputIcon={
+                            <img src='../../public/menuIcons/national.svg' alt='new icon' />
+                        }
+                        thirdInputIcon={
+                            <img src='../../public/menuIcons/vegan.svg' alt='new icon' />
+                        }
                     />
                 </Box>
                 <Aside />

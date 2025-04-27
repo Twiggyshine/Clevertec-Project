@@ -51,8 +51,7 @@
             "category": "Вторые блюда",
             "likesCount": 159,
             "favCount": 257,
-            "imgUrl": "SecondDishIcon",
-            "recommended": true
+            "imgUrl": "SecondDishIcon"
         },
         {
             "id": 7,
@@ -61,8 +60,7 @@
             "category": "Вторые блюда",
             "likesCount": 258,
             "favCount": 342,
-            "imgUrl": "SecondDishIcon",
-            "recommended": true
+            "imgUrl": "SecondDishIcon"
         },
         {
             "id": 8,

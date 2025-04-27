@@ -10,6 +10,9 @@ const VeganKitchenSection = ({
     firstInputText = 'Стейк для вегетарианцев',
     secondInputText = 'Котлеты из гречки и фасоли',
     thirdInputText = 'Сырный суп с лапшой и брокколи',
+    firstInputIcon = <img src='../../../public/menuIcons/second dish.svg' alt='search' />,
+    secondInputIcon = <img src='../../../public/menuIcons/second dish.svg' alt='search' />,
+    thirdInputIcon = <img src='../../../public/menuIcons/first dish.svg' alt='search' />,
     recipes = [
         ...recipesData.VeganCuisine.filter((recipe) => recipe.id === 9),
         ...recipesData.newRecipies.filter((recipe) => recipe.id === 2),
@@ -53,7 +56,7 @@ const VeganKitchenSection = ({
                 />
             ))}
             <Flex direction='column' gap='12px'>
-                <CustomInput
+                {/* <CustomInput
                     text={firstInputText}
                     icon={<img src='../../../public/menuIcons/second dish.svg' alt='search' />}
                 />
@@ -64,7 +67,10 @@ const VeganKitchenSection = ({
                 <CustomInput
                     text={thirdInputText}
                     icon={<img src='../../../public/menuIcons/first dish.svg' alt='search' />}
-                />
+                /> */}
+                <CustomInput text={firstInputText} icon={firstInputIcon} />
+                <CustomInput text={secondInputText} icon={secondInputIcon} />
+                <CustomInput text={thirdInputText} icon={thirdInputIcon} />
             </Flex>
         </SimpleGrid>
     </Box>
