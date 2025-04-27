@@ -6,6 +6,7 @@ import Header from '../components/header/Header';
 import NavPanel from '../components/nav/NavPanel';
 import VeganKitchenSection from '../components/sectionVeganCuisine/sectionVeganCuisine';
 import Sidebar from '../components/sidebar/Sidebar';
+import recipesData from '../data/recipes-data.json';
 import VegetarianCuisineCards from '../pages/veganCuisineCards';
 
 function veganCuisinePage() {
@@ -34,6 +35,10 @@ function veganCuisinePage() {
                         firstInputText='Домашние сырные палочки'
                         secondInputText='Панкейки'
                         thirdInputText='Воздушное банановое печенье на сковороде'
+                        recipes={[
+                            ...recipesData.Deserts.filter((recipe) => recipe.id === 18),
+                            ...recipesData.Deserts.filter((recipe) => recipe.id === 19),
+                        ]}
                     />
                 </Box>
                 <Aside />
