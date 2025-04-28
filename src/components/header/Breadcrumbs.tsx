@@ -4,6 +4,7 @@ import { Link, useLocation } from 'react-router-dom';
 export const Breadcrumbs = () => {
     const location = useLocation();
     const VeganPage = location.pathname === '/veganCuisinePage';
+    const TheJuciestPage = location.pathname === '/theJuciestPage';
 
     return (
         <Breadcrumb separator='>' ml={{ base: 3, md: 4 }}>
@@ -28,6 +29,13 @@ export const Breadcrumbs = () => {
                         fontWeight='400'
                     >
                         Веганская кухня
+                    </BreadcrumbLink>
+                </BreadcrumbItem>
+            )}
+            {TheJuciestPage && (
+                <BreadcrumbItem>
+                    <BreadcrumbLink as={Link} to='/theJuciestPage' fontSize='16px' fontWeight='400'>
+                        Самое сочное
                     </BreadcrumbLink>
                 </BreadcrumbItem>
             )}

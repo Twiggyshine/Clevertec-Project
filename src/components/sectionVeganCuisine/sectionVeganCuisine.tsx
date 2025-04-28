@@ -56,18 +56,6 @@ const VeganKitchenSection = ({
                 />
             ))}
             <Flex direction='column' gap='12px'>
-                {/* <CustomInput
-                    text={firstInputText}
-                    icon={<img src='../../../public/menuIcons/second dish.svg' alt='search' />}
-                />
-                <CustomInput
-                    text={secondInputText}
-                    icon={<img src='../../../public/menuIcons/second dish.svg' alt='search' />}
-                />
-                <CustomInput
-                    text={thirdInputText}
-                    icon={<img src='../../../public/menuIcons/first dish.svg' alt='search' />}
-                /> */}
                 <CustomInput text={firstInputText} icon={firstInputIcon} />
                 <CustomInput text={secondInputText} icon={secondInputIcon} />
                 <CustomInput text={thirdInputText} icon={thirdInputIcon} />

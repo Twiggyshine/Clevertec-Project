@@ -36,8 +36,8 @@ function veganCuisinePage() {
                         secondInputText='Панкейки'
                         thirdInputText='Воздушное банановое печенье на сковороде'
                         recipes={[
-                            ...recipesData.Deserts.filter((recipe) => recipe.id === 18),
-                            ...recipesData.Deserts.filter((recipe) => recipe.id === 19),
+                            ...recipesData.VeganCuisine.filter((recipe) => recipe.id === 9),
+                            ...recipesData.newRecipies.filter((recipe) => recipe.id === 2),
                         ]}
                         firstInputIcon={
                             <img src='../../public/menuIcons/children.svg' alt='new icon' />

@@ -37,13 +37,7 @@ const NavPanel: React.FC<NavPanelProps> = ({
                 {headingText}
             </Heading>
             {subHeadingText && (
-                <Text
-                    color='rgba(0, 0, 0, 0.48)'
-                    mb='32px'
-                    textAlign='center'
-                    fontSize='16px'
-                    maxW='696px'
-                >
+                <Text color='rgba(0, 0, 0, 0.48)' mb='32px' textAlign='center' fontSize='16px'>
                     {subHeadingText}
                 </Text>
             )}
@@ -93,6 +87,7 @@ const NavPanel: React.FC<NavPanelProps> = ({
                     fontSize='16px'
                     lineHeight='150%'
                     color='#000'
+                    minW='max-content'
                 >
                     Исключить мои аллергены
                 </FormLabel>
@@ -103,7 +98,6 @@ const NavPanel: React.FC<NavPanelProps> = ({
                     placeholder='Выберите из списка...'
                     border='1px solid rgba(0, 0, 0, 0.48)'
                     borderRadius='6px'
-                    minW='200px'
                     w='100%'
                     maxW='234px'
                     h='40px'

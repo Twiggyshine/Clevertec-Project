@@ -3,6 +3,7 @@ import './App.css';
 import { Route, Routes } from 'react-router-dom';
 
 import HomePage from '../pages/mainPage';
+import TheJuciestPage from '../pages/theJuciestPage';
 import VeganCuisinePage from '../pages/veganCuisinePage';
 
 function App() {
@@ -10,6 +11,7 @@ function App() {
         <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='/veganCuisinePage' element={<VeganCuisinePage />} />
+            <Route path='/theJuciestPage' element={<TheJuciestPage />} />
             <Route path='*' element={<HomePage />} />
         </Routes>
     );

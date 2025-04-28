@@ -6,7 +6,6 @@ import {
     AccordionPanel,
     Box,
     Flex,
-    Text,
     VStack,
 } from '@chakra-ui/react';
 import { Link as ChakraLink } from '@chakra-ui/react';
@@ -47,23 +46,19 @@ const Sidebar = () => (
                                                 data-mr={2}
                                             />
                                         )}
-                                        {menuElement.title === 'Веганская кухня' ? (
-                                            <ChakraLink
-                                                as={RouterLink}
-                                                to='/veganCuisinePage'
-                                                style={{
-                                                    fontWeight: 500,
-                                                    textDecoration: 'none',
-                                                    color: 'inherit',
-                                                    cursor: 'pointer',
-                                                }}
-                                                onClick={(e) => e.stopPropagation()}
-                                            >
-                                                {menuElement.title}
-                                            </ChakraLink>
-                                        ) : (
-                                            <Text fontWeight='500'>{menuElement.title}</Text>
-                                        )}
+                                        <ChakraLink
+                                            as={RouterLink}
+                                            to='/veganCuisinePage'
+                                            style={{
+                                                fontWeight: 500,
+                                                textDecoration: 'none',
+                                                color: 'inherit',
+                                                cursor: 'pointer',
+                                            }}
+                                            onClick={(e) => e.stopPropagation()}
+                                        >
+                                            {menuElement.title}
+                                        </ChakraLink>
                                     </Flex>
                                     <AccordionIcon />
                                 </AccordionButton>
@@ -73,7 +68,17 @@ const Sidebar = () => (
                                             {menuElement.subcategory.map(
                                                 (subMenuElement, subIndex) => (
                                                     <MenuMarker key={subIndex}>
-                                                        {subMenuElement}
+                                                        <ChakraLink
+                                                            as={RouterLink}
+                                                            to='/veganCuisinePage'
+                                                            style={{
+                                                                textDecoration: 'none',
+                                                                color: 'inherit',
+                                                                cursor: 'pointer',
+                                                            }}
+                                                        >
+                                                            {subMenuElement}
+                                                        </ChakraLink>
                                                     </MenuMarker>
                                                 ),
                                             )}
