@@ -3,6 +3,7 @@ import { Box, Flex } from '@chakra-ui/react';
 import Aside from '~/components/aside/Aside';
 
 import Header from '../components/header/Header';
+import { VeganMenu } from '../components/menuVeganCuisinePage/MenuVegan';
 import NavPanel from '../components/nav/NavPanel';
 import VeganKitchenSection from '../components/sectionVeganCuisine/sectionVeganCuisine';
 import Sidebar from '../components/sidebar/Sidebar';
@@ -28,6 +29,7 @@ function veganCuisinePage() {
                         headingText='Веганская кухня'
                         subHeadingText='Интересны не только убеждённым вегетарианцам, но и тем, кто хочет  попробовать вегетарианскую диету и готовить вкусные  вегетарианские блюда.'
                     />
+                    <VeganMenu />
                     <VegetarianCuisineCards />
                     <VeganKitchenSection
                         headingText='Десерты, выпечка'
