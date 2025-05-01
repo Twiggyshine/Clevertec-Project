@@ -9,9 +9,11 @@ import { BrowserRouter } from 'react-router-dom';
 import App from '~/app/App.tsx';
 import { store } from '~/store/configure-store.ts';
 
+import theme from '../src/theme/theme';
+
 createRoot(document.getElementById('root')!).render(
     <StrictMode>
-        <ChakraProvider>
+        <ChakraProvider theme={theme}>
             <Provider store={store}>
                 <BrowserRouter>
                     <App />

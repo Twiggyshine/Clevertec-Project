@@ -13,15 +13,14 @@ import Sidebar from '../components/sidebar/Sidebar';
 
 function HomePage() {
     return (
-        <Box width='100%' display='flex' flexDirection='column' maxW='1920px'>
+        <Box as='main' width='100%' display='flex' flexDirection='column' maxW='1920px'>
             <Header />
-
             <Flex flex='1' minH='0'>
                 <Sidebar />
                 <Box flex='1' display='flex' flexDirection='column' minH='0'>
                     <NavPanel />
                     <Box flex='1'>
-                        <Box pl={6} position='relative' maxW='1360px'>
+                        <Box pl={6} position='relative' maxW={{ '2xl': '1360px', xl: '880px' }}>
                             <Heading as='h1' fontWeight={500} fontSize='48px' mb={8}>
                                 Новые рецепты
                             </Heading>

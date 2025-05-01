@@ -27,7 +27,7 @@ interface JuicyButtonProps {
 }
 
 const JuicyButton = ({
-    children = 'Вся подборка',
+    children = '',
     icon = (
         <svg
             width='14'

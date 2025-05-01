@@ -6,16 +6,7 @@ import RecommendsBadge from '../badgeRecom/badgeRecom';
 import JuicyButton from '../buttonSelection/buttonSelection';
 import ButtonsGroup from '../buttonsGroup.tsx/buttons';
 import { BadgeWithIcon } from '../CustomBadge/customBadge';
-
-interface RecipeCardProps {
-    id: number;
-    title: string;
-    description: string;
-    category: string;
-    likesCount?: number;
-    favCount?: number;
-    imgUrl: string;
-}
+import { RecipeCardProps } from './recipeCardProps';
 
 const recommendedRecipeIds: Record<number, { name: string; avatarSrc: string }> = {
     6: { name: 'Елена Высоцкая', avatarSrc: './../../../public/icons/Avatar1.svg' },
@@ -30,10 +21,10 @@ const JuicyRecipesSection = () => {
                 <Heading as='h1' fontWeight={500} fontSize='48px' mb={8}>
                     Самое сочное
                 </Heading>
-                <JuicyButton />
+                <JuicyButton>Вся подборка</JuicyButton>
             </Flex>
 
-            <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={8}>
+            <Grid templateColumns={{ '3xl': 'repeat(2, 1fr)', '2xl': 'repeat(1, 1fr)' }} gap={8}>
                 {featuredRecipes.map((recipe: RecipeCardProps) => (
                     <GridItem key={recipe.id}>
                         <Flex
@@ -147,16 +138,11 @@ const JuicyRecipesSection = () => {
 
 export default JuicyRecipesSection;
 
-// const recommendedRecipeIds: Record<number, { name: string; avatarSrc: string }> = {
-//     6: { name: 'Елена Высоцкая', avatarSrc: './../../../public/icons/Avatar1.svg' },
-//     7: { name: 'Alex Cook', avatarSrc: './../../../public/icons/Avatar2.svg' },
-// };
-
 // const JuicyRecipesSection = () => {
 //     const featuredRecipes = recipesData.theJuciest;
 
 //     return (
-//         <Box mb='40px'>
+//         <Box mb='40px' maxW={{ xl: '880px' }} mx='auto'>
 //             <Flex justify='space-between' align='center'>
 //                 <Heading as='h1' fontWeight={500} fontSize='48px' mb={8}>
 //                     Самое сочное
@@ -164,9 +150,19 @@ export default JuicyRecipesSection;
 //                 <JuicyButton />
 //             </Flex>
 
-//             <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={8}>
+//             <Grid
+//                 templateColumns={{
+//                     base: '1fr',
+//                     md: 'repeat(2, 1fr)',
+//                     xl: '1fr'
+//                 }}
+//                 gap={8}
+//             >
 //                 {featuredRecipes.map((recipe: RecipeCardProps) => (
-//                     <GridItem key={recipe.id}>
+//                     <GridItem
+//                         key={recipe.id}
+//                         maxW={{ xl: '880px' }}
+//                     >
 //                         <Flex
 //                             borderWidth='1px'
 //                             borderColor='gray.200'
@@ -176,7 +172,7 @@ export default JuicyRecipesSection;
 //                             transition='all 0.2s ease-in-out'
 //                         >
 //                             {/* Блок с изображением */}
-//                             <Box position='relative'>
+//                             <Box position='relative' flexShrink={0}>
 //                                 <Image
 //                                     src={`../../../public/recipies/${recipe.id}.jpg`}
 //                                     alt={recipe.title}
@@ -184,19 +180,18 @@ export default JuicyRecipesSection;
 //                                     h='244px'
 //                                     w='346px'
 //                                 />
-//                                 {recipe.recommended && (
+//                                 {recommendedRecipeIds[recipe.id] && (
 //                                     <Box position='absolute' bottom='4' left='4'>
 //                                         <RecommendsBadge
-//                                             name={recipe.recommendedBy?.name || ''}
-//                                             avatarSrc={recipe.recommendedBy?.avatarSrc || ''}
+//                                             name={recommendedRecipeIds[recipe.id].name}
+//                                             avatarSrc={recommendedRecipeIds[recipe.id].avatarSrc}
 //                                         />
 //                                     </Box>
 //                                 )}
 //                             </Box>
-
-//                             {/* Блок с текстом и кнопками */}
-//                             <Box flex='1' p='20px 24px' display='flex' flexDirection='column'>
-//                                 <Flex justify='space-between' align='flex-start' mb='24px'>
+//                                {/* Блок с текстом и кнопками */}
+//                              <Box flex='1' p='20px 24px' display='flex' flexDirection='column'>
+//                                  <Flex justify='space-between' align='flex-start' mb='24px'>
 //                                     <BadgeWithIcon
 //                                         category={recipe.category}
 //                                         imgUrl={recipe.imgUrl}
@@ -266,7 +261,7 @@ export default JuicyRecipesSection;
 //                                     </Text>
 //                                 </Box>
 
-//                                < ButtonsGroup/>
+//                                 <ButtonsGroup />
 //                             </Box>
 //                         </Flex>
 //                     </GridItem>
