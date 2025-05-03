@@ -3,7 +3,7 @@ import { Box, Flex, Grid, GridItem, Heading, IconButton, Image, Text } from '@ch
 import { CustomHeartIcon, CustomSmileIcon } from '../assets/customIcon/CustomIcon';
 import JuicyButton from '../components/buttonSelection/buttonSelection';
 import ButtonsGroup from '../components/buttonsGroup.tsx/buttons';
-import { BadgeWithIcon } from '../components/CustomBadge/customBadge';
+import { BadgeWithIcon } from '../components/customBadge/customBadge';
 import recipesData from '../data/recipes-data.json';
 interface RecipeCardProps {
     id: number;

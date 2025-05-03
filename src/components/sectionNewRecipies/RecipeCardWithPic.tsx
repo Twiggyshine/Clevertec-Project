@@ -11,8 +11,14 @@ const RecipeCard = ({
     favCount,
     imgUrl,
 }: RecipeCardProps) => (
-    <Box height='414px' borderWidth='1px' borderRadius='5px' mb='40px'>
-        <Image src={`../../../public/recipies/${id}.jpg`} alt={title} objectFit='cover' />
+    <Box borderWidth='1px' borderRadius='5px' mb='40px' minH='414px'>
+        <Image
+            src={`../../../public/recipies/${id}.jpg`}
+            alt={title}
+            objectFit='cover'
+            width='100%'
+            borderRadius='5px 5px 0 0'
+        />
         <CustomCard
             title={title}
             description={description}

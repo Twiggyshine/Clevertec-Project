@@ -2,7 +2,7 @@ import { extendTheme } from '@chakra-ui/react';
 
 const theme = extendTheme({
     breakpoints: {
-        sm: '480px', // Мобильные (маленькие экраны)
+        sm: '360px', // Мобильные (маленькие экраны)
         md: '768px', // Планшеты
         lg: '1024px', // Ноутбуки
         xl: '1280px', // Десктопы

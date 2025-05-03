@@ -2,7 +2,7 @@ import { Box, Flex, IconButton, Text } from '@chakra-ui/react';
 import { chakra } from '@chakra-ui/react';
 
 import { CustomHeartIcon, CustomSmileIcon } from '../../assets/customIcon/CustomIcon';
-import { BadgeWithIcon } from '../CustomBadge/customBadge';
+import { BadgeWithIcon } from '../customBadge/customBadge';
 import { CustomCardProps } from './customCardProps';
 
 export const CustomCard = chakra(
@@ -16,7 +16,7 @@ export const CustomCard = chakra(
         badgeColor,
         ...props
     }: CustomCardProps) => (
-        <Box w='322px' {...props}>
+        <Box {...props}>
             <Box mb='24px'>
                 <Text noOfLines={1} mb='8px' fontSize='20px' fontWeight='500'>
                     {title}

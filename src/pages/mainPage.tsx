@@ -1,5 +1,4 @@
-import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
-import { Box, Flex, Heading, IconButton } from '@chakra-ui/react';
+import { Box, Flex, Heading } from '@chakra-ui/react';
 
 import Aside from '~/components/aside/Aside';
 
@@ -7,7 +6,7 @@ import Header from '../components/header/Header';
 import NavPanel from '../components/nav/NavPanel';
 import CulinaryVlogsSection from '../components/sectionCookingVlogs/sectionCookingVlogs';
 import JuicyRecipesSection from '../components/sectionJuciest/sectionJuciest';
-import RecipesGrid from '../components/sectionNewRecipies/GridContainer';
+import RecipesGrid from '../components/sectionNewRecipies/FlexContainer';
 import VeganKitchenSection from '../components/sectionVeganCuisine/sectionVeganCuisine';
 import Sidebar from '../components/sidebar/Sidebar';
 
@@ -20,49 +19,12 @@ function HomePage() {
                 <Box flex='1' display='flex' flexDirection='column' minH='0'>
                     <NavPanel />
                     <Box flex='1'>
-                        <Box pl={6} position='relative' maxW={{ '2xl': '1360px', xl: '880px' }}>
+                        <Box pl={6}>
                             <Heading as='h1' fontWeight={500} fontSize='48px' mb={8}>
                                 Новые рецепты
                             </Heading>
-                            <Box position='relative'>
-                                <IconButton
-                                    aria-label='Предыдущий слайд'
-                                    icon={<ChevronLeftIcon boxSize={6} color='white' />}
-                                    position='absolute'
-                                    left='-10px'
-                                    top='50%'
-                                    transform='translateY(-50%)'
-                                    borderRadius='4px'
-                                    size='md'
-                                    bg='black'
-                                    colorScheme='blackAlpha'
-                                    zIndex={1}
-                                    _hover={{
-                                        bg: 'black',
-                                        transform: 'translateY(-50%) scale(1.05)',
-                                    }}
-                                />
-                                <Box>
-                                    <RecipesGrid />
-                                </Box>
-                                <IconButton
-                                    aria-label='Следующий слайд'
-                                    icon={<ChevronRightIcon boxSize={6} color='white' />}
-                                    position='absolute'
-                                    right='-10px'
-                                    top='50%'
-                                    transform='translateY(-50%)'
-                                    borderRadius='4px'
-                                    size='md'
-                                    bg='black'
-                                    colorScheme='blackAlpha'
-                                    zIndex={1}
-                                    _hover={{
-                                        bg: 'blackAlpha.800',
-                                        transform: 'translateY(-50%) scale(1.05)',
-                                    }}
-                                />
-                            </Box>
+
+                            <RecipesGrid />
 
                             <JuicyRecipesSection />
                             <CulinaryVlogsSection />

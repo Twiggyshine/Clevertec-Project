@@ -7,10 +7,16 @@ const textStyles = {
     color: '#2db100',
 };
 const Aside = () => (
-    <Box h='1040px' w='280px' bg='white' borderLeft='1px solid' borderColor='gray.200'>
+    <Box
+        h='1040px'
+        w='280px'
+        borderLeft='1px solid'
+        borderColor='gray.200'
+        display={{ sm: 'none', lg: 'block' }}
+    >
         <Flex direction='column' h='100%' justify='space-between'>
             <Box w='208px' h='208px' borderRadius='12px' p='16px' alignSelf='end'>
-                <Flex direction='column' h='100%' justify='center' align='center'>
+                <Flex direction='column' justify='center' align='center'>
                     <Flex
                         justify='center'
                         alignItems='center'
