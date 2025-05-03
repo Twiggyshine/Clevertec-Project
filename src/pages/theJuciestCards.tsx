@@ -25,7 +25,11 @@ const JuciestCards = () => {
 
     return (
         <Box mb='40px'>
-            <Grid templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} gap={8} mb='16px'>
+            <Grid
+                templateColumns={{ '3xl': 'repeat(2, 1fr)', '2xl': 'repeat(1, 1fr)' }}
+                gap={8}
+                mb='16px'
+            >
                 {jucRecipes.map((recipe: RecipeCardProps) => (
                     <GridItem key={recipe.id}>
                         <Flex

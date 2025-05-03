@@ -16,7 +16,7 @@ const JuicyRecipesSection = () => {
     const featuredRecipes = recipesData.theJuciest;
 
     return (
-        <Box mb='40px'>
+        <Box mb='40px' w={{ '3xl': '1360px', '2xl': '880px' }}>
             <Flex justify='space-between' align='center'>
                 <Heading as='h1' fontWeight={500} fontSize='48px' mb={8}>
                     Самое сочное

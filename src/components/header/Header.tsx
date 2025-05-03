@@ -7,7 +7,8 @@ import UserProfile from './User';
 const Header = () => (
     <Box
         as='header'
-        minW={{ '3xl': '1920px', '2xl': '1440px', md: '768px', sm: '360px' }}
+        // minW={{ '3xl': '1920px', '2xl': '1440px', md: '768px', sm: '360px' }}
+        w='100vw'
         h={{ sm: '60px', lg: '80px' }}
         bg='#f7fee7'
         px={{ base: 3, md: 4 }}
