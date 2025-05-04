@@ -1,10 +1,11 @@
 import { Box, Flex, Grid, GridItem, Heading, IconButton, Image, Text } from '@chakra-ui/react';
 
-import { CustomHeartIcon, CustomSmileIcon } from '../assets/customIcon/CustomIcon';
-import JuicyButton from '../components/buttonSelection/buttonSelection';
-import ButtonsGroup from '../components/buttonsGroup.tsx/buttons';
-import { BadgeWithIcon } from '../components/customBadge/customBadge';
-import recipesData from '../data/recipes-data.json';
+import recipesData from '~/data/recipes-data.json';
+
+import { CustomHeartIcon, CustomSmileIcon } from '../../assets/customIcon/CustomIcon';
+import JuicyButton from '../buttonSelection/buttonSelection';
+import ButtonsGroup from '../buttonsGroup.tsx/buttons';
+import { BadgeWithIcon } from '../customBadge/customBadge';
 interface RecipeCardProps {
     id: number;
     title: string;
@@ -15,8 +16,13 @@ interface RecipeCardProps {
     imgUrl: string;
 }
 
-const VegetarianCuisineCards = () => {
-    const vegRecipes = recipesData.VegetarianCuisinePage;
+const JuciestCards = () => {
+    const jucRecipes = [
+        ...recipesData.theJuciest.filter((recipe) => [5, 6, 7, 8].includes(recipe.id)),
+        ...recipesData.VegetarianCuisinePage.filter((recipe) =>
+            [10, 11, 13, 14].includes(recipe.id),
+        ),
+    ];
 
     return (
         <Box mb='40px'>
@@ -25,7 +31,7 @@ const VegetarianCuisineCards = () => {
                 gap={8}
                 mb='16px'
             >
-                {vegRecipes.map((recipe: RecipeCardProps) => (
+                {jucRecipes.map((recipe: RecipeCardProps) => (
                     <GridItem key={recipe.id}>
                         <Flex
                             borderWidth='1px'
@@ -131,4 +137,4 @@ const VegetarianCuisineCards = () => {
     );
 };
 
-export default VegetarianCuisineCards;
+export default JuciestCards;

@@ -18,7 +18,7 @@ const VeganKitchenSection = ({
         ...recipesData.newRecipies.filter((recipe) => recipe.id === 2),
     ],
 }) => (
-    <Box minW={{ '3xl': '1360px' }}>
+    <Box maxW={{ '3xl': '1360px', lg: '880px' }}>
         <Flex justify='space-between' align='center' mb='24px'>
             <Heading as='h1' fontSize='48px' fontWeight='500'>
                 {headingText}

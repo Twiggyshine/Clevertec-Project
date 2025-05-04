@@ -2,7 +2,7 @@ import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 import { Box, Flex, IconButton } from '@chakra-ui/react';
 
 import recipesData from '../../data/recipes-data.json';
-import RecipeCard from './RecipeCardWithPic';
+import RecipeCard from '../customCard/RecipeCardWithPic';
 
 const RecipesGrid = () => {
     const newRecipes = recipesData.newRecipies;

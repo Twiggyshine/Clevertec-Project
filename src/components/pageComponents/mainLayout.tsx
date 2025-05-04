@@ -1,17 +1,16 @@
 import { Box, Flex } from '@chakra-ui/react';
 
-import Aside from '~/components/aside/Aside';
-
-import Header from '../components/header/Header';
-import NavPanel from '../components/nav/NavPanel';
-import Sidebar from '../components/sidebar/Sidebar';
+import Aside from '../aside/Aside';
+import Header from '../header/Header';
+import NavPanel from '../nav/NavPanel';
+import Sidebar from '../sidebar/Sidebar';
 
 interface LayoutProps {
     children: React.ReactNode;
 }
 
 const MainLayout = ({ children }: LayoutProps) => (
-    <Box as='main' width='100%' display='flex' flexDirection='column' pl={6}>
+    <Box as='main' width='100%' display='flex' flexDirection='column'>
         <Header />
         <Flex flex='1' minH='0'>
             <Sidebar />

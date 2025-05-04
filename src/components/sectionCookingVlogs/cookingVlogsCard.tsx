@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image, Text, VStack } from '@chakra-ui/react';
+import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react';
 
 import { BlogAuthor } from '../sectionCookingVlogs/blog';
 
@@ -22,18 +22,26 @@ const CulinaryBlogCard = ({ author }: CulinaryBlogCardProps) => (
                 boxSize='48px'
                 objectFit='cover'
             />
-            <VStack align='flex-start' spacing={1}>
-                <Heading as='h3' fontSize='18px' fontWeight='500' lineHeight='156%'>
+            <Box flex='1' minWidth='0'>
+                <Heading
+                    as='h3'
+                    fontSize='18px'
+                    fontWeight='500'
+                    lineHeight='156%'
+                    noOfLines={{ '2xl': 1 }}
+                >
                     {author.name}
                 </Heading>
                 <Text fontSize='14px' color='rgba(0, 0, 0, 0.64)'>
                     {author.username}
                 </Text>
-            </VStack>
+            </Box>
         </Flex>
-        <Text color='#000' p='12px 24px 20px 24px'>
-            {author.description}
-        </Text>
+        <Box p={{ base: '0 24px 20px', '2xl': '0 16px 16px' }} flex='1' minHeight='0'>
+            <Text color='#000' fontSize='14px' fontWeight='400px' noOfLines={{ lg: 3 }}>
+                {author.description}
+            </Text>
+        </Box>
     </Box>
 );
 
