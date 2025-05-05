@@ -23,15 +23,22 @@ export const CustomInput: React.FC<CustomInputProps> = ({ text, icon }) => (
                 </Box>
             )}
 
-            <Text fontWeight='500' fontSize='20px' pl='12px' width='100%' color='#000'>
+            <Text
+                fontWeight='500'
+                fontSize={{ '3xl': '20px', xl: '18px' }}
+                pl='12px'
+                width='100%'
+                color='#000'
+                noOfLines={{ lg: 1 }}
+            >
                 {text}
             </Text>
 
             <Button
-                w='87px'
+                // maxW={{'3xl':'87px','2xl':'70px'}}
                 h='32px'
                 color='#2db100'
-                fontSize='14px'
+                fontSize={{ '3xl': '14px', '2xl': '12px' }}
                 fontWeight='500'
                 border='1px solid #2db100'
                 borderRadius='6px'

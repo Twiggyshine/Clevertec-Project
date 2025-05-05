@@ -1,13 +1,18 @@
 import { Box } from '@chakra-ui/react';
 
 import { VeganMenu } from '../components/menuVeganCuisinePage/MenuVegan';
+import NavPanel from '../components/nav/NavPanel';
 import VegetarianCuisineCards from '../components/pageComponents/veganCuisineCards';
 import VeganKitchenSection from '../components/sectionVeganCuisine/sectionVeganCuisine';
 import recipesData from '../data/recipes-data.json';
 
 function veganCuisinePage() {
     return (
-        <Box pl={6}>
+        <Box pl={6} maxW={{ '3xl': '1360px', lg: '880px' }} overflow='hidden'>
+            <NavPanel
+                headingText='Веганская кухня'
+                subHeadingText='Интересны не только убеждённым вегетарианцам, но и тем, кто хочет  попробовать вегетарианскую диету и готовить вкусные  вегетарианские блюда.'
+            />
             <VeganMenu />
             <VegetarianCuisineCards />
             <VeganKitchenSection

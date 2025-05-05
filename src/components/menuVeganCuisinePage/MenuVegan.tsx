@@ -7,6 +7,7 @@ const linkStyles = {
     fontWeight: '500',
     fontSize: '16px',
     padding: '8px 16px',
+    whiteSpace: 'nowrap',
     _hover: {
         textDecoration: 'underline',
         color: '#2db100',
@@ -17,7 +18,14 @@ const linkStyles = {
 };
 
 export const VeganMenu = () => (
-    <Flex gap='20px' mt='32px' mb='26px' borderBottom='1px solid rgba(0, 0, 0, 0.08)'>
+    <Flex
+        gap='20px'
+        mt='32px'
+        mb='26px'
+        borderBottom='1px solid rgba(0, 0, 0, 0.08)'
+        justify={{ '3xl': 'center' }}
+        overflowX='auto'
+    >
         <ChakraLink as={RouterLink} to='/veganCuisinePage/Закуски' sx={linkStyles}>
             Закуски
         </ChakraLink>

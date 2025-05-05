@@ -6,7 +6,7 @@ import JuicyButton from '../buttonSelection/buttonSelection';
 import { BlogAuthor } from '../sectionCookingVlogs/blog';
 
 const CulinaryBlogsSection = () => (
-    <Box bg='#c4ff61' mb='40px' borderRadius='16px' p='24px' w={{ '3xl': '1360px', lg: '880px' }}>
+    <Box bg='#c4ff61' mb='40px' borderRadius='16px' p='24px'>
         <Flex justifyContent='space-between' alignItems='center'>
             <Heading as='h1' fontSize='36px' mb='24px' fontWeight='400'>
                 Кулинарные блоги

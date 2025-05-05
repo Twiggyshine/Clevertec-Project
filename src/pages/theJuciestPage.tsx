@@ -1,10 +1,13 @@
 import { Box } from '@chakra-ui/react';
 
+import NavPanel from '../components/nav/NavPanel';
 import JuciestCards from '../components/pageComponents/theJuciestCards';
 import VeganKitchenSection from '../components/sectionVeganCuisine/sectionVeganCuisine';
 import recipesData from '../data/recipes-data.json';
+
 const TheJuciestPage = () => (
-    <Box pl={6}>
+    <Box pl={6} maxW={{ '3xl': '1360px', lg: '880px' }}>
+        <NavPanel headingText='Самое сочное' />
         <JuciestCards />
         <VeganKitchenSection
             headingText='Веганская кухня'

@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, SimpleGrid, Text } from '@chakra-ui/react';
+import { Box, Flex, Grid, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 
 import recipesData from '../../data/recipes-data.json';
 import { CustomCard } from '../customCard/customCard';
@@ -18,27 +18,36 @@ const VeganKitchenSection = ({
         ...recipesData.newRecipies.filter((recipe) => recipe.id === 2),
     ],
 }) => (
-    <Box maxW={{ '3xl': '1360px', lg: '880px' }}>
-        <Flex justify='space-between' align='center' mb='24px'>
-            <Heading as='h1' fontSize='48px' fontWeight='500'>
-                {headingText}
-            </Heading>
-            <Text
-                maxW='668px'
-                fontSize='16px'
-                fontWeight='500'
-                color='rgba(0, 0, 0, 0.64);'
-                lineHeight='150%;'
-                pl='24px'
-            >
-                {descriptionText}
-            </Text>
-        </Flex>
-        <SimpleGrid
+    <Box>
+        <Grid
             templateColumns={{
                 md: '1fr 1fr 2fr',
             }}
             gap='24px'
+            mb='24px'
+            alignItems='center'
+        >
+            <Heading as='h1' fontSize='48px' fontWeight='500' gridColumn={{ '3xl': '1 / 3' }}>
+                {headingText}
+            </Heading>
+
+            <Text
+                fontSize='16px'
+                fontWeight='500'
+                color='rgba(0, 0, 0, 0.64)'
+                lineHeight='150%'
+                gridColumn={{ '3xl': '3 / 4', '2xl': '4 / 4' }}
+            >
+                {descriptionText}
+            </Text>
+        </Grid>
+
+        <SimpleGrid
+            templateColumns={{
+                '3xl': '1fr 1fr 2fr',
+                '2xl': '1fr 1fr 1fr',
+            }}
+            gap={{ '3xl': '24px', '2xl': '16px' }}
         >
             {recipes.map((recipe) => (
                 <CustomCard
@@ -49,12 +58,13 @@ const VeganKitchenSection = ({
                     imgUrl={recipe.imgUrl}
                     likesCount={recipe.likesCount}
                     favCount={recipe.favCount}
-                    p='24px 24px 20px 24px'
                     border='1px solid #E6E6E6'
                     borderRadius='8px'
                     badgeColor='#ffffd3'
+                    p={{ '3xl': '24px 24px 20px 24px', '2xl': '16px' }}
                 />
             ))}
+
             <Flex direction='column' gap='12px'>
                 <CustomInput text={firstInputText} icon={firstInputIcon} />
                 <CustomInput text={secondInputText} icon={secondInputIcon} />

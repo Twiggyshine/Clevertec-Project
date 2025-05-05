@@ -8,7 +8,7 @@ const RecipesGrid = () => {
     const newRecipes = recipesData.newRecipies;
 
     return (
-        <Box w={{ '3xl': '1360px', '2xl': '880px' }} position='relative'>
+        <Box position='relative'>
             <IconButton
                 aria-label='Предыдущий слайд'
                 icon={<ChevronLeftIcon boxSize={6} color='white' />}

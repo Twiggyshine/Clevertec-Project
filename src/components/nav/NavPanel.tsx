@@ -37,7 +37,14 @@ const NavPanel: React.FC<NavPanelProps> = ({
                 {headingText}
             </Heading>
             {subHeadingText && (
-                <Text color='rgba(0, 0, 0, 0.48)' mb='32px' textAlign='center' fontSize='16px'>
+                <Text
+                    color='rgba(0, 0, 0, 0.48)'
+                    mb='32px'
+                    textAlign='center'
+                    fontSize='16px'
+                    maxW='696px'
+                    mx='auto'
+                >
                     {subHeadingText}
                 </Text>
             )}
