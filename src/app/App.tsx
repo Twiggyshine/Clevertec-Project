@@ -10,8 +10,6 @@ import VeganCuisinePage from '../pages/veganCuisinePage';
 function App() {
     return (
         <MainLayout>
-            {' '}
-            {/* Общий Layout для всех страниц */}
             <Routes>
                 <Route path='/' element={<HomePage />} />
                 <Route path='/veganCuisinePage' element={<VeganCuisinePage />} />

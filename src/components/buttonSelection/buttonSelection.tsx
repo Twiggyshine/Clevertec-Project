@@ -1,22 +1,3 @@
-// import { Button } from '@chakra-ui/react';
-
-// const JuicyButton = ({ children = 'Вся подборка →' }) => (
-//   <Button
-//     w='197px'
-//     h='48px'
-//     p='0px 24px'
-//     bg='#b1ff2e'
-//     borderRadius='6px'
-//     fontSize='18px'
-//     data-test-id='juiciest-link'
-//   >
-//     {children}
-
-//   </Button>
-// );
-
-// export default JuicyButton;
-
 import { Button } from '@chakra-ui/react';
 import { ReactNode } from 'react';
 

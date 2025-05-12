@@ -7,7 +7,7 @@ import RecipesGrid from '../components/sectionNewRecipies/FlexContainer';
 import VeganKitchenSection from '../components/sectionVeganCuisine/sectionVeganCuisine';
 
 const HomePage = () => (
-    <Box pl={6} maxW={{ '3xl': '1360px', lg: '880px' }}>
+    <Box pl={6} pr={{ base: 6, lg: 0 }} maxW={{ '3xl': '1360px', lg: '880px' }}>
         <NavPanel />
         <Heading as='h1' fontWeight={500} fontSize='48px' mb={8}>
             Новые рецепты
