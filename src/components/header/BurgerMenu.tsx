@@ -1,0 +1,25 @@
+import { HamburgerIcon } from '@chakra-ui/icons';
+import { Box, IconButton, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
+
+function BurgerMenu() {
+    return (
+        <Box>
+            <Menu>
+                <MenuButton
+                    as={IconButton}
+                    aria-label='Меню'
+                    icon={<HamburgerIcon />}
+                    variant='transparent'
+                />
+                <MenuList>
+                    <MenuItem>Главная</MenuItem>
+                    <MenuItem>О нас</MenuItem>
+                    <MenuItem>Услуги</MenuItem>
+                    <MenuItem>Контакты</MenuItem>
+                </MenuList>
+            </Menu>
+        </Box>
+    );
+}
+
+export default BurgerMenu;

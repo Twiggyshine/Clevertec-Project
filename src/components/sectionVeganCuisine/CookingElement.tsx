@@ -29,7 +29,7 @@ export const CustomInput: React.FC<CustomInputProps> = ({ text, icon }) => (
                 pl='12px'
                 width='100%'
                 color='#000'
-                noOfLines={{ lg: 1 }}
+                noOfLines={{ sm: 1 }}
             >
                 {text}
             </Text>
@@ -38,7 +38,7 @@ export const CustomInput: React.FC<CustomInputProps> = ({ text, icon }) => (
                 // maxW={{'3xl':'87px','2xl':'70px'}}
                 h='32px'
                 color='#2db100'
-                fontSize={{ '3xl': '14px', '2xl': '12px' }}
+                fontSize={{ '3xl': '14px', sm: '12px' }}
                 fontWeight='500'
                 border='1px solid #2db100'
                 borderRadius='6px'

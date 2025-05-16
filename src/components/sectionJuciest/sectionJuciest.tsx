@@ -1,4 +1,14 @@
-import { Box, Flex, Grid, GridItem, Heading, IconButton, Image, Text } from '@chakra-ui/react';
+import {
+    Box,
+    Flex,
+    Grid,
+    GridItem,
+    Heading,
+    IconButton,
+    Image,
+    Text,
+    useBreakpointValue,
+} from '@chakra-ui/react';
 
 import { CustomHeartIcon, CustomSmileIcon } from '../../assets/customIcon/CustomIcon';
 import recipesData from '../../data/recipes-data.json';
@@ -15,16 +25,34 @@ const recommendedRecipeIds: Record<number, { name: string; avatarSrc: string }> 
 const JuicyRecipesSection = () => {
     const featuredRecipes = recipesData.theJuciest;
 
+    const showDescription = useBreakpointValue({ '2xl': true, sm: false });
+    const showJuicyButton = useBreakpointValue({ lg: true, sm: false });
+    const hideJuicyButton = useBreakpointValue({ lg: false, sm: true });
+    const hideRecommendsBadge = useBreakpointValue({ '2xl': true, sm: false });
+    const showBadge = useBreakpointValue({ '2xl': true, '3xl': false });
+
     return (
         <Box mb='40px'>
             <Flex justify='space-between' align='center'>
-                <Heading as='h1' fontWeight={500} fontSize='48px' mb={8}>
+                <Heading
+                    fontWeight={500}
+                    fontSize={{ '3xl': '48px', '2xl': '36px', sm: '24px' }}
+                    mb={8}
+                >
                     Самое сочное
                 </Heading>
-                <JuicyButton>Вся подборка</JuicyButton>
+                {showJuicyButton && <JuicyButton>Вся подборка</JuicyButton>}
             </Flex>
 
-            <Grid templateColumns={{ '3xl': 'repeat(2, 1fr)', '2xl': 'repeat(1, 1fr)' }} gap={8}>
+            <Grid
+                templateColumns={{
+                    '3xl': 'repeat(2, 1fr)',
+                    '2xl': 'repeat(1, 1fr)',
+                    md: 'repeat(2, 1fr)',
+                }}
+                gap={8}
+                mb='12px'
+            >
                 {featuredRecipes.map((recipe: RecipeCardProps) => (
                     <GridItem key={recipe.id}>
                         <Flex
@@ -41,26 +69,37 @@ const JuicyRecipesSection = () => {
                                     src={`../../../public/recipies/${recipe.id}.jpg`}
                                     alt={recipe.title}
                                     objectFit='cover'
-                                    h='244px'
-                                    w='346px'
+                                    // h='244px'
+                                    // w='346px'
                                 />
                                 {recommendedRecipeIds[recipe.id] && (
                                     <Box position='absolute' bottom='4' left='4'>
-                                        <RecommendsBadge
-                                            name={recommendedRecipeIds[recipe.id].name}
-                                            avatarSrc={recommendedRecipeIds[recipe.id].avatarSrc}
-                                        />
+                                        {hideRecommendsBadge && (
+                                            <RecommendsBadge
+                                                name={recommendedRecipeIds[recipe.id].name}
+                                                avatarSrc={
+                                                    recommendedRecipeIds[recipe.id].avatarSrc
+                                                }
+                                            />
+                                        )}
                                     </Box>
                                 )}
                             </Box>
 
                             {/* Блок с текстом и кнопками */}
-                            <Box flex='1' p='20px 24px' display='flex' flexDirection='column'>
+                            <Box
+                                flex='1'
+                                p={{ '2xl': '20px 24px', sm: '8px 8px 4px 8px;' }}
+                                display='flex'
+                                flexDirection='column'
+                            >
                                 <Flex justify='space-between' align='flex-start' mb='24px'>
-                                    <BadgeWithIcon
-                                        category={recipe.category}
-                                        imgUrl={recipe.imgUrl}
-                                    />
+                                    {showBadge && (
+                                        <BadgeWithIcon
+                                            category={recipe.category}
+                                            imgUrl={recipe.imgUrl}
+                                        />
+                                    )}
 
                                     <Flex align='center' gap='8px'>
                                         {recipe.likesCount !== undefined &&
@@ -115,15 +154,17 @@ const JuicyRecipesSection = () => {
                                         {recipe.title}
                                     </Heading>
 
-                                    <Text
-                                        color='#000'
-                                        mb='24px'
-                                        fontSize='14px'
-                                        lineHeight='143%'
-                                        noOfLines={3}
-                                    >
-                                        {recipe.description}
-                                    </Text>
+                                    {showDescription && (
+                                        <Text
+                                            color='#000'
+                                            mb='24px'
+                                            fontSize='14px'
+                                            lineHeight='143%'
+                                            noOfLines={3}
+                                        >
+                                            {recipe.description}
+                                        </Text>
+                                    )}
                                 </Box>
 
                                 <ButtonsGroup />
@@ -132,6 +173,9 @@ const JuicyRecipesSection = () => {
                     </GridItem>
                 ))}
             </Grid>
+            <Flex justifyContent='center'>
+                {hideJuicyButton && <JuicyButton>Вся подборка</JuicyButton>}
+            </Flex>
         </Box>
     );
 };

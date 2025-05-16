@@ -1,5 +1,4 @@
-import { Box, Flex, IconButton, Text } from '@chakra-ui/react';
-import { chakra } from '@chakra-ui/react';
+import { Box, chakra, Flex, IconButton, Text, useBreakpointValue } from '@chakra-ui/react';
 
 import { CustomHeartIcon, CustomSmileIcon } from '../../assets/customIcon/CustomIcon';
 import { BadgeWithIcon } from '../customBadge/customBadge';
@@ -15,52 +14,58 @@ export const CustomCard = chakra(
         imgUrl,
         badgeColor,
         ...props
-    }: CustomCardProps) => (
-        <Box {...props}>
-            <Box mb='24px'>
-                <Text noOfLines={1} mb='8px' fontSize='20px' fontWeight='500'>
-                    {title}
-                </Text>
-                <Text color='#000' fontSize='14px' noOfLines={{ lg: 1, sm: 3 }}>
-                    {description}
-                </Text>
-            </Box>
+    }: CustomCardProps) => {
+        const showBadge = useBreakpointValue({ '2xl': true, '3xl': false });
 
-            <Flex align='center' justify='space-between'>
-                <BadgeWithIcon category={category} imgUrl={imgUrl} bgColor={badgeColor} />
+        return (
+            <Box {...props}>
+                <Box mb='24px'>
+                    <Text noOfLines={1} mb='8px' fontSize='20px' fontWeight='500'>
+                        {title}
+                    </Text>
+                    <Text color='#000' fontSize='14px' noOfLines={{ lg: 1, sm: 3 }}>
+                        {description}
+                    </Text>
+                </Box>
 
-                <Flex align='center' gap='8px'>
-                    {likesCount !== undefined && likesCount > 0 && (
-                        <Flex align='center'>
-                            <IconButton
-                                aria-label='Лайк'
-                                icon={<CustomHeartIcon />}
-                                variant='ghost'
-                                isRound
-                                size='sm'
-                            />
-                            <Text fontSize='sm' color='#2db100' fontWeight='600'>
-                                {likesCount}
-                            </Text>
-                        </Flex>
+                <Flex align='center' justify='space-between'>
+                    {showBadge && (
+                        <BadgeWithIcon category={category} imgUrl={imgUrl} bgColor={badgeColor} />
                     )}
 
-                    {favCount !== undefined && favCount > 0 && (
-                        <Flex align='center'>
-                            <IconButton
-                                aria-label='Смайлик'
-                                icon={<CustomSmileIcon />}
-                                variant='ghost'
-                                isRound
-                                size='sm'
-                            />
-                            <Text fontSize='sm' color='#2db100' fontWeight='600'>
-                                {favCount}
-                            </Text>
-                        </Flex>
-                    )}
+                    <Flex align='center' gap='8px'>
+                        {likesCount !== undefined && likesCount > 0 && (
+                            <Flex align='center'>
+                                <IconButton
+                                    aria-label='Лайк'
+                                    icon={<CustomHeartIcon />}
+                                    variant='ghost'
+                                    isRound
+                                    size='sm'
+                                />
+                                <Text fontSize='sm' color='#2db100' fontWeight='600'>
+                                    {likesCount}
+                                </Text>
+                            </Flex>
+                        )}
+
+                        {favCount !== undefined && favCount > 0 && (
+                            <Flex align='center'>
+                                <IconButton
+                                    aria-label='Смайлик'
+                                    icon={<CustomSmileIcon />}
+                                    variant='ghost'
+                                    isRound
+                                    size='sm'
+                                />
+                                <Text fontSize='sm' color='#2db100' fontWeight='600'>
+                                    {favCount}
+                                </Text>
+                            </Flex>
+                        )}
+                    </Flex>
                 </Flex>
-            </Flex>
-        </Box>
-    ),
+            </Box>
+        );
+    },
 );

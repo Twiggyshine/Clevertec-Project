@@ -28,7 +28,7 @@ const CulinaryBlogCard = ({ author }: CulinaryBlogCardProps) => (
                     fontSize='18px'
                     fontWeight='500'
                     lineHeight='156%'
-                    noOfLines={{ '2xl': 1 }}
+                    noOfLines={{ sm: 1 }}
                 >
                     {author.name}
                 </Heading>
@@ -38,7 +38,7 @@ const CulinaryBlogCard = ({ author }: CulinaryBlogCardProps) => (
             </Box>
         </Flex>
         <Box p={{ base: '0 24px 20px', '2xl': '0 16px 16px' }} flex='1' minHeight='0'>
-            <Text color='#000' fontSize='14px' fontWeight='400px' noOfLines={{ lg: 3 }}>
+            <Text color='#000' fontSize='14px' fontWeight='400px' noOfLines={{ sm: 3 }}>
                 {author.description}
             </Text>
         </Box>

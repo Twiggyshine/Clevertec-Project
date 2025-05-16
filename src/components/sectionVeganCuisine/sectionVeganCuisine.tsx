@@ -21,13 +21,19 @@ const VeganKitchenSection = ({
     <Box mb='16px'>
         <Grid
             templateColumns={{
-                md: '1fr 1fr 2fr',
+                xl: '1fr 1fr 3fr',
+                sm: '1fr',
             }}
             gap='24px'
             mb='24px'
             alignItems='center'
         >
-            <Heading as='h1' fontSize='48px' fontWeight='500' gridColumn={{ '3xl': '1 / 3' }}>
+            <Heading
+                as='h1'
+                fontSize={{ '3xl': '48px', xl: '36px', sm: '24px' }}
+                fontWeight='500'
+                gridColumn={{ sm: '1 / 3', md: '1 / 2' }}
+            >
                 {headingText}
             </Heading>
 
@@ -36,7 +42,7 @@ const VeganKitchenSection = ({
                 fontWeight='500'
                 color='rgba(0, 0, 0, 0.64)'
                 lineHeight='150%'
-                gridColumn={{ '3xl': '3 / 4', '2xl': '4 / 4' }}
+                gridColumn={{ '3xl': '3 / 4', xl: '4 / 4' }}
             >
                 {descriptionText}
             </Text>
@@ -45,9 +51,9 @@ const VeganKitchenSection = ({
         <SimpleGrid
             templateColumns={{
                 '3xl': '1fr 1fr 2fr',
-                '2xl': '1fr 1fr 1fr',
+                md: '1fr 1fr 1fr',
             }}
-            gap={{ '3xl': '24px', '2xl': '16px' }}
+            gap={{ '3xl': '24px', '2xl': '16px', sm: '12px' }}
         >
             {recipes.map((recipe) => (
                 <CustomCard
@@ -61,7 +67,7 @@ const VeganKitchenSection = ({
                     border='1px solid #E6E6E6'
                     borderRadius='8px'
                     badgeColor='#ffffd3'
-                    p={{ '3xl': '24px 24px 20px 24px', '2xl': '16px' }}
+                    p={{ '3xl': '24px 24px 20px 24px', md: '16px', sm: '12px' }}
                 />
             ))}
 
