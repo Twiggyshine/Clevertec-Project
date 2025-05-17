@@ -1,6 +1,5 @@
 import { SearchIcon } from '@chakra-ui/icons';
 import {
-    Box,
     Button,
     Flex,
     FormControl,
@@ -24,11 +23,11 @@ const NavPanel: React.FC<NavPanelProps> = ({
     headingText = 'Приятного аппетита!',
     subHeadingText,
 }) => {
-    const showFormControl = useBreakpointValue({ lg: true, sm: false }); // Скрыть на mobile, показать на sm+
+    const showFormControl = useBreakpointValue({ lg: true, sm: false });
 
     return (
-        <Flex mb='32px' width='100%'>
-            <Box flex='1' p='32px 0px 0px 0px'>
+        <Flex mb='32px' width={{ xl: '898px', lg: '578px', md: '480px', base: '360px' }}>
+            <Flex flex='1' p='32px 0px 0px 0px' flexDirection='column' alignItems='center'>
                 <Heading
                     as='h1'
                     mb='32px'
@@ -47,24 +46,29 @@ const NavPanel: React.FC<NavPanelProps> = ({
                             color='rgba(0, 0, 0, 0.48)'
                             mb='32px'
                             textAlign='center'
-                            fontSize='16px'
-                            // maxW='696px'
+                            fontSize={{ lg: '16px', sm: '14px' }}
+                            w={{ lg: '696px', md: '727px', sm: '328px' }}
+                            lineHeight='143%'
+                            fontWeight='500'
                         >
                             {subHeadingText}
                         </Text>
                     )}
                 </Flex>
 
-                <Flex mb='16px' justifyContent='center' gap='12px'>
+                <Flex
+                    mb='16px'
+                    justifyContent='center'
+                    gap='12px'
+                    w={{ lg: '518px', md: '448px', sm: '328px' }}
+                >
                     <Button
                         border='1px solid rgba(0, 0, 0, 0.48)'
                         borderRadius='6px'
                         p='0px 12px'
                         w='48px'
                         h='48px'
-                    >
-                        {/* SVG иконка */}
-                    </Button>
+                    ></Button>
 
                     <InputGroup>
                         <Input
@@ -83,14 +87,18 @@ const NavPanel: React.FC<NavPanelProps> = ({
                 </Flex>
 
                 {showFormControl && (
-                    <FormControl as={Flex} alignItems='center' justifyContent='center'>
+                    <FormControl
+                        as={Flex}
+                        alignItems='center'
+                        justifyContent='center'
+                        w={{ lg: '518px' }}
+                    >
                         <FormLabel
                             htmlFor='allergens-toggle'
                             fontWeight='500'
                             fontSize='16px'
                             lineHeight='150%'
                             color='#000'
-                            // minW='max-content'
                         >
                             Исключить мои аллергены
                         </FormLabel>
@@ -102,7 +110,6 @@ const NavPanel: React.FC<NavPanelProps> = ({
                             border='1px solid rgba(0, 0, 0, 0.48)'
                             borderRadius='6px'
                             w='100%'
-                            // maxW='234px'
                             h='40px'
                             bg='#fff'
                             color='rgba(0, 0, 0, 0.64)'
@@ -114,7 +121,7 @@ const NavPanel: React.FC<NavPanelProps> = ({
                         </Select>
                     </FormControl>
                 )}
-            </Box>
+            </Flex>
         </Flex>
     );
 };

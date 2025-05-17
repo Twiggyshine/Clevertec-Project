@@ -1,4 +1,4 @@
-import { Box, Flex, useBreakpointValue } from '@chakra-ui/react';
+import { Box, HStack, useBreakpointValue, VStack } from '@chakra-ui/react';
 
 import Aside from '../aside/Aside';
 import Header from '../header/Header';
@@ -11,32 +11,19 @@ interface LayoutProps {
 
 const MainLayout = ({ children }: LayoutProps) => {
     const showFooter = useBreakpointValue({
-        base: true, // 360px+
-        lg: false, // скрывать на 1024px+
-    });
-
-    const showSidebar = useBreakpointValue({
-        base: false, // 360px+
-        lg: true, // скрывать на 1024px+
-    });
-
-    const showAside = useBreakpointValue({
-        base: false, // 360px+
-        xl: true, // скрывать на 1024px+
+        base: true,
+        lg: false,
     });
     return (
-        <Box as='main' width='100%' display='flex' flexDirection='column' position='relative'>
+        <VStack w='100vw'>
             <Header />
-            <Flex minH='0' mb='84px'>
-                {showSidebar && <Sidebar />}
-                <Box display='flex' flexDirection='column' minH='0'>
-                    <Box flex='1'>{children}</Box>
-                </Box>
-                {showAside && <Aside />}
-            </Flex>
+            <HStack w='100%' mt='80px' alignItems='flex-start'>
+                <Sidebar />
+                <Box w={{ base: '100%', lg: '60%' }}>{children}</Box>
+                <Aside />
+            </HStack>
             {showFooter && <RespFooter data-test-id='footer' />}
-        </Box>
+        </VStack>
     );
 };
-
 export default MainLayout;

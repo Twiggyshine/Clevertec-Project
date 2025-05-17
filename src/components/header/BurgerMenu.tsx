@@ -8,9 +8,13 @@ function BurgerMenu() {
                 <MenuButton
                     as={IconButton}
                     aria-label='Меню'
-                    icon={<HamburgerIcon />}
+                    icon={<HamburgerIcon boxSize='24px' strokeWidth='2px' />}
                     variant='transparent'
+                    width='24px'
+                    height='24px'
+                    p='0 12px'
                 />
+
                 <MenuList>
                     <MenuItem>Главная</MenuItem>
                     <MenuItem>О нас</MenuItem>

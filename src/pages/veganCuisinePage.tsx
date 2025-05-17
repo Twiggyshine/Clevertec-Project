@@ -8,7 +8,7 @@ import recipesData from '../data/recipes-data.json';
 
 function veganCuisinePage() {
     return (
-        <Box pl={6} maxW={{ '3xl': '1360px', lg: '880px' }} overflow='hidden'>
+        <Box w='100%' p='0 24px'>
             <NavPanel
                 headingText='Веганская кухня'
                 subHeadingText='Интересны не только убеждённым вегетарианцам, но и тем, кто хочет  попробовать вегетарианскую диету и готовить вкусные  вегетарианские блюда.'

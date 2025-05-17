@@ -18,7 +18,7 @@ const VeganKitchenSection = ({
         ...recipesData.newRecipies.filter((recipe) => recipe.id === 2),
     ],
 }) => (
-    <Box mb='16px'>
+    <Box mb={{ sm: '100px', lg: '16px' }}>
         <Grid
             templateColumns={{
                 xl: '1fr 1fr 3fr',

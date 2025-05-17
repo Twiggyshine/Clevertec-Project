@@ -15,7 +15,7 @@ import recipesData from '../../data/recipes-data.json';
 import RecommendsBadge from '../badgeRecom/badgeRecom';
 import JuicyButton from '../buttonSelection/buttonSelection';
 import ButtonsGroup from '../buttonsGroup.tsx/buttons';
-import { BadgeWithIcon } from '../customBadge/customBadge';
+import { BadgeWithIcon } from '../CustomBadge/customBadge';
 import { RecipeCardProps } from './recipeCardProps';
 
 const recommendedRecipeIds: Record<number, { name: string; avatarSrc: string }> = {
@@ -107,7 +107,12 @@ const JuicyRecipesSection = () => {
                                                 <Flex align='center'>
                                                     <IconButton
                                                         aria-label='Лайк'
-                                                        icon={<CustomHeartIcon />}
+                                                        icon={
+                                                            <CustomHeartIcon
+                                                                width='12px'
+                                                                height='12px'
+                                                            />
+                                                        }
                                                         variant='ghost'
                                                         isRound
                                                         size='sm'
@@ -126,7 +131,12 @@ const JuicyRecipesSection = () => {
                                             <Flex align='center'>
                                                 <IconButton
                                                     aria-label='Смайлик'
-                                                    icon={<CustomSmileIcon />}
+                                                    icon={
+                                                        <CustomSmileIcon
+                                                            width='12px'
+                                                            height='12px'
+                                                        />
+                                                    }
                                                     variant='ghost'
                                                     isRound
                                                     size='sm'

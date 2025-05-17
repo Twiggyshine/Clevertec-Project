@@ -1,7 +1,7 @@
 import { Box, chakra, Flex, IconButton, Text, useBreakpointValue } from '@chakra-ui/react';
 
 import { CustomHeartIcon, CustomSmileIcon } from '../../assets/customIcon/CustomIcon';
-import { BadgeWithIcon } from '../customBadge/customBadge';
+import { BadgeWithIcon } from '../CustomBadge/customBadge';
 import { CustomCardProps } from './customCardProps';
 
 export const CustomCard = chakra(
@@ -38,7 +38,7 @@ export const CustomCard = chakra(
                             <Flex align='center'>
                                 <IconButton
                                     aria-label='Лайк'
-                                    icon={<CustomHeartIcon />}
+                                    icon={<CustomHeartIcon width='12px' height='12px' />}
                                     variant='ghost'
                                     isRound
                                     size='sm'
@@ -53,7 +53,7 @@ export const CustomCard = chakra(
                             <Flex align='center'>
                                 <IconButton
                                     aria-label='Смайлик'
-                                    icon={<CustomSmileIcon />}
+                                    icon={<CustomSmileIcon width='12px' height='12px' />}
                                     variant='ghost'
                                     isRound
                                     size='sm'

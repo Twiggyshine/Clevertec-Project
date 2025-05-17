@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { VStack } from '@chakra-ui/react';
 
 import NavPanel from '../components/nav/NavPanel';
 import JuciestCards from '../components/pageComponents/theJuciestCards';
@@ -6,7 +6,7 @@ import VeganKitchenSection from '../components/sectionVeganCuisine/sectionVeganC
 import recipesData from '../data/recipes-data.json';
 
 const TheJuciestPage = () => (
-    <Box pl={6} maxW={{ '3xl': '1360px', lg: '880px' }}>
+    <VStack w='100%' p='0 24px' justifyContent='center'>
         <NavPanel headingText='Самое сочное' />
         <JuciestCards />
         <VeganKitchenSection
@@ -23,7 +23,7 @@ const TheJuciestPage = () => (
             secondInputIcon={<img src='../../public/menuIcons/second dish.svg' alt='new icon' />}
             thirdInputIcon={<img src='../../public/menuIcons/first dish.svg' alt='new icon' />}
         />
-    </Box>
+    </VStack>
 );
 
 export default TheJuciestPage;

@@ -1,6 +1,6 @@
 import { Link as ChakraLink } from '@chakra-ui/react';
 import { Flex } from '@chakra-ui/react';
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router';
 
 const linkStyles = {
     color: '#134b00',

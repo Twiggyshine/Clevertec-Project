@@ -1,4 +1,4 @@
-import { Box, Heading } from '@chakra-ui/react';
+import { Heading, VStack } from '@chakra-ui/react';
 
 import NavPanel from '../components/nav/NavPanel';
 import CulinaryVlogsSection from '../components/sectionCookingVlogs/sectionCookingVlogs';
@@ -7,16 +7,21 @@ import RecipesGrid from '../components/sectionNewRecipies/FlexContainer';
 import VeganKitchenSection from '../components/sectionVeganCuisine/sectionVeganCuisine';
 
 const HomePage = () => (
-    <Box pl={6} pr={{ base: 6, lg: 0 }} maxW={{ '3xl': '1360px', lg: '880px' }}>
+    <VStack w='100%' p='0 24px' justifyContent='center'>
         <NavPanel />
-        <Heading fontWeight={500} fontSize={{ '3xl': '48px', '2xl': '36px', sm: '24px' }} mb={8}>
+        <Heading
+            fontWeight={500}
+            fontSize={{ '3xl': '48px', '2xl': '36px', sm: '24px' }}
+            mb={8}
+            alignSelf='flex-start'
+        >
             Новые рецепты
         </Heading>
         <RecipesGrid />
         <JuicyRecipesSection />
         <CulinaryVlogsSection />
         <VeganKitchenSection />
-    </Box>
+    </VStack>
 );
 
 export default HomePage;

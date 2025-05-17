@@ -5,7 +5,7 @@ import recipesData from '~/data/recipes-data.json';
 import { CustomHeartIcon, CustomSmileIcon } from '../../assets/customIcon/CustomIcon';
 import JuicyButton from '../buttonSelection/buttonSelection';
 import ButtonsGroup from '../buttonsGroup.tsx/buttons';
-import { BadgeWithIcon } from '../customBadge/customBadge';
+import { BadgeWithIcon } from '../CustomBadge/customBadge';
 interface RecipeCardProps {
     id: number;
     title: string;
@@ -66,7 +66,12 @@ const JuciestCards = () => {
                                                 <Flex align='center'>
                                                     <IconButton
                                                         aria-label='Лайк'
-                                                        icon={<CustomHeartIcon />}
+                                                        icon={
+                                                            <CustomHeartIcon
+                                                                width='12px'
+                                                                height='12px'
+                                                            />
+                                                        }
                                                         variant='ghost'
                                                         isRound
                                                         size='sm'
@@ -85,7 +90,12 @@ const JuciestCards = () => {
                                             <Flex align='center'>
                                                 <IconButton
                                                     aria-label='Смайлик'
-                                                    icon={<CustomSmileIcon />}
+                                                    icon={
+                                                        <CustomSmileIcon
+                                                            width='12px'
+                                                            height='12px'
+                                                        />
+                                                    }
                                                     variant='ghost'
                                                     isRound
                                                     size='sm'

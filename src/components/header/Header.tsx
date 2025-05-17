@@ -1,12 +1,12 @@
-import { Box, Flex, Image, useBreakpointValue } from '@chakra-ui/react';
+import { Box, Flex, HStack, Image, useBreakpointValue } from '@chakra-ui/react';
 
 import Logo from '../../assets/icons/Logo.png';
+import StatsIcons from '../aside/iconField';
 import Breadcrumbs from './Breadcrumbs';
-import BurgerMenu from './burgerMenu';
+import BurgerMenu from './BurgerMenu';
 import UserProfile from './User';
 
 const Header = () => {
-    // <-- Исправлено: добавлены `() =>`
     const showUserProfile = useBreakpointValue({
         base: false,
         lg: true,
@@ -19,13 +19,15 @@ const Header = () => {
 
     return (
         <Box
+            position='fixed'
             as='header'
-            minW='100vw'
+            width='100vw'
             h={{ sm: '60px', lg: '80px' }}
             bg='#f7fee7'
             px={{ base: 3, md: 4 }}
             border='1px solid #000'
             data-test-id='header'
+            zIndex={100}
         >
             <Flex h='100%' align='center' justify='space-between'>
                 <Flex align='center'>
@@ -36,10 +38,16 @@ const Header = () => {
                         <Breadcrumbs />
                     </Box>
                 </Flex>
-                <Flex>
+
+                <HStack align='baseline' gap={4} h='24px'>
                     {showUserProfile && <UserProfile />}
-                    {showBurger && <BurgerMenu />}
-                </Flex>
+                    <HStack h='24px' justify='space-around' alignItems='center'>
+                        <StatsIcons />
+                    </HStack>
+                    <HStack display='flex' alignItems='center' h='24px'>
+                        {showBurger && <BurgerMenu />}
+                    </HStack>
+                </HStack>
             </Flex>
         </Box>
     );

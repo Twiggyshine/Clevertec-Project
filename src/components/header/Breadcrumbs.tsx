@@ -1,5 +1,5 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router';
 
 export const Breadcrumbs = () => {
     const location = useLocation();
@@ -20,7 +20,6 @@ export const Breadcrumbs = () => {
     }
     return (
         <Breadcrumb separator='>' ml={{ base: 3, md: 4 }}>
-            {/* Главная - всегда отображается */}
             <BreadcrumbItem>
                 <BreadcrumbLink
                     as={Link}
