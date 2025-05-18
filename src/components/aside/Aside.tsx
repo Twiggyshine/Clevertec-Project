@@ -1,29 +1,24 @@
-import { Box, Button, Flex, Text } from '@chakra-ui/react';
+import { Button, Flex, Text, VStack } from '@chakra-ui/react';
 
 import StatsIcons from './iconField';
 
 const Aside = () => (
-    <Box
+    <VStack
         h='1040px'
         w='280px'
-        borderLeft='1px solid'
-        borderColor='gray.200'
         flex='1'
+        justifyContent='flex-end'
+        align='flex-end'
         display={{ lg: 'flex', base: 'none' }}
     >
         <Flex direction='column' h='100%' justify='space-between'>
-            <Box w='208px' h='208px' borderRadius='12px' p='16px' alignSelf='end'>
-                <Flex direction='column' align='center'>
-                    <StatsIcons />
-                </Flex>
-            </Box>
+            <Flex direction='column' w='208px' h='208px' align='center' justify='space-around'>
+                <StatsIcons />
+            </Flex>
 
-            <Box
+            <VStack
                 w='208px'
                 h='208px'
-                borderRadius='12px'
-                p='16px'
-                alignSelf='end'
                 display='flex'
                 flexDirection='column'
                 justifyContent='flex-end'
@@ -67,9 +62,9 @@ const Aside = () => (
                 >
                     Записать рецепт
                 </Text>
-            </Box>
+            </VStack>
         </Flex>
-    </Box>
+    </VStack>
 );
 
 export default Aside;

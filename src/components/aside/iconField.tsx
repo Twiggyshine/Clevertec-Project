@@ -19,7 +19,6 @@ export const StatsIcons = () => (
         <Flex
             justify='center'
             alignItems='center'
-            mb='24px'
             borderRadius='6px'
             padding='0px 16px'
             width='85px'
@@ -33,7 +32,6 @@ export const StatsIcons = () => (
         <Flex
             justify='center'
             alignItems='center'
-            mb='24px'
             borderRadius='6px'
             padding='0px 16px'
             width='87px'
@@ -47,7 +45,6 @@ export const StatsIcons = () => (
         <Flex
             alignItems='center'
             justify='center'
-            mb='24px'
             borderRadius='6px'
             padding='0px 16px'
             width='86px'

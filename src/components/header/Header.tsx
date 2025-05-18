@@ -17,6 +17,10 @@ const Header = () => {
         lg: false,
     });
 
+    const showStatsIcons = useBreakpointValue({
+        base: true,
+        lg: false,
+    });
     return (
         <Box
             position='fixed'
@@ -39,12 +43,12 @@ const Header = () => {
                     </Box>
                 </Flex>
 
-                <HStack align='baseline' gap={4} h='24px'>
+                <HStack alignItems='center' gap={4} h='24px'>
                     {showUserProfile && <UserProfile />}
                     <HStack h='24px' justify='space-around' alignItems='center'>
-                        <StatsIcons />
+                        {showStatsIcons && <StatsIcons />}
                     </HStack>
-                    <HStack display='flex' alignItems='center' h='24px'>
+                    <HStack alignItems='center' h='24px'>
                         {showBurger && <BurgerMenu />}
                     </HStack>
                 </HStack>

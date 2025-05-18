@@ -28,13 +28,9 @@ const RecipesGrid = () => {
                     />
                 )}
 
-                <Flex overflow='auto' gap={{ '3xl': '24px', sm: '12px' }}>
+                <Flex overflowX='auto' gap={{ '3xl': '24px', sm: '12px' }}>
                     {newRecipes.map((recipe) => (
-                        <Box
-                            key={recipe.id}
-                            flex='1 1 auto'
-                            minW={{ '3xl': '322px', '2xl': '277px' }}
-                        >
+                        <Box key={recipe.id} flex='1 1 auto'>
                             <RecipeCard {...recipe} />
                         </Box>
                     ))}

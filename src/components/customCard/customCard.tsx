@@ -18,12 +18,22 @@ export const CustomCard = chakra(
         const showBadge = useBreakpointValue({ '2xl': true, '3xl': false });
 
         return (
-            <Box {...props}>
+            <Flex {...props} flexDirection='column'>
                 <Box mb='24px'>
-                    <Text noOfLines={1} mb='8px' fontSize='20px' fontWeight='500'>
+                    <Text
+                        noOfLines={1}
+                        mb='8px'
+                        fontSize={{ '3xl': '24px', sm: '16px', xl: '18px' }}
+                        fontWeight='500'
+                    >
                         {title}
                     </Text>
-                    <Text color='#000' fontSize='14px' noOfLines={{ lg: 1, sm: 3 }}>
+                    <Text
+                        color='#000'
+                        fontSize='14px'
+                        lineHeight='143%'
+                        noOfLines={{ lg: 1, sm: 3 }}
+                    >
                         {description}
                     </Text>
                 </Box>
@@ -65,7 +75,7 @@ export const CustomCard = chakra(
                         )}
                     </Flex>
                 </Flex>
-            </Box>
+            </Flex>
         );
     },
 );
