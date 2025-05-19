@@ -18,7 +18,7 @@ import MenuMarker from './MenuMarker';
 const Sidebar = () => (
     <Flex
         direction='column'
-        display={{ lg: 'flex', base: 'none' }}
+        display={{ xl: 'flex', base: 'none' }}
         w='256px'
         h='1040px'
         borderRight='1px'

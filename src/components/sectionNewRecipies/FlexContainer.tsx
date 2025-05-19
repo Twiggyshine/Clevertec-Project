@@ -30,9 +30,9 @@ const RecipesGrid = () => {
 
                 <Flex overflowX='auto' gap={{ '3xl': '24px', sm: '12px' }}>
                     {newRecipes.map((recipe) => (
-                        <Box key={recipe.id} flex='1 1 auto'>
+                        <Flex key={recipe.id} flex='1 1 auto' alignItems='stretch'>
                             <RecipeCard {...recipe} />
-                        </Box>
+                        </Flex>
                     ))}
                 </Flex>
                 {hideIconButton && (

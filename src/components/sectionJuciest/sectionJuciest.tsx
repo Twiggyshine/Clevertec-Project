@@ -25,18 +25,18 @@ const recommendedRecipeIds: Record<number, { name: string; avatarSrc: string }> 
 const JuicyRecipesSection = () => {
     const featuredRecipes = recipesData.theJuciest;
 
-    const showDescription = useBreakpointValue({ '2xl': true, sm: false });
+    const showDescription = useBreakpointValue({ xl: true, sm: false });
     const showJuicyButton = useBreakpointValue({ lg: true, sm: false });
     const hideJuicyButton = useBreakpointValue({ lg: false, sm: true });
-    const hideRecommendsBadge = useBreakpointValue({ '2xl': true, sm: false });
-    const showBadge = useBreakpointValue({ '2xl': true, '3xl': false });
+    const hideRecommendsBadge = useBreakpointValue({ xl: true, sm: false });
+    const showBadge = useBreakpointValue({ xl: true, '3xl': false });
 
     return (
         <Box mb='40px'>
             <Flex justify='space-between' align='center'>
                 <Heading
                     fontWeight={500}
-                    fontSize={{ '3xl': '48px', '2xl': '36px', sm: '24px' }}
+                    fontSize={{ '2xl': '48px', md: '36px', sm: '24px' }}
                     mb={8}
                 >
                     Самое сочное
@@ -47,7 +47,7 @@ const JuicyRecipesSection = () => {
             <Grid
                 templateColumns={{
                     '3xl': 'repeat(2, 1fr)',
-                    '2xl': 'repeat(1, 1fr)',
+                    xl: 'repeat(1, 1fr)',
                     md: 'repeat(2, 1fr)',
                 }}
                 gap={8}
@@ -63,14 +63,12 @@ const JuicyRecipesSection = () => {
                             h='100%'
                             transition='all 0.2s ease-in-out'
                         >
-                            {/* Блок с изображением */}
                             <Box position='relative'>
                                 <Image
                                     src={`../../../public/recipies/${recipe.id}.jpg`}
                                     alt={recipe.title}
                                     objectFit='cover'
-                                    // h='244px'
-                                    // w='346px'
+                                    height='100%'
                                 />
                                 {recommendedRecipeIds[recipe.id] && (
                                     <Box position='absolute' bottom='4' left='4'>
@@ -86,14 +84,13 @@ const JuicyRecipesSection = () => {
                                 )}
                             </Box>
 
-                            {/* Блок с текстом и кнопками */}
                             <Box
                                 flex='1'
                                 p={{ '2xl': '20px 24px', sm: '8px 8px 4px 8px;' }}
                                 display='flex'
                                 flexDirection='column'
                             >
-                                <Flex justify='space-between' align='flex-start' mb='24px'>
+                                <Flex justify='space-between' align='flex-start'>
                                     {showBadge && (
                                         <BadgeWithIcon
                                             category={recipe.category}
@@ -153,16 +150,15 @@ const JuicyRecipesSection = () => {
                                     </Flex>
                                 </Flex>
                                 <Box>
-                                    <Heading
-                                        as='h3'
-                                        fontSize='20px'
+                                    <Text
+                                        fontSize={{ '3xl': '24px', sm: '16px', xl: '18px' }}
                                         mb='8px'
                                         color='#000'
                                         fontWeight='500'
-                                        noOfLines={1}
+                                        noOfLines={{ lg: 1, sm: 2 }}
                                     >
                                         {recipe.title}
-                                    </Heading>
+                                    </Text>
 
                                     {showDescription && (
                                         <Text

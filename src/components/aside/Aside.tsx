@@ -9,7 +9,7 @@ const Aside = () => (
         flex='1'
         justifyContent='flex-end'
         align='flex-end'
-        display={{ lg: 'flex', base: 'none' }}
+        display={{ xl: 'flex', base: 'none' }}
     >
         <Flex direction='column' h='100%' justify='space-between'>
             <Flex direction='column' w='208px' h='208px' align='center' justify='space-around'>

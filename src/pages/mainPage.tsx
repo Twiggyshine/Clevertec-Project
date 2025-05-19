@@ -10,8 +10,8 @@ const HomePage = () => (
     <VStack w='100%' p='0 24px' justifyContent='center'>
         <NavPanel />
         <Heading
-            fontWeight={500}
-            fontSize={{ '3xl': '48px', '2xl': '36px', sm: '24px' }}
+            fontWeight='500'
+            fontSize={{ '2xl': '48px', md: '36px', sm: '24px' }}
             mb={8}
             alignSelf='flex-start'
         >

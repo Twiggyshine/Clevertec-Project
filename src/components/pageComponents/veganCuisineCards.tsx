@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, Heading, IconButton, Image, Text } from '@chakra-ui/react';
+import { Box, Flex, Grid, GridItem, IconButton, Image, Text, VStack } from '@chakra-ui/react';
 
 import recipesData from '~/data/recipes-data.json';
 
@@ -30,26 +30,23 @@ const VegetarianCuisineCards = () => {
                     <GridItem key={recipe.id}>
                         <Flex
                             borderWidth='1px'
-                            borderColor='gray.200'
-                            borderRadius='lg'
+                            borderColor='border: 1px solid rgba(0, 0, 0, 0.08)'
+                            borderRadius='8px'
                             overflow='hidden'
                             h='100%'
-                            transition='all 0.2s ease-in-out'
                         >
-                            {/* Блок с изображением */}
-                            <Box position='relative'>
+                            <VStack position='relative'>
                                 <Image
                                     src={`../../public/recipies/${recipe.id}.jpg`}
                                     alt={recipe.title}
                                     objectFit='cover'
-                                    h='244px'
-                                    w='346px'
+                                    // h='244px'
+                                    // w='346px'
                                 />
-                            </Box>
+                            </VStack>
 
-                            {/* Блок с текстом и кнопками */}
                             <Box flex='1' p='20px 24px' display='flex' flexDirection='column'>
-                                <Flex justify='space-between' align='flex-start' mb='24px'>
+                                <Flex justify='space-between' align='flex-start'>
                                     <BadgeWithIcon
                                         category={recipe.category}
                                         imgUrl={recipe.imgUrl}
@@ -107,16 +104,15 @@ const VegetarianCuisineCards = () => {
                                     </Flex>
                                 </Flex>
                                 <Box>
-                                    <Heading
-                                        as='h3'
-                                        fontSize='20px'
+                                    <Text
+                                        fontSize={{ '3xl': '24px', sm: '16px', xl: '18px' }}
                                         mb='8px'
                                         color='#000'
                                         fontWeight='500'
-                                        noOfLines={1}
+                                        noOfLines={{ lg: 1, sm: 2 }}
                                     >
                                         {recipe.title}
-                                    </Heading>
+                                    </Text>
 
                                     <Text
                                         color='#000'

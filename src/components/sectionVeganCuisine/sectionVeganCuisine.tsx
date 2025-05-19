@@ -25,12 +25,11 @@ const VeganKitchenSection = ({
                 sm: '1fr',
             }}
             gap='24px'
-            mb='24px'
             alignItems='center'
         >
             <Heading
                 as='h1'
-                fontSize={{ '3xl': '48px', xl: '36px', sm: '24px' }}
+                fontSize={{ '2xl': '48px', md: '36px', sm: '24px' }}
                 fontWeight='500'
                 gridColumn={{ sm: '1 / 3', md: '1 / 2' }}
             >
@@ -43,6 +42,7 @@ const VeganKitchenSection = ({
                 color='rgba(0, 0, 0, 0.64)'
                 lineHeight='150%'
                 gridColumn={{ '3xl': '3 / 4', xl: '4 / 4' }}
+                mb={{ sm: '16px', xl: '0px' }}
             >
                 {descriptionText}
             </Text>

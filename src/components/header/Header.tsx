@@ -7,19 +7,19 @@ import BurgerMenu from './BurgerMenu';
 import UserProfile from './User';
 
 const Header = () => {
-    const showUserProfile = useBreakpointValue({
+    const hideUserProfile = useBreakpointValue({
         base: false,
-        lg: true,
+        xl: true,
     });
 
     const showBurger = useBreakpointValue({
         base: true,
-        lg: false,
+        xl: false,
     });
 
     const showStatsIcons = useBreakpointValue({
         base: true,
-        lg: false,
+        xl: false,
     });
     return (
         <Box
@@ -44,7 +44,7 @@ const Header = () => {
                 </Flex>
 
                 <HStack alignItems='center' gap={4} h='24px'>
-                    {showUserProfile && <UserProfile />}
+                    {hideUserProfile && <UserProfile />}
                     <HStack h='24px' justify='space-around' alignItems='center'>
                         {showStatsIcons && <StatsIcons />}
                     </HStack>

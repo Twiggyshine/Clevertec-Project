@@ -18,13 +18,13 @@ export const CustomCard = chakra(
         const showBadge = useBreakpointValue({ '2xl': true, '3xl': false });
 
         return (
-            <Flex {...props} flexDirection='column'>
-                <Box mb='24px'>
+            <Flex {...props} flexDirection='column' flex='1' justify='space-between'>
+                <Box>
                     <Text
-                        noOfLines={1}
+                        noOfLines={{ lg: 1, sm: 2 }}
                         mb='8px'
                         fontSize={{ '3xl': '24px', sm: '16px', xl: '18px' }}
-                        fontWeight='500'
+                        fontWeight={{ sm: '500' }}
                     >
                         {title}
                     </Text>

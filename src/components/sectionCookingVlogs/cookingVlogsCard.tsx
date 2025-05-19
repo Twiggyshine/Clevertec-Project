@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react';
+import { Box, Heading, HStack, Image, Text } from '@chakra-ui/react';
 
 import { BlogAuthor } from '../sectionCookingVlogs/blog';
 
@@ -14,7 +14,7 @@ const CulinaryBlogCard = ({ author }: CulinaryBlogCardProps) => (
         transition='all 0.2s'
         _hover={{ transform: 'translateY(-5px)', boxShadow: 'xl' }}
     >
-        <Flex gap={4} alignItems='flex-start' p='24px 24px 16px 24px'>
+        <HStack gap={4} alignItems='flex-start' p='24px 24px 16px 24px'>
             <Image
                 src={author.avatar}
                 alt={author.name}
@@ -36,7 +36,7 @@ const CulinaryBlogCard = ({ author }: CulinaryBlogCardProps) => (
                     {author.username}
                 </Text>
             </Box>
-        </Flex>
+        </HStack>
         <Box p={{ base: '0 24px 20px', '2xl': '0 16px 16px' }} flex='1' minHeight='0'>
             <Text color='#000' fontSize='14px' fontWeight='400px' noOfLines={{ sm: 3 }}>
                 {author.description}

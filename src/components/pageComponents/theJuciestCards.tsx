@@ -1,4 +1,4 @@
-import { Box, Flex, Grid, GridItem, Heading, IconButton, Image, Text } from '@chakra-ui/react';
+import { Box, Flex, Grid, GridItem, IconButton, Image, Text } from '@chakra-ui/react';
 
 import recipesData from '~/data/recipes-data.json';
 
@@ -41,7 +41,6 @@ const JuciestCards = () => {
                             h='100%'
                             transition='all 0.2s ease-in-out'
                         >
-                            {/* Блок с изображением */}
                             <Box position='relative'>
                                 <Image
                                     src={`../../public/recipies/${recipe.id}.jpg`}
@@ -51,10 +50,8 @@ const JuciestCards = () => {
                                     w='346px'
                                 />
                             </Box>
-
-                            {/* Блок с текстом и кнопками */}
                             <Box flex='1' p='20px 24px' display='flex' flexDirection='column'>
-                                <Flex justify='space-between' align='flex-start' mb='24px'>
+                                <Flex justify='space-between' align='flex-start'>
                                     <BadgeWithIcon
                                         category={recipe.category}
                                         imgUrl={recipe.imgUrl}
@@ -112,16 +109,15 @@ const JuciestCards = () => {
                                     </Flex>
                                 </Flex>
                                 <Box>
-                                    <Heading
-                                        as='h3'
-                                        fontSize='20px'
+                                    <Text
+                                        fontSize={{ '3xl': '24px', sm: '16px', xl: '18px' }}
                                         mb='8px'
                                         color='#000'
                                         fontWeight='500'
                                         noOfLines={1}
                                     >
                                         {recipe.title}
-                                    </Heading>
+                                    </Text>
 
                                     <Text
                                         color='#000'
