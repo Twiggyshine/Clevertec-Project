@@ -1,8 +1,18 @@
-import { Box, Flex, Grid, GridItem, IconButton, Image, Text } from '@chakra-ui/react';
+import {
+    Box,
+    Flex,
+    Grid,
+    GridItem,
+    IconButton,
+    Image,
+    Text,
+    useBreakpointValue,
+} from '@chakra-ui/react';
 
 import recipesData from '~/data/recipes-data.json';
 
 import { CustomHeartIcon, CustomSmileIcon } from '../../assets/customIcon/CustomIcon';
+import RecommendsBadge from '../badgeRecom/badgeRecom';
 import JuicyButton from '../buttonSelection/buttonSelection';
 import ButtonsGroup from '../buttonsGroup.tsx/buttons';
 import { BadgeWithIcon } from '../CustomBadge/customBadge';
@@ -16,7 +26,15 @@ interface RecipeCardProps {
     imgUrl: string;
 }
 
+const recommendedRecipeIds: Record<number, { name: string; avatarSrc: string }> = {
+    6: { name: 'Елена Высоцкая', avatarSrc: './../../../public/icons/Avatar1.svg' },
+    7: { name: 'Alex Cook', avatarSrc: './../../../public/icons/Avatar2.svg' },
+};
 const JuciestCards = () => {
+    const showDescription = useBreakpointValue({ lg: true, sm: false });
+    const hideRecommendsBadge = useBreakpointValue({ xl: true, sm: false });
+    const showBadge = useBreakpointValue({ xl: true, base: false });
+    const hideBadge = useBreakpointValue({ xl: false, base: true });
     const jucRecipes = [
         ...recipesData.theJuciest.filter((recipe) => [5, 6, 7, 8].includes(recipe.id)),
         ...recipesData.VegetarianCuisinePage.filter((recipe) =>
@@ -35,27 +53,52 @@ const JuciestCards = () => {
                     <GridItem key={recipe.id}>
                         <Flex
                             borderWidth='1px'
-                            borderColor='gray.200'
-                            borderRadius='lg'
+                            borderColor='border: 1px solid rgba(0, 0, 0, 0.08);'
+                            borderRadius='8px'
                             overflow='hidden'
                             h='100%'
-                            transition='all 0.2s ease-in-out'
                         >
                             <Box position='relative'>
                                 <Image
                                     src={`../../public/recipies/${recipe.id}.jpg`}
                                     alt={recipe.title}
                                     objectFit='cover'
-                                    h='244px'
-                                    w='346px'
+                                    height='100%'
+                                    maxW={{ base: '158px', xl: '100%' }}
                                 />
+                                {hideBadge && (
+                                    <Box position='absolute' top='10px' left='10px'>
+                                        <BadgeWithIcon
+                                            category={recipe.category}
+                                            imgUrl={recipe.imgUrl}
+                                        />
+                                    </Box>
+                                )}
+                                {recommendedRecipeIds[recipe.id] && (
+                                    <Box position='absolute' bottom='4' left='4'>
+                                        {hideRecommendsBadge && (
+                                            <RecommendsBadge
+                                                name={recommendedRecipeIds[recipe.id].name}
+                                                avatarSrc={
+                                                    recommendedRecipeIds[recipe.id].avatarSrc
+                                                }
+                                            />
+                                        )}
+                                    </Box>
+                                )}
                             </Box>
-                            <Box flex='1' p='20px 24px' display='flex' flexDirection='column'>
+                            <Flex
+                                flex='1'
+                                p={{ '2xl': '20px 24px', sm: '8px 8px 4px 8px;' }}
+                                flexDirection='column'
+                            >
                                 <Flex justify='space-between' align='flex-start'>
-                                    <BadgeWithIcon
-                                        category={recipe.category}
-                                        imgUrl={recipe.imgUrl}
-                                    />
+                                    {showBadge && (
+                                        <BadgeWithIcon
+                                            category={recipe.category}
+                                            imgUrl={recipe.imgUrl}
+                                        />
+                                    )}
 
                                     <Flex align='center' gap='8px'>
                                         {recipe.likesCount !== undefined &&
@@ -114,24 +157,26 @@ const JuciestCards = () => {
                                         mb='8px'
                                         color='#000'
                                         fontWeight='500'
-                                        noOfLines={1}
+                                        noOfLines={{ xl: 1, sm: 2 }}
                                     >
                                         {recipe.title}
                                     </Text>
 
-                                    <Text
-                                        color='#000'
-                                        mb='24px'
-                                        fontSize='14px'
-                                        lineHeight='143%'
-                                        noOfLines={3}
-                                    >
-                                        {recipe.description}
-                                    </Text>
+                                    {showDescription && (
+                                        <Text
+                                            color='#000'
+                                            mb='24px'
+                                            fontSize='14px'
+                                            lineHeight='143%'
+                                            noOfLines={3}
+                                        >
+                                            {recipe.description}
+                                        </Text>
+                                    )}
                                 </Box>
 
                                 <ButtonsGroup />
-                            </Box>
+                            </Flex>
                         </Flex>
                     </GridItem>
                 ))}

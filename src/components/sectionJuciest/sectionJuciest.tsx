@@ -62,6 +62,7 @@ const JuicyRecipesSection = () => {
                             borderColor='border: 1px solid rgba(0, 0, 0, 0.08);'
                             borderRadius='8px'
                             overflow='hidden'
+                            h='100%'
                         >
                             <Box position='relative'>
                                 <Image
@@ -71,7 +72,6 @@ const JuicyRecipesSection = () => {
                                     height='100%'
                                     width='auto'
                                     maxW={{ base: '158px', xl: '100%' }}
-                                    maxH={{ base: '128px', xl: '100%' }}
                                 />
                                 {hideBadge && (
                                     <Box position='absolute' top='10px' left='10px'>

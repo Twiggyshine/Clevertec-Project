@@ -1,4 +1,13 @@
-import { Box, Flex, Grid, GridItem, IconButton, Image, Text, VStack } from '@chakra-ui/react';
+import {
+    Box,
+    Flex,
+    Grid,
+    GridItem,
+    IconButton,
+    Image,
+    Text,
+    useBreakpointValue,
+} from '@chakra-ui/react';
 
 import recipesData from '~/data/recipes-data.json';
 
@@ -18,7 +27,9 @@ interface RecipeCardProps {
 
 const VegetarianCuisineCards = () => {
     const vegRecipes = recipesData.VegetarianCuisinePage;
-
+    const showDescription = useBreakpointValue({ lg: true, sm: false });
+    const showBadge = useBreakpointValue({ xl: true, base: false });
+    const hideBadge = useBreakpointValue({ xl: false, base: true });
     return (
         <Box mb='40px'>
             <Grid
@@ -35,22 +46,35 @@ const VegetarianCuisineCards = () => {
                             overflow='hidden'
                             h='100%'
                         >
-                            <VStack position='relative'>
+                            <Box position='relative'>
                                 <Image
                                     src={`../../public/recipies/${recipe.id}.jpg`}
                                     alt={recipe.title}
                                     objectFit='cover'
-                                    // h='244px'
-                                    // w='346px'
+                                    height='100%'
+                                    maxW={{ base: '158px', xl: '100%' }}
                                 />
-                            </VStack>
-
-                            <Box flex='1' p='20px 24px' display='flex' flexDirection='column'>
+                                {hideBadge && (
+                                    <Box position='absolute' top='10px' left='10px'>
+                                        <BadgeWithIcon
+                                            category={recipe.category}
+                                            imgUrl={recipe.imgUrl}
+                                        />
+                                    </Box>
+                                )}
+                            </Box>
+                            <Flex
+                                flex='1'
+                                p={{ '2xl': '20px 24px', sm: '8px 8px 4px 8px;' }}
+                                flexDirection='column'
+                            >
                                 <Flex justify='space-between' align='flex-start'>
-                                    <BadgeWithIcon
-                                        category={recipe.category}
-                                        imgUrl={recipe.imgUrl}
-                                    />
+                                    {showBadge && (
+                                        <BadgeWithIcon
+                                            category={recipe.category}
+                                            imgUrl={recipe.imgUrl}
+                                        />
+                                    )}
 
                                     <Flex align='center' gap='8px'>
                                         {recipe.likesCount !== undefined &&
@@ -109,24 +133,26 @@ const VegetarianCuisineCards = () => {
                                         mb='8px'
                                         color='#000'
                                         fontWeight='500'
-                                        noOfLines={{ lg: 1, sm: 2 }}
+                                        noOfLines={{ xl: 1, sm: 2 }}
                                     >
                                         {recipe.title}
                                     </Text>
 
-                                    <Text
-                                        color='#000'
-                                        mb='24px'
-                                        fontSize='14px'
-                                        lineHeight='143%'
-                                        noOfLines={3}
-                                    >
-                                        {recipe.description}
-                                    </Text>
+                                    {showDescription && (
+                                        <Text
+                                            color='#000'
+                                            mb='24px'
+                                            fontSize='14px'
+                                            lineHeight='143%'
+                                            noOfLines={3}
+                                        >
+                                            {recipe.description}
+                                        </Text>
+                                    )}
                                 </Box>
 
                                 <ButtonsGroup />
-                            </Box>
+                            </Flex>
                         </Flex>
                     </GridItem>
                 ))}
