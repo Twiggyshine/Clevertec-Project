@@ -14,7 +14,7 @@ const CulinaryBlogCard = ({ author }: CulinaryBlogCardProps) => (
         transition='all 0.2s'
         _hover={{ transform: 'translateY(-5px)', boxShadow: 'xl' }}
     >
-        <HStack gap={4} alignItems='flex-start' p='24px 24px 16px 24px'>
+        <HStack gap={{ base: '8px', xl: '12px' }} alignItems='flex-start' p='24px 24px 16px 24px'>
             <Image
                 src={author.avatar}
                 alt={author.name}
@@ -22,7 +22,7 @@ const CulinaryBlogCard = ({ author }: CulinaryBlogCardProps) => (
                 boxSize='48px'
                 objectFit='cover'
             />
-            <Box flex='1' minWidth='0'>
+            <Box>
                 <Heading
                     as='h3'
                     fontSize='18px'
@@ -32,12 +32,16 @@ const CulinaryBlogCard = ({ author }: CulinaryBlogCardProps) => (
                 >
                     {author.name}
                 </Heading>
-                <Text fontSize='14px' color='rgba(0, 0, 0, 0.64)'>
+                <Text
+                    fontSize={{ base: '12px', xl: '14px' }}
+                    lineHeight='14px'
+                    color='rgba(0, 0, 0, 0.64)'
+                >
                     {author.username}
                 </Text>
             </Box>
         </HStack>
-        <Box p={{ base: '0 24px 20px', '2xl': '0 16px 16px' }} flex='1' minHeight='0'>
+        <Box p={{ base: '0 24px 20px', '2xl': '0 16px 16px' }}>
             <Text color='#000' fontSize='14px' fontWeight='400px' noOfLines={{ sm: 3 }}>
                 {author.description}
             </Text>

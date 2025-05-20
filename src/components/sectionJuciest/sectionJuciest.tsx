@@ -25,14 +25,14 @@ const recommendedRecipeIds: Record<number, { name: string; avatarSrc: string }> 
 const JuicyRecipesSection = () => {
     const featuredRecipes = recipesData.theJuciest;
 
-    const showDescription = useBreakpointValue({ xl: true, sm: false });
+    const showDescription = useBreakpointValue({ lg: true, sm: false });
     const showJuicyButton = useBreakpointValue({ lg: true, sm: false });
     const hideJuicyButton = useBreakpointValue({ lg: false, sm: true });
     const hideRecommendsBadge = useBreakpointValue({ xl: true, sm: false });
     const showBadge = useBreakpointValue({ xl: true, '3xl': false });
 
     return (
-        <Box mb='40px'>
+        <Box mb='40px' w='100%'>
             <Flex justify='space-between' align='center'>
                 <Heading
                     fontWeight={500}
@@ -49,6 +49,7 @@ const JuicyRecipesSection = () => {
                     '3xl': 'repeat(2, 1fr)',
                     xl: 'repeat(1, 1fr)',
                     md: 'repeat(2, 1fr)',
+                    sm: 'repeat(1, 1fr)',
                 }}
                 gap={8}
                 mb='12px'
@@ -57,18 +58,18 @@ const JuicyRecipesSection = () => {
                     <GridItem key={recipe.id}>
                         <Flex
                             borderWidth='1px'
-                            borderColor='gray.200'
-                            borderRadius='lg'
+                            borderColor='border: 1px solid rgba(0, 0, 0, 0.08);'
+                            borderRadius='8px'
                             overflow='hidden'
-                            h='100%'
-                            transition='all 0.2s ease-in-out'
                         >
                             <Box position='relative'>
                                 <Image
-                                    src={`../../../public/recipies/${recipe.id}.jpg`}
+                                    src={`/recipies/${recipe.id}.jpg`}
                                     alt={recipe.title}
                                     objectFit='cover'
                                     height='100%'
+                                    width='auto'
+                                    maxW={{ base: '158px', xl: '346px' }}
                                 />
                                 {recommendedRecipeIds[recipe.id] && (
                                     <Box position='absolute' bottom='4' left='4'>
@@ -84,10 +85,9 @@ const JuicyRecipesSection = () => {
                                 )}
                             </Box>
 
-                            <Box
+                            <Flex
                                 flex='1'
                                 p={{ '2xl': '20px 24px', sm: '8px 8px 4px 8px;' }}
-                                display='flex'
                                 flexDirection='column'
                             >
                                 <Flex justify='space-between' align='flex-start'>
@@ -155,7 +155,7 @@ const JuicyRecipesSection = () => {
                                         mb='8px'
                                         color='#000'
                                         fontWeight='500'
-                                        noOfLines={{ lg: 1, sm: 2 }}
+                                        noOfLines={{ xl: 1, sm: 2 }}
                                     >
                                         {recipe.title}
                                     </Text>
@@ -174,7 +174,7 @@ const JuicyRecipesSection = () => {
                                 </Box>
 
                                 <ButtonsGroup />
-                            </Box>
+                            </Flex>
                         </Flex>
                     </GridItem>
                 ))}

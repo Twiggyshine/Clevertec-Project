@@ -32,7 +32,7 @@ const NavPanel: React.FC<NavPanelProps> = ({
                     as='h1'
                     mb='32px'
                     fontWeight='700'
-                    fontSize={{ '2xl': '48px', sm: '24px' }}
+                    fontSize={{ lg: '48px', base: '24px' }}
                     lineHeight='100%'
                     textAlign='center'
                     color='#000'
@@ -67,8 +67,7 @@ const NavPanel: React.FC<NavPanelProps> = ({
                         border='1px solid rgba(0, 0, 0, 0.48)'
                         borderRadius='6px'
                         p='0px 12px'
-                        w={{ lg: '48px', sm: '32px' }}
-                        h={{ lg: '48px', sm: '32px' }}
+                        h={{ md: '48px', sm: '32px' }}
                     >
                         <svg
                             width='24'
@@ -88,16 +87,15 @@ const NavPanel: React.FC<NavPanelProps> = ({
                         <Input
                             placeholder='Название или ингредиент...'
                             borderRadius='6px'
-                            // pr='40px'
                             border='1px solid rgba(0, 0, 0, 0.48)'
-                            h={{ lg: '48px', sm: '32px' }}
-                            fontSize='18px'
+                            h={{ md: '48px', sm: '32px' }}
+                            fontSize={{ md: '18px', sm: '14px' }}
                             _placeholder={{ color: '#134b00' }}
                         />
                         <InputRightElement
                             pointerEvents='none'
                             alignItems='center'
-                            h={{ lg: '48px', sm: '32px' }}
+                            h={{ md: '48px', sm: '32px' }}
                         >
                             <SearchIcon color='black' />
                         </InputRightElement>

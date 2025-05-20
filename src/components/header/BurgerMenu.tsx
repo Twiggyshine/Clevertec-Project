@@ -10,8 +10,8 @@ function BurgerMenu() {
                     aria-label='Меню'
                     icon={<HamburgerIcon boxSize='24px' strokeWidth='2px' />}
                     variant='transparent'
-                    width='24px'
-                    height='24px'
+                    width='48px'
+                    height='48px'
                     p='0 12px'
                 />
 

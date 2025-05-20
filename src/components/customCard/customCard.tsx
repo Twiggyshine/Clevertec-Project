@@ -13,15 +13,16 @@ export const CustomCard = chakra(
         favCount,
         imgUrl,
         badgeColor,
+        forceShowBadge = false,
         ...props
     }: CustomCardProps) => {
-        const showBadge = useBreakpointValue({ '2xl': true, '3xl': false });
+        const hideBadge = useBreakpointValue({ '2xl': false, base: true });
 
         return (
             <Flex {...props} flexDirection='column' flex='1' justify='space-between'>
-                <Box>
+                <Box mb='24px'>
                     <Text
-                        noOfLines={{ lg: 1, sm: 2 }}
+                        noOfLines={{ md: 1, base: 2 }}
                         mb='8px'
                         fontSize={{ '3xl': '24px', sm: '16px', xl: '18px' }}
                         fontWeight={{ sm: '500' }}
@@ -39,7 +40,7 @@ export const CustomCard = chakra(
                 </Box>
 
                 <Flex align='center' justify='space-between'>
-                    {showBadge && (
+                    {!forceShowBadge && !hideBadge && (
                         <BadgeWithIcon category={category} imgUrl={imgUrl} bgColor={badgeColor} />
                     )}
 

@@ -26,6 +26,7 @@ const VeganKitchenSection = ({
             }}
             gap='24px'
             alignItems='center'
+            mb='24px'
         >
             <Heading
                 as='h1'
@@ -64,6 +65,7 @@ const VeganKitchenSection = ({
                     imgUrl={recipe.imgUrl}
                     likesCount={recipe.likesCount}
                     favCount={recipe.favCount}
+                    forceShowBadge={false}
                     border='1px solid #E6E6E6'
                     borderRadius='8px'
                     badgeColor='#ffffd3'

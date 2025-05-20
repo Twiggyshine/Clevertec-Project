@@ -20,10 +20,9 @@ export const StatsIcons = () => (
             justify='center'
             alignItems='center'
             borderRadius='6px'
-            padding='0px 16px'
-            width='85px'
+            padding={{ base: '0 12px', md: '0px 16px' }}
             height='24px'
-            gap='4px'
+            gap='6px'
         >
             <CustomHeartIcon width='16px' height='16px' />
             <Text {...textStyles}>185</Text>
@@ -33,10 +32,9 @@ export const StatsIcons = () => (
             justify='center'
             alignItems='center'
             borderRadius='6px'
-            padding='0px 16px'
-            width='87px'
+            padding={{ base: '0 12px', md: '0px 16px' }}
             height='40px'
-            gap='4px'
+            gap='6px'
         >
             <CustomUsersIcon width='16px' height='16px' />
             <Text {...textStyles}>589</Text>
@@ -46,10 +44,9 @@ export const StatsIcons = () => (
             alignItems='center'
             justify='center'
             borderRadius='6px'
-            padding='0px 16px'
-            width='86px'
+            padding={{ base: '0 12px', md: '0px 16px' }}
             height='40px'
-            gap='4px'
+            gap='6px'
         >
             <CustomSmileIcon width='16px' height='16px' />
             <Text {...textStyles}>587</Text>
