@@ -63,6 +63,12 @@ const JuicyRecipesSection = () => {
                             borderRadius='8px'
                             overflow='hidden'
                             h='100%'
+                            _hover={{
+                                boxShadow:
+                                    '0 2px 4px -1px rgba(32, 126, 0, 0.06), 0 4px 6px -1px rgba(32, 126, 0, 0.1)',
+                                background: '#fff',
+                                transition: 'all 0.3s ease',
+                            }}
                         >
                             <Box position='relative'>
                                 <Image

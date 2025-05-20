@@ -22,7 +22,19 @@ export const CustomCard = chakra(
         });
 
         return (
-            <Flex {...props} flexDirection='column' flex='1' justify='space-between'>
+            <Flex
+                {...props}
+                flexDirection='column'
+                flex='1'
+                justify='space-between'
+                transition='all 0.3s ease'
+                _hover={{
+                    boxShadow:
+                        '0 2px 4px -1px rgba(32, 126, 0, 0.06), 0 4px 6px -1px rgba(32, 126, 0, 0.1)',
+                    background: '#fff',
+                    transition: 'all 0.3s ease',
+                }}
+            >
                 <Box mb='24px'>
                     <Text
                         noOfLines={{ md: 1, base: 2 }}
