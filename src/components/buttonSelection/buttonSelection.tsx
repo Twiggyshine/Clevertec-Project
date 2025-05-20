@@ -5,6 +5,7 @@ interface JuicyButtonProps {
     children: ReactNode;
     icon?: ReactNode;
     bgColor?: string;
+    test?: string;
 }
 
 const JuicyButton = ({
@@ -27,6 +28,7 @@ const JuicyButton = ({
         </svg>
     ),
     bgColor = '#b1ff2e',
+    test,
 }: JuicyButtonProps) => (
     <Button
         w='197px'
@@ -35,7 +37,7 @@ const JuicyButton = ({
         bg={bgColor}
         borderRadius='6px'
         fontSize='18px'
-        data-test-id='juiciest-link'
+        data-test-id={test || ''}
     >
         {children}
         {icon}

@@ -11,6 +11,7 @@ export const RespFooter = () => (
         position='fixed'
         bottom='0'
         zIndex={100}
+        data-test-id='footer'
     >
         <Button
             variant='unstyled'

@@ -43,6 +43,7 @@ const JuicyRecipesSection = () => {
                     Самое сочное
                 </Heading>
                 {showJuicyButton && <JuicyButton>Вся подборка</JuicyButton>}
+                <JuicyButton>Вся подборка</JuicyButton>
             </Flex>
 
             <Grid

@@ -57,6 +57,11 @@ const Sidebar = () => (
                                                 cursor: 'pointer',
                                             }}
                                             onClick={(e) => e.stopPropagation()}
+                                            data-test-id={
+                                                menuElement.title === 'Веганская кухня'
+                                                    ? 'vegan-cuisine'
+                                                    : undefined
+                                            }
                                         >
                                             {menuElement.title}
                                         </ChakraLink>

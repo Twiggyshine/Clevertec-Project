@@ -22,7 +22,7 @@ const MainLayout = ({ children }: LayoutProps) => {
                 <Box w={{ base: '100%', xl: '63%', '3xl': '73%' }}>{children}</Box>
                 <Aside />
             </HStack>
-            {showFooter && <RespFooter data-test-id='footer' />}
+            {showFooter && <RespFooter />}
         </VStack>
     );
 };
