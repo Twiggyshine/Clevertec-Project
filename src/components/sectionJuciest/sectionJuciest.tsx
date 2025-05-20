@@ -29,8 +29,9 @@ const JuicyRecipesSection = () => {
     const showJuicyButton = useBreakpointValue({ lg: true, sm: false });
     const hideJuicyButton = useBreakpointValue({ lg: false, sm: true });
     const hideRecommendsBadge = useBreakpointValue({ xl: true, sm: false });
-    const showBadge = useBreakpointValue({ xl: true, '3xl': false });
+    const showBadge = useBreakpointValue({ xl: true, base: false });
 
+    const hideBadge = useBreakpointValue({ xl: false, base: true });
     return (
         <Box mb='40px' w='100%'>
             <Flex justify='space-between' align='center'>
@@ -69,8 +70,17 @@ const JuicyRecipesSection = () => {
                                     objectFit='cover'
                                     height='100%'
                                     width='auto'
-                                    maxW={{ base: '158px', xl: '346px' }}
+                                    maxW={{ base: '158px', xl: '100%' }}
+                                    maxH={{ base: '128px', xl: '100%' }}
                                 />
+                                {hideBadge && (
+                                    <Box position='absolute' top='10px' left='10px'>
+                                        <BadgeWithIcon
+                                            category={recipe.category}
+                                            imgUrl={recipe.imgUrl}
+                                        />
+                                    </Box>
+                                )}
                                 {recommendedRecipeIds[recipe.id] && (
                                     <Box position='absolute' bottom='4' left='4'>
                                         {hideRecommendsBadge && (

@@ -6,5 +6,4 @@ export interface CustomCardProps {
     favCount?: number;
     imgUrl: string;
     badgeColor?: string;
-    forceShowBadge?: boolean;
 }

@@ -45,7 +45,6 @@ const RecipeCard = ({
                 likesCount={likesCount}
                 favCount={favCount}
                 imgUrl={imgUrl}
-                forceShowBadge={true}
                 badgeColor='#d7ff94'
                 p={{ '3xl': '16px 24px 20px 24px', sm: '8px 8px 4px 8px', lg: '12px' }}
             />

@@ -19,7 +19,7 @@ const MainLayout = ({ children }: LayoutProps) => {
             <Header />
             <HStack w='100%' mt='80px' alignItems='flex-start'>
                 <Sidebar />
-                <Box w={{ base: '100%', xl: '60%' }}>{children}</Box>
+                <Box w={{ base: '100%', xl: '63%', '3xl': '73%' }}>{children}</Box>
                 <Aside />
             </HStack>
             {showFooter && <RespFooter data-test-id='footer' />}
