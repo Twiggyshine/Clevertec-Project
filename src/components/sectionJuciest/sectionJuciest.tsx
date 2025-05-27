@@ -9,6 +9,7 @@ import {
     Text,
     useBreakpointValue,
 } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router';
 
 import { CustomHeartIcon, CustomSmileIcon } from '../../assets/customIcon/CustomIcon';
 import recipesData from '../../data/recipes-data.json';
@@ -26,8 +27,6 @@ const JuicyRecipesSection = () => {
     const featuredRecipes = recipesData.theJuciest;
 
     const showDescription = useBreakpointValue({ lg: true, sm: false });
-    const showJuicyButton = useBreakpointValue({ lg: true, sm: false });
-    const hideJuicyButton = useBreakpointValue({ lg: false, sm: true });
     const hideRecommendsBadge = useBreakpointValue({ xl: true, sm: false });
     const showBadge = useBreakpointValue({ xl: true, base: false });
 
@@ -42,8 +41,14 @@ const JuicyRecipesSection = () => {
                 >
                     Самое сочное
                 </Heading>
-                {showJuicyButton && <JuicyButton>Вся подборка</JuicyButton>}
-                <JuicyButton>Вся подборка</JuicyButton>
+                <JuicyButton
+                    test='juiciest-link'
+                    display={{ lg: 'flex', base: 'none' }}
+                    as={RouterLink}
+                    to='/theJuciestPage'
+                >
+                    Вся подборка
+                </JuicyButton>
             </Flex>
 
             <Grid
@@ -197,7 +202,9 @@ const JuicyRecipesSection = () => {
                 ))}
             </Grid>
             <Flex justifyContent='center'>
-                {hideJuicyButton && <JuicyButton>Вся подборка</JuicyButton>}
+                <JuicyButton test='juiciest-link-mobile' display={{ lg: 'none', base: 'flex' }}>
+                    Вся подборка
+                </JuicyButton>
             </Flex>
         </Box>
     );

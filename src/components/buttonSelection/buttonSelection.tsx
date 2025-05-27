@@ -1,15 +1,19 @@
 import { Button } from '@chakra-ui/react';
-import { ReactNode } from 'react';
+import { ElementType, ReactNode } from 'react';
 
 interface JuicyButtonProps {
     children: ReactNode;
     icon?: ReactNode;
     bgColor?: string;
     test?: string;
+    display?: { lg: string; base: string };
+    as?: ElementType;
+    to?: string;
 }
 
 const JuicyButton = ({
     children = '',
+    display,
     icon = (
         <svg
             width='14'
@@ -29,13 +33,18 @@ const JuicyButton = ({
     ),
     bgColor = '#b1ff2e',
     test,
+    as,
+    to,
 }: JuicyButtonProps) => (
     <Button
+        as={as}
+        to={to}
         w='197px'
         h='48px'
         p='0px 24px'
         bg={bgColor}
         borderRadius='6px'
+        display={display}
         fontSize='18px'
         data-test-id={test || ''}
     >
