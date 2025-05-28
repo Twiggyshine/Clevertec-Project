@@ -1,8 +1,7 @@
-import { Link as ChakraLink } from '@chakra-ui/react';
-import { Flex } from '@chakra-ui/react';
+import { Flex, Tab, TabList, Tabs } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router';
 
-const linkStyles = {
+const tabStyles = {
     color: '#134b00',
     fontWeight: '500',
     fontSize: '16px',
@@ -19,36 +18,39 @@ const linkStyles = {
 
 export const VeganMenu = () => (
     <Flex
-        gap='20px'
         mt='32px'
         mb='26px'
         borderBottom='1px solid rgba(0, 0, 0, 0.08)'
         justify={{ '3xl': 'center' }}
         overflowX='auto'
     >
-        <ChakraLink as={RouterLink} to='/veganCuisinePage/Закуски' sx={linkStyles}>
-            Закуски
-        </ChakraLink>
-        <ChakraLink as={RouterLink} to='/veganCuisinePage/Первые блюда' sx={linkStyles}>
-            Первые блюда
-        </ChakraLink>
-        <ChakraLink as={RouterLink} to='/veganCuisinePage/Вторые блюда' sx={linkStyles}>
-            Вторые блюда
-        </ChakraLink>
-        <ChakraLink as={RouterLink} to='/veganCuisinePage/Гарниры' sx={linkStyles}>
-            Гарниры
-        </ChakraLink>
-        <ChakraLink as={RouterLink} to='/veganCuisinePage/Десерты' sx={linkStyles}>
-            Десерты
-        </ChakraLink>
-        <ChakraLink as={RouterLink} to='/veganCuisinePage/Выпечка' sx={linkStyles}>
-            Выпечка
-        </ChakraLink>
-        <ChakraLink as={RouterLink} to='/veganCuisinePage/Сыроедческие блюда' sx={linkStyles}>
-            Сыроедческие блюда
-        </ChakraLink>
-        <ChakraLink as={RouterLink} to='/veganCuisinePage/Напитки' sx={linkStyles}>
-            Напитки
-        </ChakraLink>
+        <Tabs variant='unstyled'>
+            <TabList gap='20px'>
+                <Tab as={RouterLink} to='/veganCuisinePage/Закуски' sx={tabStyles}>
+                    Закуски
+                </Tab>
+                <Tab as={RouterLink} to='/veganCuisinePage/Первые блюда' sx={tabStyles}>
+                    Первые блюда
+                </Tab>
+                <Tab as={RouterLink} to='/veganCuisinePage/Вторые блюда' sx={tabStyles}>
+                    Вторые блюда
+                </Tab>
+                <Tab as={RouterLink} to='/veganCuisinePage/Гарниры' sx={tabStyles}>
+                    Гарниры
+                </Tab>
+                <Tab as={RouterLink} to='/veganCuisinePage/Десерты' sx={tabStyles}>
+                    Десерты
+                </Tab>
+                <Tab as={RouterLink} to='/veganCuisinePage/Выпечка' sx={tabStyles}>
+                    Выпечка
+                </Tab>
+                <Tab as={RouterLink} to='/veganCuisinePage/Сыроедческие блюда' sx={tabStyles}>
+                    Сыроедческие блюда
+                </Tab>
+                <Tab as={RouterLink} to='/veganCuisinePage/Напитки' sx={tabStyles}>
+                    Напитки
+                </Tab>
+            </TabList>
+        </Tabs>
     </Flex>
 );

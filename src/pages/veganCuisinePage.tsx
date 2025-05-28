@@ -1,4 +1,4 @@
-import { Box } from '@chakra-ui/react';
+import { VStack } from '@chakra-ui/react';
 
 import { VeganMenu } from '../components/menuVeganCuisinePage/MenuVegan';
 import NavPanel from '../components/nav/NavPanel';
@@ -8,7 +8,7 @@ import recipesData from '../data/recipes-data.json';
 
 function veganCuisinePage() {
     return (
-        <Box w='100%' p='0 24px'>
+        <VStack w='100%' p='0 24px' justifyContent='center'>
             <NavPanel
                 headingText='Веганская кухня'
                 subHeadingText='Интересны не только убеждённым вегетарианцам, но и тем, кто хочет  попробовать вегетарианскую диету и готовить вкусные  вегетарианские блюда.'
@@ -29,7 +29,7 @@ function veganCuisinePage() {
                 secondInputIcon={<img src='../../public/menuIcons/national.svg' alt='new icon' />}
                 thirdInputIcon={<img src='../../public/menuIcons/vegan.svg' alt='new icon' />}
             />
-        </Box>
+        </VStack>
     );
 }
 
