@@ -3,6 +3,7 @@ import { ReactNode } from 'react';
 
 interface MenuMarkerProps extends TextProps {
     children: ReactNode;
+    isActive: boolean;
 }
 
 const MenuMarker = ({ children, ...rest }: MenuMarkerProps) => (

@@ -41,7 +41,7 @@ const Header = () => {
             as='header'
             width='100vw'
             h={{ sm: '60px', lg: '80px' }}
-            bg='#f7fee7'
+            bg='#ffffd3'
             px={{ base: 3, md: 4 }}
             border='1px solid #000'
             data-test-id='header'
