@@ -16,9 +16,8 @@ export const VeganMenu = () => {
         fontSize: '16px',
         padding: '8px 16px',
         whiteSpace: 'nowrap',
-        _hover: {
-            textDecoration: 'underline',
-            textUnderlineOffset: '13px',
+        _selected: {
+            borderBottom: '2px solid #2db100',
             color: '#2db100',
         },
     };

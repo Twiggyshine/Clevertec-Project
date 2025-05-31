@@ -11,14 +11,17 @@ import {
 import { Link as ChakraLink } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router';
 import { useParams } from 'react-router';
+import { useLocation } from 'react-router';
 
 import menuData from '../../data/DataMenu';
 import Footer from '../footer/Footer';
 import MenuMarker from './MenuMarker';
 
 const Sidebar = () => {
-    const { category, subcategory } = useParams();
-
+    const { subcategory } = useParams();
+    console.log('subcategory from useParams:', subcategory);
+    const location = useLocation();
+    console.log('location:', location);
     return (
         <Flex
             direction='column'
@@ -65,22 +68,19 @@ const Sidebar = () => {
                                     </AccordionButton>
                                     <AccordionPanel pb={4} pl={8}>
                                         <VStack align='stretch' spacing={2}>
-                                            {menuItem.subcategory.map((sub) => (
-                                                <MenuMarker
-                                                    key={sub.path}
-                                                    isActive={
-                                                        category === menuItem.path &&
-                                                        subcategory === sub.path
-                                                    }
-                                                >
-                                                    <ChakraLink
-                                                        as={RouterLink}
-                                                        to={`/${menuItem.path}/${sub.path}`}
-                                                    >
-                                                        {sub.name}
-                                                    </ChakraLink>
-                                                </MenuMarker>
-                                            ))}
+                                            {menuItem.subcategory.map((sub) => {
+                                                const isActive = subcategory === sub.path;
+                                                return (
+                                                    <MenuMarker key={sub.path} isActive={isActive}>
+                                                        <ChakraLink
+                                                            as={RouterLink}
+                                                            to={`/${menuItem.path}/${sub.path}`}
+                                                        >
+                                                            {sub.name}
+                                                        </ChakraLink>
+                                                    </MenuMarker>
+                                                );
+                                            })}
                                         </VStack>
                                     </AccordionPanel>
                                 </AccordionItem>
