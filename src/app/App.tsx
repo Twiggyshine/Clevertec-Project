@@ -11,9 +11,10 @@ function App() {
     return (
         <MainLayout>
             <Routes>
-                <Route path='/:category/:subcategory' element={<HomePage />} />
                 <Route path='/theJuciestPage' element={<TheJuciestPage />} />
-                <Route path='vegan-cuisine/:subcategory' element={<VeganCuisinePage />} />
+                <Route path='/vegan-cuisine' element={<VeganCuisinePage />} />
+                <Route path='/vegan-cuisine/:subcategory' element={<VeganCuisinePage />} />
+                <Route path='/:category/:subcategory' element={<HomePage />} />
                 <Route path='*' element={<HomePage />} />
             </Routes>
         </MainLayout>

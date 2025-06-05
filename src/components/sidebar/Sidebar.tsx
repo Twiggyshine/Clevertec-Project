@@ -6,11 +6,11 @@ import {
     AccordionPanel,
     Box,
     Flex,
+    Text,
     VStack,
 } from '@chakra-ui/react';
 import { Link as ChakraLink } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router';
-import { useParams } from 'react-router';
 import { useLocation } from 'react-router';
 
 import menuData from '../../data/DataMenu';
@@ -18,10 +18,12 @@ import Footer from '../footer/Footer';
 import MenuMarker from './MenuMarker';
 
 const Sidebar = () => {
-    const { subcategory } = useParams();
-    console.log('subcategory from useParams:', subcategory);
-    const location = useLocation();
-    console.log('location:', location);
+    function GetCurrentPath() {
+        const location = useLocation();
+
+        return location.pathname.split('/').filter(Boolean);
+    }
+    const location = GetCurrentPath();
     return (
         <Flex
             direction='column'
@@ -69,15 +71,20 @@ const Sidebar = () => {
                                     <AccordionPanel pb={4} pl={8}>
                                         <VStack align='stretch' spacing={2}>
                                             {menuItem.subcategory.map((sub) => {
-                                                const isActive = subcategory === sub.path;
+                                                const isActive =
+                                                    location[location.length - 1] === sub.path;
+                                                console.log;
                                                 return (
                                                     <MenuMarker key={sub.path} isActive={isActive}>
-                                                        <ChakraLink
+                                                        <Text
                                                             as={RouterLink}
                                                             to={`/${menuItem.path}/${sub.path}`}
+                                                            fontWeight={
+                                                                isActive ? 'bold' : 'normal'
+                                                            }
                                                         >
                                                             {sub.name}
-                                                        </ChakraLink>
+                                                        </Text>
                                                     </MenuMarker>
                                                 );
                                             })}
