@@ -1,27 +1,41 @@
 import { HamburgerIcon } from '@chakra-ui/icons';
-import { Box, IconButton, Menu, MenuButton, MenuItem, MenuList } from '@chakra-ui/react';
+import {
+    Box,
+    Drawer,
+    DrawerBody,
+    DrawerCloseButton,
+    DrawerContent,
+    DrawerOverlay,
+    IconButton,
+    useDisclosure,
+} from '@chakra-ui/react';
+
+import Sidebar from '../sidebar/Sidebar';
 
 function BurgerMenu() {
+    const { isOpen, onOpen, onClose } = useDisclosure();
+
     return (
         <Box>
-            <Menu>
-                <MenuButton
-                    as={IconButton}
-                    aria-label='Меню'
-                    icon={<HamburgerIcon boxSize='24px' strokeWidth='2px' />}
-                    variant='transparent'
-                    width='48px'
-                    height='48px'
-                    p='0 12px'
-                />
+            <IconButton
+                aria-label='Открыть меню'
+                icon={<HamburgerIcon boxSize='24px' strokeWidth='2px' />}
+                variant='transparent'
+                width='48px'
+                height='48px'
+                p='0 12px'
+                onClick={onOpen}
+            />
 
-                <MenuList>
-                    <MenuItem>Главная</MenuItem>
-                    <MenuItem>О нас</MenuItem>
-                    <MenuItem>Услуги</MenuItem>
-                    <MenuItem>Контакты</MenuItem>
-                </MenuList>
-            </Menu>
+            <Drawer placement='left' onClose={onClose} isOpen={isOpen} size='xs'>
+                <DrawerOverlay />
+                <DrawerContent>
+                    <DrawerCloseButton />
+                    <DrawerBody p={0}>
+                        <Sidebar />
+                    </DrawerBody>
+                </DrawerContent>
+            </Drawer>
         </Box>
     );
 }

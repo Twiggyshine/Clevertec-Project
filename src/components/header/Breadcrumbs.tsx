@@ -19,7 +19,11 @@ const Breadcrumbs = () => {
 
     if (isJuicyPage) {
         return (
-            <Breadcrumb separator='>' ml={{ base: 3, md: 4 }}>
+            <Breadcrumb
+                separator='>'
+                ml={{ base: 3, md: 4 }}
+                display={{ xl: 'flex', base: 'none' }}
+            >
                 <BreadcrumbItem>
                     <BreadcrumbLink
                         as={Link}

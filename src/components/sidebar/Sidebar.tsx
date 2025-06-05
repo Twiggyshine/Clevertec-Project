@@ -6,6 +6,7 @@ import {
     AccordionPanel,
     Box,
     Flex,
+    ResponsiveValue,
     Text,
     VStack,
 } from '@chakra-ui/react';
@@ -17,7 +18,11 @@ import menuData from '../../data/DataMenu';
 import Footer from '../footer/Footer';
 import MenuMarker from './MenuMarker';
 
-const Sidebar = () => {
+interface SidebarProps {
+    display?: ResponsiveValue<string>;
+}
+
+const Sidebar = ({ display }: SidebarProps) => {
     function GetCurrentPath() {
         const location = useLocation();
 
@@ -27,7 +32,7 @@ const Sidebar = () => {
     return (
         <Flex
             direction='column'
-            display={{ xl: 'flex', base: 'none' }}
+            display={display}
             w='256px'
             h='1040px'
             borderRight='1px'
@@ -73,7 +78,6 @@ const Sidebar = () => {
                                             {menuItem.subcategory.map((sub) => {
                                                 const isActive =
                                                     location[location.length - 1] === sub.path;
-                                                console.log;
                                                 return (
                                                     <MenuMarker key={sub.path} isActive={isActive}>
                                                         <Text

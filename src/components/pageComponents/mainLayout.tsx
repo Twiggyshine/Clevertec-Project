@@ -18,7 +18,7 @@ const MainLayout = ({ children }: LayoutProps) => {
         <VStack w='100vw'>
             <Header />
             <HStack w='100%' mt='80px' alignItems='flex-start'>
-                <Sidebar />
+                <Sidebar display={{ xl: 'flex', base: 'none' }} />
                 <Box w={{ base: '100%', xl: '63%', '3xl': '73%' }}>{children}</Box>
                 <Aside />
             </HStack>
