@@ -8,6 +8,7 @@ import {
     Flex,
     ResponsiveValue,
     Text,
+    useBreakpointValue,
     VStack,
 } from '@chakra-ui/react';
 import { Link as ChakraLink } from '@chakra-ui/react';
@@ -16,6 +17,7 @@ import { useLocation } from 'react-router';
 
 import menuData from '../../data/DataMenu';
 import Footer from '../footer/Footer';
+import Breadcrumbs from '../header/Breadcrumbs';
 import MenuMarker from './MenuMarker';
 
 interface SidebarProps {
@@ -28,18 +30,28 @@ const Sidebar = ({ display }: SidebarProps) => {
 
         return location.pathname.split('/').filter(Boolean);
     }
+
+    const showBreadcrumbs = useBreakpointValue({
+        base: true,
+        lg: false,
+    });
     const location = GetCurrentPath();
     return (
         <Flex
             direction='column'
             display={display}
-            w='256px'
             h='1040px'
             borderRight='1px'
             borderColor='gray.200'
+            fontSize={{ lg: '16px', base: '12px' }}
         >
             <Box p='24px 0 0 0'>
-                <Box borderRadius='12px' p='10px 16px 10px 10px' w='100%' maxW='256px'>
+                <Box borderRadius='12px' p='10px 16px 10px 10px'>
+                    {showBreadcrumbs && (
+                        <Flex alignItems='center' mb='24px'>
+                            <Breadcrumbs />
+                        </Flex>
+                    )}
                     <VStack align='stretch' spacing={0}>
                         <Accordion allowToggle>
                             {menuData.map((menuItem) => (

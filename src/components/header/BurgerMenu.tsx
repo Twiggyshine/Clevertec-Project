@@ -30,7 +30,9 @@ function BurgerMenu() {
             <Drawer placement='left' onClose={onClose} isOpen={isOpen} size='xs'>
                 <DrawerOverlay />
                 <DrawerContent>
-                    <DrawerCloseButton />
+                    <Box mb='24px'>
+                        <DrawerCloseButton color='grey' />
+                    </Box>
                     <DrawerBody p={0}>
                         <Sidebar />
                     </DrawerBody>

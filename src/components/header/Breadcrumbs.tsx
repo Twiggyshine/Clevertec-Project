@@ -23,6 +23,7 @@ const Breadcrumbs = () => {
                 separator='>'
                 ml={{ base: 3, md: 4 }}
                 display={{ xl: 'flex', base: 'none' }}
+                flexWrap='wrap'
             >
                 <BreadcrumbItem>
                     <BreadcrumbLink
@@ -31,6 +32,7 @@ const Breadcrumbs = () => {
                         fontSize='16px'
                         fontWeight='400'
                         color='rgba(0, 0, 0, 0.64)'
+                        whiteSpace='nowrap'
                     >
                         Главная
                     </BreadcrumbLink>
@@ -42,6 +44,7 @@ const Breadcrumbs = () => {
                         fontSize='16px'
                         fontWeight='400'
                         isCurrentPage
+                        whiteSpace='nowrap'
                     >
                         Самое сочное
                     </BreadcrumbLink>
@@ -61,7 +64,7 @@ const Breadcrumbs = () => {
     );
 
     return (
-        <Breadcrumb separator='>' ml={{ base: 3, md: 4 }}>
+        <Breadcrumb separator='>' ml={{ base: 3, md: 4 }} flexWrap='wrap'>
             <BreadcrumbItem>
                 <BreadcrumbLink
                     as={Link}
@@ -69,6 +72,7 @@ const Breadcrumbs = () => {
                     fontSize='16px'
                     fontWeight='400'
                     color='rgba(0, 0, 0, 0.64)'
+                    whiteSpace='nowrap'
                 >
                     Главная
                 </BreadcrumbLink>
@@ -82,6 +86,7 @@ const Breadcrumbs = () => {
                         fontSize='16px'
                         fontWeight='400'
                         color={subcategoryData ? 'rgba(0, 0, 0, 0.64)' : '#000'}
+                        whiteSpace='nowrap'
                     >
                         {categoryData.category}
                     </BreadcrumbLink>
@@ -96,6 +101,7 @@ const Breadcrumbs = () => {
                         fontSize='16px'
                         fontWeight='400'
                         isCurrentPage
+                        whiteSpace='nowrap'
                     >
                         {subcategoryData.name}
                     </BreadcrumbLink>

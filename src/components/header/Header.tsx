@@ -35,6 +35,7 @@ const Header = () => {
         base: false,
         lg: true,
     });
+
     return (
         <Box
             position='fixed'
