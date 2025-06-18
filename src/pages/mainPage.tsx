@@ -7,7 +7,7 @@ import RecipesGrid from '../components/sectionNewRecipies/FlexContainer';
 import VeganKitchenSection from '../components/sectionVeganCuisine/sectionVeganCuisine';
 
 const HomePage = () => (
-    <VStack w='100%' p='0 24px' justifyContent='center'>
+    <VStack w='100%' p={{ xl: '0 24px', base: '0 20px' }} justifyContent='center'>
         <NavPanel />
         <Heading
             fontWeight='500'

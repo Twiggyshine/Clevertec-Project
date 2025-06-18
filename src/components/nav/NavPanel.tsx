@@ -26,7 +26,7 @@ const NavPanel: React.FC<NavPanelProps> = ({
     const showFormControl = useBreakpointValue({ lg: true, sm: false });
 
     return (
-        <Flex mb='32px' width={{ xl: '898px', lg: '578px', md: '480px', base: '360px' }}>
+        <Flex mb='32px' width={{ xl: '898px', lg: '578px', md: '100%', sm: '360px' }}>
             <Flex flex='1' p='32px 0px 0px 0px' flexDirection='column' alignItems='center'>
                 <Heading
                     as='h1'
@@ -47,7 +47,7 @@ const NavPanel: React.FC<NavPanelProps> = ({
                             mb='32px'
                             textAlign='center'
                             fontSize={{ lg: '16px', sm: '14px' }}
-                            w={{ lg: '696px', md: '727px', sm: '328px' }}
+                            w={{ lg: '696px', md: '100%', sm: '328px' }}
                             lineHeight='143%'
                             fontWeight='500'
                         >

@@ -6,7 +6,7 @@ import VeganKitchenSection from '../components/sectionVeganCuisine/sectionVeganC
 import recipesData from '../data/recipes-data.json';
 
 const TheJuciestPage = () => (
-    <VStack w='100%' p='0 24px' justifyContent='center'>
+    <VStack w='100%' p={{ xl: '0 24px', base: '0 20px' }} m='0 24px' justifyContent='center'>
         <NavPanel headingText='Самое сочное' />
         <JuciestCards />
         <VeganKitchenSection

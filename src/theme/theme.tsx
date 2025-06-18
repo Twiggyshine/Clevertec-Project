@@ -9,14 +9,6 @@ const theme = extendTheme({
         '2xl': '1440px', // Большие десктопы (ваш кастомный брейкпоинт)
         '3xl': '1920px', // 4K/очень большие экраны
     },
-
-    components: {
-        Button: {
-            baseStyle: {
-                fontSize: { base: '14px' },
-            },
-        },
-    },
 });
 
 export default theme;

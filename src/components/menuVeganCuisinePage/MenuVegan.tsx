@@ -23,7 +23,14 @@ export const VeganMenu = () => {
     };
 
     return (
-        <Flex mt='32px' mb='26px' borderBottom='1px solid rgba(0,0,0,0.08)' overflowX='auto'>
+        <Flex
+            mt='32px'
+            mb='26px'
+            borderBottom='1px solid rgba(0,0,0,0.08)'
+            overflowX='auto'
+            width='100%'
+            justifyContent='center'
+        >
             <Tabs
                 variant='unstyled'
                 index={veganMenu.subcategory.findIndex((s) => s.path === subcategory)}

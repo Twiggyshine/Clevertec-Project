@@ -8,7 +8,7 @@ import recipesData from '../data/recipes-data.json';
 
 function veganCuisinePage() {
     return (
-        <VStack w='100%' p='0 24px' justifyContent='center'>
+        <VStack w='100%' p={{ xl: '0 24px', base: '0 20px' }} justifyContent='center'>
             <NavPanel
                 headingText='Веганская кухня'
                 subHeadingText='Интересны не только убеждённым вегетарианцам, но и тем, кто хочет  попробовать вегетарианскую диету и готовить вкусные  вегетарианские блюда.'
