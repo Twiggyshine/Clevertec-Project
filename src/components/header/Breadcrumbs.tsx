@@ -23,7 +23,6 @@ const Breadcrumbs = () => {
                 separator='>'
                 ml={{ base: 3, md: 4 }}
                 display={{ xl: 'flex', base: 'none' }}
-                flexWrap='wrap'
             >
                 <BreadcrumbItem>
                     <BreadcrumbLink
@@ -64,7 +63,17 @@ const Breadcrumbs = () => {
     );
 
     return (
-        <Breadcrumb separator='>' ml={{ base: 3, md: 4 }} flexWrap='wrap'>
+        <Breadcrumb
+            separator='>'
+            ml={{ base: 3, md: 4 }}
+            sx={{
+                '& > .chakra-breadcrumb__list': {
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '8px',
+                },
+            }}
+        >
             <BreadcrumbItem>
                 <BreadcrumbLink
                     as={Link}
