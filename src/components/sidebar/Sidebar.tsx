@@ -42,7 +42,7 @@ const Sidebar = ({ display }: SidebarProps) => {
             display={display}
             h='1040px'
             borderRight='1px'
-            borderColor='gray.200'
+            border='none'
             fontSize={{ lg: '16px', base: '12px' }}
         >
             <Box p='24px 0 0 0'>

@@ -1,7 +1,7 @@
 import 'swiper/css';
 import 'swiper/css/navigation';
 
-import { useBreakpointValue } from '@chakra-ui/icons';
+import { useBreakpointValue } from '@chakra-ui/react';
 import { Box, Flex, IconButton } from '@chakra-ui/react';
 import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -9,10 +9,11 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import recipesData from '../../data/recipes-data.json';
 import RecipeCard from '../customCard/RecipeCardWithPic';
 
-const RecipesGrid = () => {
+const RecipesSlider = () => {
     const newRecipes = recipesData.newRecipies;
     const isDesktop = useBreakpointValue({ base: false, xl: true });
-    const spaceBetween = useBreakpointValue({ base: 12, xl: 24 });
+    // const spaceBetween = useBreakpointValue({ xl: '12px','2xl':'24px' });
+    const spaceBetween = useBreakpointValue({ base: 8, xl: 12, '2xl': 24 }, { fallback: 'base' });
 
     return (
         <Box width='100%'>
@@ -20,7 +21,7 @@ const RecipesGrid = () => {
                 <Swiper
                     modules={[Navigation]}
                     spaceBetween={spaceBetween}
-                    slidesPerView={4}
+                    slidesPerView='auto'
                     loop={true}
                     touchEventsTarget={isDesktop ? 'container' : 'wrapper'}
                     allowTouchMove={!isDesktop}
@@ -34,8 +35,8 @@ const RecipesGrid = () => {
                     }
                 >
                     {newRecipes.map((recipe) => (
-                        <SwiperSlide key={recipe.id} style={{ height: 'auto' }}>
-                            <Flex px={1} height='100%'>
+                        <SwiperSlide key={recipe.id} style={{ width: 'auto', height: 'auto' }}>
+                            <Flex px={1} height='100%' flex='1 1 auto '>
                                 <RecipeCard {...recipe} />
                             </Flex>
                         </SwiperSlide>
@@ -75,4 +76,4 @@ const RecipesGrid = () => {
     );
 };
 
-export default RecipesGrid;
+export default RecipesSlider;

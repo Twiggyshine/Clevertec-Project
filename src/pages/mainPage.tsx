@@ -3,7 +3,7 @@ import { Heading, VStack } from '@chakra-ui/react';
 import NavPanel from '../components/nav/NavPanel';
 import CulinaryVlogsSection from '../components/sectionCookingVlogs/sectionCookingVlogs';
 import JuicyRecipesSection from '../components/sectionJuciest/sectionJuciest';
-import RecipesGrid from '../components/sectionNewRecipies/FlexContainer';
+import RecipesGrid from '../components/sectionNewRecipies/Slider';
 import VeganKitchenSection from '../components/sectionVeganCuisine/sectionVeganCuisine';
 
 const HomePage = () => (

@@ -6,10 +6,13 @@ import {
     DrawerCloseButton,
     DrawerContent,
     DrawerOverlay,
+    Flex,
     IconButton,
+    Image,
     useDisclosure,
 } from '@chakra-ui/react';
 
+import LogoMob from '../../assets/icons/LogoMob.svg';
 import Sidebar from '../sidebar/Sidebar';
 
 function BurgerMenu() {
@@ -29,10 +32,11 @@ function BurgerMenu() {
 
             <Drawer placement='left' onClose={onClose} isOpen={isOpen} size='xs'>
                 <DrawerOverlay />
-                <DrawerContent>
-                    <Box mb='24px'>
-                        <DrawerCloseButton color='grey' />
-                    </Box>
+                <DrawerContent p='16px'>
+                    <Flex alignItems='center' mb='24px' justifyContent='space-between'>
+                        <Image src={LogoMob} alt='Логотип' objectFit='contain' />
+                        <DrawerCloseButton color='grey' position='relative' top='0' right='0' />
+                    </Flex>
                     <DrawerBody p={0}>
                         <Sidebar />
                     </DrawerBody>
