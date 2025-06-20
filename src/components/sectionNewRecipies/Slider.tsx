@@ -12,15 +12,13 @@ import RecipeCard from '../customCard/RecipeCardWithPic';
 const RecipesSlider = () => {
     const newRecipes = recipesData.newRecipies;
     const isDesktop = useBreakpointValue({ base: false, xl: true });
-    // const spaceBetween = useBreakpointValue({ xl: '12px','2xl':'24px' });
-    const spaceBetween = useBreakpointValue({ base: 8, xl: 12, '2xl': 24 }, { fallback: 'base' });
 
     return (
         <Box width='100%'>
             <Box position='relative'>
                 <Swiper
                     modules={[Navigation]}
-                    spaceBetween={spaceBetween}
+                    spaceBetween={12}
                     slidesPerView='auto'
                     loop={true}
                     touchEventsTarget={isDesktop ? 'container' : 'wrapper'}
@@ -35,13 +33,22 @@ const RecipesSlider = () => {
                     }
                 >
                     {newRecipes.map((recipe) => (
-                        <SwiperSlide key={recipe.id} style={{ width: 'auto', height: 'auto' }}>
-                            <Flex px={1} height='100%' flex='1 1 auto '>
+                        <SwiperSlide key={recipe.id}>
+                            <Flex
+                                px={1}
+                                height='100%'
+                                flex='1 1 auto '
+                                maxW={{ '3xl': '322px', '2xl': '277px', sm: '158px' }}
+                            >
                                 <RecipeCard {...recipe} />
                             </Flex>
                         </SwiperSlide>
                     ))}
                     <style>{`
+                    .swiper-slide {
+    width: auto !important; /* Отключаем width: 100% */
+    height: auto;
+  }
                         .swiper-button-next,
                         .swiper-button-prev {
                             background: black;

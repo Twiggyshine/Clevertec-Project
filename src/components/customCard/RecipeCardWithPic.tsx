@@ -21,8 +21,8 @@ const RecipeCard = ({
             borderWidth='1px'
             borderRadius='10px'
             mb='40px'
-            minW={{ '3xl': '322px', '2xl': '277px', sm: '158px' }}
-            minH={{ '3xl': '414px', '2xl': '402px', sm: '220px' }}
+            // minW={{ '3xl': '322px', '2xl': '277px', sm: '158px' }}
+            // minH={{ '3xl': '414px', '2xl': '402px', sm: '220px' }}
         >
             <Box position='relative'>
                 <Image
