@@ -46,9 +46,9 @@ const RecipesSlider = () => {
                     ))}
                     <style>{`
                     .swiper-slide {
-    width: auto !important; /* Отключаем width: 100% */
-    height: auto;
-  }
+                width: auto !important; 
+                height: auto;
+                        }
                         .swiper-button-next,
                         .swiper-button-prev {
                             background: black;
