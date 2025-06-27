@@ -1,10 +1,10 @@
 import { Heading, VStack } from '@chakra-ui/react';
 
-import NavPanel from '../components/nav/NavPanel';
-import CulinaryVlogsSection from '../components/sectionCookingVlogs/sectionCookingVlogs';
-import JuicyRecipesSection from '../components/sectionJuciest/sectionJuciest';
-import RecipesGrid from '../components/sectionNewRecipies/Slider';
-import VeganKitchenSection from '../components/sectionVeganCuisine/sectionVeganCuisine';
+import NavPanel from '../features/shared/layouts/nav/NavPanel';
+import CulinaryVlogsSection from '../features/shared/sections/sectionCookingVlogs/sectionCookingVlogs';
+import JuicyRecipesSection from '../features/shared/sections/sectionJuciest/sectionJuciest';
+import RecipesGrid from '../features/shared/sections/sectionNewRecipies/Slider';
+import VeganKitchenSection from '../features/shared/sections/sectionVeganCuisine/sectionVeganCuisine';
 
 const HomePage = () => (
     <VStack w='100%' p={{ xl: '0 24px', base: '0 20px' }} justifyContent='center'>

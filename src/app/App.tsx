@@ -2,7 +2,7 @@ import './App.css';
 
 import { Route, Routes } from 'react-router';
 
-import MainLayout from '../components/pageComponents/mainLayout';
+import MainLayout from '../features/shared/layouts/pageComponents/mainLayout';
 import HomePage from '../pages/mainPage';
 import TheJuciestPage from '../pages/theJuciestPage';
 import VeganCuisinePage from '../pages/veganCuisinePage';

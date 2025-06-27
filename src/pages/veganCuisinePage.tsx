@@ -1,10 +1,10 @@
 import { VStack } from '@chakra-ui/react';
 
-import { VeganMenu } from '../components/menuVeganCuisinePage/MenuVegan';
-import NavPanel from '../components/nav/NavPanel';
-import VegetarianCuisineCards from '../components/pageComponents/veganCuisineCards';
-import VeganKitchenSection from '../components/sectionVeganCuisine/sectionVeganCuisine';
 import recipesData from '../data/recipes-data.json';
+import NavPanel from '../features/shared/layouts/nav/NavPanel';
+import VegetarianCuisineCards from '../features/shared/layouts/pageComponents/veganCuisineCards';
+import VeganKitchenSection from '../features/shared/sections/sectionVeganCuisine/sectionVeganCuisine';
+import { VeganMenu } from '../features/shared/ui/menuVeganCuisinePage/MenuVegan';
 
 function veganCuisinePage() {
     return (

@@ -1,9 +1,9 @@
 import { VStack } from '@chakra-ui/react';
 
-import NavPanel from '../components/nav/NavPanel';
-import JuciestCards from '../components/pageComponents/theJuciestCards';
-import VeganKitchenSection from '../components/sectionVeganCuisine/sectionVeganCuisine';
 import recipesData from '../data/recipes-data.json';
+import NavPanel from '../features/shared/layouts/nav/NavPanel';
+import JuciestCards from '../features/shared/layouts/pageComponents/theJuciestCards';
+import VeganKitchenSection from '../features/shared/sections/sectionVeganCuisine/sectionVeganCuisine';
 
 const TheJuciestPage = () => (
     <VStack w='100%' p={{ xl: '0 24px', base: '0 20px' }} m='0 24px' justifyContent='center'>
