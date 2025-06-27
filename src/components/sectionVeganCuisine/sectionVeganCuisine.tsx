@@ -1,7 +1,7 @@
 import { Box, Flex, Grid, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 
 import recipesData from '../../data/recipes-data.json';
-import { CustomCard } from '../customCard/customCard';
+import { CustomCard } from '../customCard/SliderCard';
 import { CustomInput } from '../sectionVeganCuisine/CookingElement';
 
 const VeganKitchenSection = ({

@@ -90,7 +90,8 @@
             "category": "Вторые блюда",
             "likesCount": 85,
             "favCount": 152,
-            "imgUrl": "SecondDishIcon"
+            "imgUrl": "SecondDishIcon",
+            "recommendedBy": null
         },
         {
             "id": 6,
@@ -99,7 +100,11 @@
             "category": "Вторые блюда",
             "likesCount": 159,
             "favCount": 257,
-            "imgUrl": "SecondDishIcon"
+            "imgUrl": "SecondDishIcon",
+            "recommendedBy": {
+                "name": "Елена Высоцкая",
+                "avatarSrc": "/icons/Avatar1.svg"
+            }
         },
         {
             "id": 7,
@@ -108,7 +113,11 @@
             "category": "Вторые блюда",
             "likesCount": 258,
             "favCount": 342,
-            "imgUrl": "SecondDishIcon"
+            "imgUrl": "SecondDishIcon",
+            "recommendedBy": {
+                "name": "Alex Cook",
+                "avatarSrc": "/icons/Avatar2.svg"
+            }
         },
         {
             "id": 8,
@@ -117,7 +126,8 @@
             "category": "Национальные",
             "likesCount": 124,
             "favCount": 324,
-            "imgUrl": "NationalIcon"
+            "imgUrl": "NationalIcon",
+            "recommendedBy": null
         }
     ],
     "VeganCuisine": [

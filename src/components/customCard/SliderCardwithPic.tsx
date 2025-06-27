@@ -2,7 +2,7 @@ import { Box, Image, useBreakpointValue, VStack } from '@chakra-ui/react';
 
 import { BadgeWithIcon } from '../CustomBadge/customBadge';
 import { RecipeCardProps } from '../sectionNewRecipies/RecipeCardProps';
-import { CustomCard } from './customCard';
+import { CustomCard } from './SliderCard';
 const RecipeCard = ({
     id,
     title,

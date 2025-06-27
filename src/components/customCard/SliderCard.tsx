@@ -2,7 +2,7 @@ import { Box, chakra, Flex, IconButton, Text, useBreakpointValue } from '@chakra
 
 import { CustomHeartIcon, CustomSmileIcon } from '../../assets/customIcon/CustomIcon';
 import { BadgeWithIcon } from '../CustomBadge/customBadge';
-import { CustomCardProps } from './customCardProps';
+import { CustomCardProps } from './SliderCardProp';
 
 export const CustomCard = chakra(
     ({

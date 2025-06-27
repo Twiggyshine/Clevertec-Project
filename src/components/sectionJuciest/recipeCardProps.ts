@@ -1,3 +1,8 @@
+export interface RecommendedBy {
+    name: string;
+    avatarSrc: string;
+}
+
 export interface RecipeCardProps {
     id: number;
     title: string;
@@ -6,4 +11,8 @@ export interface RecipeCardProps {
     likesCount?: number;
     favCount?: number;
     imgUrl: string;
+    recommendedBy?: {
+        name: string;
+        avatarSrc: string;
+    } | null;
 }
