@@ -15,4 +15,5 @@ export interface RecipeCardProps {
         name: string;
         avatarSrc: string;
     } | null;
+    buttons?: React.ReactNode;
 }

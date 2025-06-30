@@ -16,6 +16,7 @@ export const RecipeCard = ({
     likesCount,
     favCount,
     recommendedBy,
+    buttons,
 }: RecipeCardProps) => {
     const showDescription = useBreakpointValue({ lg: true, sm: false });
     const hideRecommendsBadge = useBreakpointValue({ xl: true, sm: false });
@@ -126,7 +127,7 @@ export const RecipeCard = ({
                     )}
                 </Box>
 
-                <ButtonsGroup />
+                {buttons ?? <ButtonsGroup />}
             </Flex>
         </Flex>
     );

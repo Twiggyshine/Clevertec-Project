@@ -7,7 +7,7 @@ import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import recipesData from '~/data/recipes-data.json';
-import RecipeCard from '~/features/recipes/components/sliderCard/SliderCardwithPic';
+import SliderCards from '~/features/recipes/components/sliderCard/SliderCardwithPic';
 
 const RecipesSlider = () => {
     const newRecipes = recipesData.newRecipies;
@@ -40,7 +40,7 @@ const RecipesSlider = () => {
                                 flex='1 1 auto '
                                 maxW={{ '3xl': '322px', '2xl': '277px', sm: '158px' }}
                             >
-                                <RecipeCard {...recipe} />
+                                <SliderCards {...recipe} />
                             </Flex>
                         </SwiperSlide>
                     ))}

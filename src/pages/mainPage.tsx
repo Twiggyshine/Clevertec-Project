@@ -3,7 +3,7 @@ import { Heading, VStack } from '@chakra-ui/react';
 import NavPanel from '../features/shared/layouts/nav/NavPanel';
 import CulinaryVlogsSection from '../features/shared/sections/sectionCookingVlogs/sectionCookingVlogs';
 import JuicyRecipesSection from '../features/shared/sections/sectionJuciest/sectionJuciest';
-import RecipesGrid from '../features/shared/sections/sectionNewRecipies/Slider';
+import RecipesSlider from '../features/shared/sections/sectionNewRecipies/Slider';
 import VeganKitchenSection from '../features/shared/sections/sectionVeganCuisine/sectionVeganCuisine';
 
 const HomePage = () => (
@@ -17,7 +17,7 @@ const HomePage = () => (
         >
             Новые рецепты
         </Heading>
-        <RecipesGrid />
+        <RecipesSlider />
         <JuicyRecipesSection />
         <CulinaryVlogsSection />
         <VeganKitchenSection />
