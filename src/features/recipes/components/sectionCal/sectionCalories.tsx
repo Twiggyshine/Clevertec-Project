@@ -3,7 +3,7 @@ import { Box, Flex, Text } from '@chakra-ui/react';
 import CalElement from '../../../shared/ui/pageCountingElement/calElement';
 
 const sectionCalories = () => (
-    <Box w='668px' h='176px'>
+    <Box w='668px' h='176px' mb='40px'>
         <Text color='rgba(0, 0, 0, 0.8)' fontWeight='400' fontSize='14px' textAlign='start'>
             * Калорийность на 1 порцию
         </Text>
