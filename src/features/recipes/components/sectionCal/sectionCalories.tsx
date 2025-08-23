@@ -1,6 +1,6 @@
 import { Box, Flex, Text } from '@chakra-ui/react';
 
-import CalElement from '../../../shared/ui/pageCountingElement/calElement';
+import CalElement from '../../../shared/ui/recipePageCountingElement/calElement';
 
 interface NutritionValue {
     calories: number;
