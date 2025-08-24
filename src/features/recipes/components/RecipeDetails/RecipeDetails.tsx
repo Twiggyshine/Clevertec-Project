@@ -1,49 +1,8 @@
-import { Box, Flex, Heading, Image, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, Image, Text, VStack } from '@chakra-ui/react';
 
-import SectionCalories from '../sectionCal/sectionCalories';
-import RecipeHeader from './CookingRecipeCard';
-
-interface Ingredient {
-    title: string;
-    count: string;
-    measureUnit: string;
-}
-
-interface NutritionValue {
-    calories: number;
-    proteins: number;
-    fats: number;
-    carbohydrates: number;
-}
-
-interface CookingStep {
-    stepNumber: number;
-    description: string;
-    image?: string;
-}
-
-interface Recipe {
-    id: string;
-    title: string;
-    description: string;
-    category: string[];
-    subcategory: string[];
-    image: string;
-    bookmarks: number;
-    likes: number;
-    date: string;
-    time: string;
-    portions: number;
-    nutritionValue: NutritionValue;
-    ingredients: Ingredient[];
-    steps: CookingStep[];
-    meat: string;
-    side: string;
-}
-
-interface CookingSectionProps {
-    recipe: Recipe;
-}
+import RecipeHeader from './CookingRecipeHeader';
+import { CookingSectionProps } from './RecipeDetailsProops';
+import SectionCalories from './sectionCal/sectionCalories';
 
 const CookingSection = ({ recipe }: CookingSectionProps) => {
     const {
@@ -58,27 +17,27 @@ const CookingSection = ({ recipe }: CookingSectionProps) => {
 
     return (
         <Box mb='40px'>
-            <Flex>
-                <RecipeHeader
-                    title={title}
-                    description={description}
-                    image={image}
-                    category={category}
-                    likesCount={likesCount}
-                    favCount={favCount}
-                />
-                <SectionCalories nutrition={recipe.nutritionValue} />
+            <RecipeHeader
+                title={title}
+                description={description}
+                image={image}
+                category={category}
+                likesCount={likesCount}
+                favCount={favCount}
+            />
 
-                <Heading fontSize='48px' fontWeight='500' mb='20px'>
-                    Шаги приготовления: {title}
-                </Heading>
+            <SectionCalories nutrition={recipe.nutritionValue} />
 
+            <Heading fontSize='48px' fontWeight='500' mb='20px' mt='40px'>
+                Шаги приготовления: {title}
+            </Heading>
+            <VStack spacing='20px' align='stretch'>
                 {steps.map((step) => (
                     <Flex
                         key={step.stepNumber}
-                        mb='20px'
                         gap='20px'
                         direction={{ base: 'column', md: 'row' }}
+                        alignItems={{ base: 'center', md: 'flex-start' }}
                     >
                         {step.image && (
                             <Image
@@ -100,7 +59,7 @@ const CookingSection = ({ recipe }: CookingSectionProps) => {
                         </Box>
                     </Flex>
                 ))}
-            </Flex>
+            </VStack>
         </Box>
     );
 };

@@ -3,7 +3,7 @@ import { Flex, IconButton, Image, Text } from '@chakra-ui/react';
 import { CustomHeartIcon, CustomSmileIcon } from '~/assets/customIcon/CustomIcon';
 
 import { BadgeWithIcon } from '../../../shared/ui/customBadge/customBadge';
-import RecipeActions from '../../../shared/ui/recipePageActionBar/recipeActions';
+import RecipeActions from './recipePageActionBar/recipeActions';
 
 interface RecipeHeaderProps {
     title: string;
