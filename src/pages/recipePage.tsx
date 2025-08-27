@@ -1,14 +1,17 @@
-import { Box, Flex } from '@chakra-ui/react';
+// src/components/RecipePage.tsx
+import { useSelector } from 'react-redux';
+import { useParams } from 'react-router-dom';
 
-const RecipeCard = () => (
-    <Box>
-        <Flex>
-            <Box position='relative'>
-                <Flex></Flex>
-                <Flex></Flex>
-            </Box>
-        </Flex>
-    </Box>
-);
+import { RootState } from '../store/configure-store';
+import CookingSection from './../features/recipes/components/RecipeDetails/RecipeDetails';
 
-export default RecipeCard;
+const RecipePage = () => {
+    const { id } = useParams<{ id: string }>();
+    const recipe = useSelector((state: RootState) =>
+        state.recipes.recipes.find((r) => r.id === id),
+    );
+
+    return <CookingSection recipe={recipe} />;
+};
+
+export default RecipePage;

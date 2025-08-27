@@ -17,7 +17,7 @@ interface CookingStep {
     image?: string;
 }
 
-interface Recipe {
+export interface Recipe {
     id: string;
     title: string;
     description: string;
@@ -37,5 +37,5 @@ interface Recipe {
 }
 
 export interface CookingSectionProps {
-    recipe: Recipe;
+    recipe?: Recipe;
 }
