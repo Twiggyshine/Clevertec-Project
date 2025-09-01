@@ -70,27 +70,28 @@
 import { Box, Flex, Heading, Image, Text, VStack } from '@chakra-ui/react';
 
 import RecipeHeader from './CookingRecipeHeader';
-import { CookingSectionProps } from './RecipeDetailsProops';
+import { CookingSectionProps } from './CookingSectionProops';
 import SectionCalories from './sectionCal/sectionCalories';
 
 const CookingSection = ({ recipe }: CookingSectionProps) => {
     console.log(recipe);
     if (!recipe) return null;
+    const { title, description, image, category, likes, bookmarks } = recipe;
     return (
         <Box mb='40px'>
             <RecipeHeader
-                title={recipe.title}
+                title={title}
                 description={description}
                 image={image}
                 category={category}
-                likesCount={likesCount}
-                favCount={favCount}
+                likesCount={likes}
+                favCount={bookmarks}
             />
 
             <SectionCalories nutrition={recipe.nutritionValue} />
 
             <Heading fontSize='48px' fontWeight='500' mb='20px' mt='40px'>
-                Шаги приготовления: {title}
+                Шаги приготовления: {recipe.title}
             </Heading>
             <VStack spacing='20px' align='stretch'>
                 {recipe.steps.map((step) => (

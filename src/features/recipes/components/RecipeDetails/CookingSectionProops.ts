@@ -28,12 +28,12 @@ export interface Recipe {
     likes: number;
     date: string;
     time: string;
-    portions: number;
+    portions?: number;
     nutritionValue: NutritionValue;
     ingredients: Ingredient[];
     steps: CookingStep[];
-    meat: string;
-    side: string;
+    meat?: string;
+    side?: string;
 }
 
 export interface CookingSectionProps {

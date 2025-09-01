@@ -1,16 +1,17 @@
 // src/components/RecipePage.tsx
 import { useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
+import { useLocation } from 'react-router';
 
+import CookingSection from '../features/recipes/components/RecipeDetails/CookingSection';
 import { RootState } from '../store/configure-store';
-import CookingSection from './../features/recipes/components/RecipeDetails/RecipeDetails';
 
 const RecipePage = () => {
-    const { id } = useParams<{ id: string }>();
+    const { pathname } = useLocation();
+    const id = pathname.split('/').at(-1);
     const recipe = useSelector((state: RootState) =>
         state.recipes.recipes.find((r) => r.id === id),
     );
-
+    console.log(recipe);
     return <CookingSection recipe={recipe} />;
 };
 

@@ -26,43 +26,7 @@
 // export default appSlice.reducer;
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
-interface Ingredient {
-    title: string;
-    count: string;
-    measureUnit: string;
-}
-
-interface Step {
-    stepNumber: number;
-    description: string;
-    image?: string;
-}
-
-interface NutritionValue {
-    calories: number;
-    proteins: number;
-    fats: number;
-    carbohydrates: number;
-}
-
-export interface Recipe {
-    id: string;
-    title: string;
-    description: string;
-    image: string;
-    category: string[];
-    subcategory: string[];
-    bookmarks: number;
-    likes: number;
-    date: string;
-    time: string;
-    portions: number;
-    nutritionValue: NutritionValue;
-    ingredients: Ingredient[];
-    steps: Step[];
-    meat?: string;
-    side?: string;
-}
+import { Recipe } from '../features/recipes/components/RecipeDetails/CookingSectionProops';
 
 export interface RecipesState {
     recipes: Recipe[];
