@@ -88,6 +88,7 @@ const NavPanel: React.FC<NavPanelProps> = ({
                             placeholder='Название или ингредиент...'
                             borderRadius='6px'
                             border='1px solid rgba(0, 0, 0, 0.48)'
+                            name='search-input'
                             h={{ md: '48px', sm: '32px' }}
                             fontSize={{ md: '18px', sm: '14px' }}
                             _placeholder={{ color: '#134b00' }}
