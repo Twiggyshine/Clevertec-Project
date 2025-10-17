@@ -9,8 +9,7 @@ const CalElement = ({ topText = '', mainText = '', bottomText = '' }: CalElement
         flexDirection='column'
         border='1px solid rgba(0, 0, 0, 0.08)'
         borderRadius='16px'
-        p='16px'
-        gap='12px'
+        p='48px 16px 48px 16px'
     >
         <Text color='rgba(0, 0, 0, 0.48)' textAlign='center' fontWeight='400' fontSize='14px'>
             {topText}

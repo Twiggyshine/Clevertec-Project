@@ -18,8 +18,6 @@ const RecipePage = () => {
         ),
     );
 
-    console.log('Найденный рецепт:', recipe);
-
     return <CookingSection recipe={recipe} />;
 };
 

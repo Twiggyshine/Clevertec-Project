@@ -8,7 +8,7 @@ const CookingSection = ({ recipe }: CookingSectionProps) => {
     if (!recipe) return null;
     const { title, description, image, category, likes, bookmarks } = recipe;
     return (
-        <Box mb='40px'>
+        <Box mb='40px' mt='56px'>
             <RecipeHeader
                 title={title}
                 description={description}
