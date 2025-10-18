@@ -332,17 +332,17 @@
             {
                 "stepNumber": 1,
                 "description": "Отварить лапшу.",
-                "image": "url"
+                "image": "https://i.ibb.co/G3MFRQBp/1.jpg"
             },
             {
                 "stepNumber": 2,
                 "description": "Обжарить курицу с луком и шафраном.",
-                "image": "url"
+                "image": "https://i.ibb.co/hJhKWRgm/2.jpg"
             },
             {
                 "stepNumber": 3,
                 "description": "Смешать лапшу с курицей и подавать.",
-                "image": "url"
+                "image": "https://i.ibb.co/BVYxST5s/3.jpg"
             }
         ]
     },

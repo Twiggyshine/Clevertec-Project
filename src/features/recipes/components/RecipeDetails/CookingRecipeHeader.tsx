@@ -29,21 +29,22 @@ const CookingRecipeHeader = ({
                 w='553px'
             />
             <Flex direction='column'>
+                <Flex gap='10px' wrap='wrap' mb='10px'>
+                    {category.map((i) => (
+                        <Tag key={i} colorScheme='green'>
+                            {i}
+                        </Tag>
+                    ))}
+
+                    <Flex gap='20px' fontWeight='bold'>
+                        <Text> {likesCount}</Text>
+                        <Text> {favCount}</Text>
+                    </Flex>
+                </Flex>
                 <Heading fontSize='36px' mb='10px'>
                     {title}
                 </Heading>
                 <Text mb='10px'>{description}</Text>
-                <Flex gap='10px' wrap='wrap' mb='10px'>
-                    {category.map((cat) => (
-                        <Tag key={cat} colorScheme='green'>
-                            {cat}
-                        </Tag>
-                    ))}
-                </Flex>
-                <Flex gap='20px' fontWeight='bold'>
-                    <Text> {likesCount}</Text>
-                    <Text> {favCount}</Text>
-                </Flex>
             </Flex>
         </Flex>
     </Box>
