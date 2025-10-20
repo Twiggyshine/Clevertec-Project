@@ -1,4 +1,17 @@
-import { Box, Flex, Input, Table, Tbody, Td, Text, Tr } from '@chakra-ui/react';
+import {
+    Box,
+    Flex,
+    NumberDecrementStepper,
+    NumberIncrementStepper,
+    NumberInput,
+    NumberInputField,
+    NumberInputStepper,
+    Table,
+    Tbody,
+    Td,
+    Text,
+    Tr,
+} from '@chakra-ui/react';
 
 const IngredientsTable: React.FC = () => (
     <Box w='668px' h='680px'>
@@ -12,14 +25,18 @@ const IngredientsTable: React.FC = () => (
                         <Text color='#2db100' textAlign='right'>
                             ПОРЦИЙ:
                         </Text>
-                        <Input
-                            type='number'
-                            defaultValue={1}
-                            width='90px'
-                            height='40px'
-                            border='1px solid #e2e8f0'
-                            borderRadius='6px'
-                        />
+                        <NumberInput defaultValue={1} min={0} max={10}>
+                            <NumberInputField
+                                width='90px'
+                                height='40px'
+                                border='1px solid #e2e8f0'
+                                borderRadius='6px'
+                            />
+                            <NumberInputStepper>
+                                <NumberIncrementStepper />
+                                <NumberDecrementStepper />
+                            </NumberInputStepper>
+                        </NumberInput>
                     </Flex>
                 </Td>
             </Tr>

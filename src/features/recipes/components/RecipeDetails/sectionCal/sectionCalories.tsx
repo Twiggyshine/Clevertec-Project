@@ -24,7 +24,7 @@ const SectionCalories = ({ nutrition }: SectionCaloriesProps) => (
         >
             * Калорийность на 1 порцию
         </Text>
-        <Flex h='176px' mb='40px'>
+        <Flex>
             <Flex gap='24px'>
                 <CalElement
                     topText='калорийность'
