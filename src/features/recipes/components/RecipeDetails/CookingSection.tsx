@@ -1,5 +1,6 @@
-import { Box, Flex, Heading, Image, Text, VStack } from '@chakra-ui/react';
+import { Box, VStack } from '@chakra-ui/react';
 
+import CookingSteps from '../cookingSteps/cookingSteps';
 import IngredientsTable from '../IngredientsTable/ingridTable';
 import Banner from './../AutorsBanner/banner';
 import RecipeHeader from './CookingRecipeHeader';
@@ -8,7 +9,8 @@ import SectionCalories from './sectionCal/sectionCalories';
 
 // const CookingSection = ({ recipe }: CookingSectionProps) => {
 //     if (!recipe) return null;
-//     const { title, description, image, category, likes, bookmarks } = recipe;
+//     const { title, description, image, category, likes, bookmarks, steps } = recipe;
+
 //     return (
 //         <Box mb='40px' mt='56px'>
 //             <RecipeHeader
@@ -19,44 +21,15 @@ import SectionCalories from './sectionCal/sectionCalories';
 //                 likesCount={likes}
 //                 favCount={bookmarks}
 //             />
-//             <VStack w='668px' >
+
+//             <VStack w='100%' maxW='668px' mx='auto' spacing='40px'>
 //                 <SectionCalories nutrition={recipe.nutritionValue} />
-//                 <IngredientsTable />
-//                 <Box mb='40px'>
-//                 <Heading fontSize='48px' fontWeight='500' >
-//                     Шаги приготовления
-//                 </Heading>
-//                 <VStack spacing='20px' align='stretch'>
-//                     {recipe.steps.map((step) => (
-//                         <Flex
-//                             key={step.stepNumber}
-//                             gap='20px'
-//                             // direction={{ base: 'column', md: 'row' }}
-//                             // alignItems={{ base: 'center', md: 'flex-start' }}
-//                         >
-//                             {step.image && (
-//                                 <Image
-//                                     src={step.image}
-//                                     alt={`Шаг ${step.stepNumber}`}
-//                                     boxSize={{ base: '100%', md: '200px' }}
-//                                     objectFit='cover'
-//                                     borderRadius='8px'
-//                                     flexShrink={0}
-//                                 />
-//                             )}
-//                             <Flex flex='1'>
-//                                 <Text fontWeight='bold' mb='8px' fontSize='lg'>
-//                                     Шаг {step.stepNumber}
-//                                 </Text>
-//                                 <Text fontSize='md' lineHeight='tall'>
-//                                     {step.description}
-//                                 </Text>
-//                             </Flex>
-//                         </Flex>
-//                     ))}
-//                 </VStack>
+//                 <Box w='100%'>
+//                     <IngredientsTable />
 //                 </Box>
+//                 <CookingSteps steps={steps} />
 //                 <Banner />
+
 //             </VStack>
 //         </Box>
 //     );
@@ -64,9 +37,21 @@ import SectionCalories from './sectionCal/sectionCalories';
 
 // export default CookingSection;
 
+// CookingSection.tsx
+
 const CookingSection = ({ recipe }: CookingSectionProps) => {
     if (!recipe) return null;
-    const { title, description, image, category, likes, bookmarks } = recipe;
+    const {
+        title,
+        description,
+        image,
+        category,
+        likes,
+        bookmarks,
+        nutritionValue,
+        ingredients,
+        steps,
+    } = recipe;
 
     return (
         <Box mb='40px' mt='56px'>
@@ -80,48 +65,13 @@ const CookingSection = ({ recipe }: CookingSectionProps) => {
             />
 
             <VStack w='100%' maxW='668px' mx='auto' spacing='40px'>
-                <SectionCalories nutrition={recipe.nutritionValue} />
+                <SectionCalories nutrition={nutritionValue} />
 
                 <Box w='100%'>
-                    <IngredientsTable />
+                    <IngredientsTable ingredients={ingredients} />
                 </Box>
 
-                <Box w='100%'>
-                    <Heading fontSize={{ base: '32px', md: '48px' }} fontWeight='500' mb='24px'>
-                        Шаги приготовления
-                    </Heading>
-
-                    <VStack spacing='20px' align='stretch'>
-                        {recipe.steps.map((step) => (
-                            <Flex
-                                key={step.stepNumber}
-                                gap='20px'
-                                direction={{ base: 'column', md: 'row' }}
-                                alignItems={{ base: 'center', md: 'flex-start' }}
-                            >
-                                {step.image && (
-                                    <Image
-                                        src={step.image}
-                                        alt={`Шаг ${step.stepNumber}`}
-                                        width={{ base: '100%', md: '200px' }}
-                                        height={{ base: '200px', md: '200px' }}
-                                        objectFit='cover'
-                                        borderRadius='8px'
-                                        flexShrink={0}
-                                    />
-                                )}
-                                <Box flex='1'>
-                                    <Text fontWeight='bold' mb='8px' fontSize='lg'>
-                                        Шаг {step.stepNumber}
-                                    </Text>
-                                    <Text fontSize='md' lineHeight='tall'>
-                                        {step.description}
-                                    </Text>
-                                </Box>
-                            </Flex>
-                        ))}
-                    </VStack>
-                </Box>
+                <CookingSteps steps={steps} />
 
                 <Banner />
             </VStack>

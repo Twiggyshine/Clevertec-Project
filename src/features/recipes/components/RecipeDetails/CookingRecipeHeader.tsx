@@ -1,5 +1,7 @@
 import { Box, Flex, Heading, Image, Tag, Text } from '@chakra-ui/react';
 
+import RecipeStats from '../../../shared/ui/recipeStatus/recipeStatus';
+
 interface RecipeHeaderProps {
     title: string;
     description: string;
@@ -29,7 +31,7 @@ const CookingRecipeHeader = ({
                 w='553px'
             />
             <Flex direction='column'>
-                <Flex gap='10px' wrap='wrap' mb='10px'>
+                <Flex gap='10px' wrap='wrap' mb='10px' justify='space-between'>
                     {category.map((i) => (
                         <Tag key={i} colorScheme='green'>
                             {i}
@@ -37,8 +39,7 @@ const CookingRecipeHeader = ({
                     ))}
 
                     <Flex gap='20px' fontWeight='bold'>
-                        <Text> {likesCount}</Text>
-                        <Text> {favCount}</Text>
+                        <RecipeStats likesCount={likesCount} favCount={favCount} />
                     </Flex>
                 </Flex>
                 <Heading fontSize='36px' mb='10px'>

@@ -1,11 +1,10 @@
-import { Box, Flex, IconButton, Image, Text, useBreakpointValue } from '@chakra-ui/react';
-
-import { CustomHeartIcon, CustomSmileIcon } from '~/assets/customIcon/CustomIcon';
+import { Box, Flex, Image, Text, useBreakpointValue } from '@chakra-ui/react';
 
 import { RecipeCardProps } from '../../../shared/sections/sectionJuciest/recipeCardProps';
 import RecommendsBadge from '../../../shared/ui/badgeRecom/badgeRecom';
 import ButtonsGroup from '../../../shared/ui/buttonsGroup.tsx/buttons';
 import { BadgeWithIcon } from '../../../shared/ui/customBadge/customBadge';
+import RecipeStats from '../../../shared/ui/recipeStatus/recipeStatus';
 
 export const RecipeCard = ({
     id,
@@ -71,37 +70,7 @@ export const RecipeCard = ({
                 <Flex justify='space-between' align='flex-start'>
                     {showBadge && <BadgeWithIcon category={category} imgUrl={imgUrl} />}
 
-                    <Flex align='center' gap='8px'>
-                        {likesCount !== undefined && likesCount > 0 && (
-                            <Flex align='center'>
-                                <IconButton
-                                    aria-label='Лайк'
-                                    icon={<CustomHeartIcon width='12px' height='12px' />}
-                                    variant='ghost'
-                                    isRound
-                                    size='sm'
-                                />
-                                <Text fontSize='sm' color='#2db100' fontWeight='600'>
-                                    {likesCount}
-                                </Text>
-                            </Flex>
-                        )}
-
-                        {favCount !== undefined && favCount > 0 && (
-                            <Flex align='center'>
-                                <IconButton
-                                    aria-label='Смайлик'
-                                    icon={<CustomSmileIcon width='12px' height='12px' />}
-                                    variant='ghost'
-                                    isRound
-                                    size='sm'
-                                />
-                                <Text fontSize='sm' color='#2db100' fontWeight='600'>
-                                    {favCount}
-                                </Text>
-                            </Flex>
-                        )}
-                    </Flex>
+                    <RecipeStats likesCount={likesCount} favCount={favCount} />
                 </Flex>
                 <Box>
                     <Text
@@ -132,4 +101,5 @@ export const RecipeCard = ({
         </Flex>
     );
 };
+
 export default RecipeCard;
