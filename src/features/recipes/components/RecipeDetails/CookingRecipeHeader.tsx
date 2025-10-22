@@ -1,12 +1,14 @@
-import { Box, Flex, Heading, Image, Tag, Text } from '@chakra-ui/react';
+import { Box, Flex, Heading, HStack, Image, Tag, Text } from '@chakra-ui/react';
 
+import type { CategoryPath } from '../../../../utils/categoryHelpers';
+import { getCategoryIconByPath, getCategoryNameByPath } from '../../../../utils/categoryHelpers';
 import RecipeStats from '../../../shared/ui/recipeStatus/recipeStatus';
 
 interface RecipeHeaderProps {
     title: string;
     description: string;
     image: string;
-    category: string[];
+    category: CategoryPath[];
     likesCount: number;
     favCount: number;
 }
@@ -32,11 +34,23 @@ const CookingRecipeHeader = ({
             />
             <Flex direction='column'>
                 <Flex gap='10px' wrap='wrap' mb='10px' justify='space-between'>
-                    {category.map((i) => (
-                        <Tag key={i} colorScheme='green'>
-                            {i}
-                        </Tag>
-                    ))}
+                    {category.map((path) => {
+                        const iconPath = getCategoryIconByPath(path); // теперь это string | undefined
+                        return (
+                            <Tag key={path} backgroundColor='#ffffd3'>
+                                <HStack spacing='8px'>
+                                    {iconPath && (
+                                        <Image
+                                            src={iconPath}
+                                            alt={getCategoryNameByPath(path)}
+                                            boxSize='20px'
+                                        />
+                                    )}
+                                    <Text>{getCategoryNameByPath(path)}</Text>
+                                </HStack>
+                            </Tag>
+                        );
+                    })}
 
                     <Flex gap='20px' fontWeight='bold'>
                         <RecipeStats likesCount={likesCount} favCount={favCount} />

@@ -43,7 +43,7 @@ const menuData: MenuItem[] = [
     },
     {
         category: 'Первые блюда',
-        path: 'first-courses',
+        path: 'first-dish',
         subcategory: [
             { name: 'Закуски', path: 'appetizers' },
             { name: 'Первые блюда', path: 'soups' },
@@ -58,7 +58,7 @@ const menuData: MenuItem[] = [
     },
     {
         category: 'Вторые блюда',
-        path: 'second-courses',
+        path: 'second-dish',
         subcategory: [
             { name: 'Закуски', path: 'appetizers' },
             { name: 'Первые блюда', path: 'soups' },
@@ -118,7 +118,7 @@ const menuData: MenuItem[] = [
     },
     {
         category: 'Детские блюда',
-        path: 'FirstDishIcon',
+        path: 'сhildren-dish',
         subcategory: [
             { name: 'Закуски', path: 'appetizers' },
             { name: 'Первые блюда', path: 'soups' },

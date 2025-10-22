@@ -2,6 +2,7 @@
     "user": {
         "avatar": "../../public/icons/recipeAvatar.svg",
         "name": "Сергей Разумов",
-        "email": "@serge25"
+        "email": "@serge25",
+        "followers": "124"
     }
 }

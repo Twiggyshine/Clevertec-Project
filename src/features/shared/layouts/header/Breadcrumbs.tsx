@@ -52,12 +52,10 @@ const Breadcrumbs = () => {
         );
     }
 
-    // Находим текущую категорию в menuData
     const categoryData = menuData.find(
         (item) => item.path === currentCategory || item.path.replace('-', '') === currentCategory,
     );
 
-    // Находим текущую подкатегорию
     const subcategoryData = categoryData?.subcategory.find(
         (sub) => sub.path === currentSubcategory,
     );

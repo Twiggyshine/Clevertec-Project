@@ -22,7 +22,7 @@ function App() {
     return (
         <MainLayout>
             <Routes>
-                <Route path='' element={<TheJuciestPage />} />
+                <Route path='/theJuciestPage' element={<TheJuciestPage />} />
                 <Route path='/vegan-cuisine' element={<VeganCuisinePage />} />
                 <Route path='/vegan-cuisine/:subcategory' element={<VeganCuisinePage />} />
                 <Route path='/:category/:subcategory/:id' element={<RecipePage />} />
