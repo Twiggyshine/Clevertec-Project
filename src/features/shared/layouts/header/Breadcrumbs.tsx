@@ -1,21 +1,32 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from '@chakra-ui/react';
+import { useSelector } from 'react-redux';
 import { Link, useLocation } from 'react-router';
 
 import menuData from '../../../../data/DataMenu';
+import { RootState } from '../../../../store/configure-store';
 
 const Breadcrumbs = () => {
     const location = useLocation();
     const pathParts = location.pathname.split('/').filter(Boolean);
+    const recipe = useSelector((state: RootState) =>
+        state.recipes.recipes.find((r) => r.id.toString() === id),
+    );
 
-    const isHomePage = location.pathname === '/';
-    const isJuicyPage = pathParts[0] === 'theJuciestPage';
-    const currentCategory = pathParts[0];
+    // если на главной — ничего не показываем
+    if (location.pathname === '/') return null;
 
-    const currentSubcategory = pathParts[1];
+    // ищем категорию и подкатегорию из menuData
+    const [category, subcategory, id] = pathParts;
 
-    if (isHomePage) {
-        return null;
-    }
+    const isJuicyPage = category === 'theJuciestPage';
+
+    const categoryData = menuData.find(
+        (item) => item.path === category || item.path.replace('-', '') === category,
+    );
+
+    const subcategoryData = categoryData?.subcategory.find((sub) => sub.path === subcategory);
+
+    // ищем рецепт по id
 
     if (isJuicyPage) {
         return (
@@ -31,34 +42,18 @@ const Breadcrumbs = () => {
                         fontSize='16px'
                         fontWeight='400'
                         color='rgba(0, 0, 0, 0.64)'
-                        whiteSpace='nowrap'
                     >
                         Главная
                     </BreadcrumbLink>
                 </BreadcrumbItem>
-                <BreadcrumbItem>
-                    <BreadcrumbLink
-                        as={Link}
-                        to='/theJuciestPage'
-                        fontSize='16px'
-                        fontWeight='400'
-                        isCurrentPage
-                        whiteSpace='nowrap'
-                    >
+                <BreadcrumbItem isCurrentPage>
+                    <BreadcrumbLink as={Link} to='/theJuciestPage' fontSize='16px' fontWeight='400'>
                         Самое сочное
                     </BreadcrumbLink>
                 </BreadcrumbItem>
             </Breadcrumb>
         );
     }
-
-    const categoryData = menuData.find(
-        (item) => item.path === currentCategory || item.path.replace('-', '') === currentCategory,
-    );
-
-    const subcategoryData = categoryData?.subcategory.find(
-        (sub) => sub.path === currentSubcategory,
-    );
 
     return (
         <Breadcrumb
@@ -72,6 +67,7 @@ const Breadcrumbs = () => {
                 },
             }}
         >
+            {/* Главная */}
             <BreadcrumbItem>
                 <BreadcrumbLink
                     as={Link}
@@ -79,12 +75,12 @@ const Breadcrumbs = () => {
                     fontSize='16px'
                     fontWeight='400'
                     color='rgba(0, 0, 0, 0.64)'
-                    whiteSpace='nowrap'
                 >
                     Главная
                 </BreadcrumbLink>
             </BreadcrumbItem>
 
+            {/* Категория */}
             {categoryData && (
                 <BreadcrumbItem>
                     <BreadcrumbLink
@@ -92,14 +88,14 @@ const Breadcrumbs = () => {
                         to={`/${categoryData.path}`}
                         fontSize='16px'
                         fontWeight='400'
-                        color={subcategoryData ? 'rgba(0, 0, 0, 0.64)' : '#000'}
-                        whiteSpace='nowrap'
+                        color={subcategoryData || recipe ? 'rgba(0, 0, 0, 0.64)' : '#000'}
                     >
                         {categoryData.category}
                     </BreadcrumbLink>
                 </BreadcrumbItem>
             )}
 
+            {/* Подкатегория */}
             {subcategoryData && (
                 <BreadcrumbItem>
                     <BreadcrumbLink
@@ -107,10 +103,24 @@ const Breadcrumbs = () => {
                         to={`/${categoryData?.path}/${subcategoryData.path}`}
                         fontSize='16px'
                         fontWeight='400'
-                        isCurrentPage
-                        whiteSpace='nowrap'
+                        color={recipe ? 'rgba(0, 0, 0, 0.64)' : '#000'}
                     >
                         {subcategoryData.name}
+                    </BreadcrumbLink>
+                </BreadcrumbItem>
+            )}
+
+            {/* Название рецепта */}
+            {recipe && (
+                <BreadcrumbItem isCurrentPage>
+                    <BreadcrumbLink
+                        as={Link}
+                        to={`/${category}/${subcategory}/${recipe.id}`}
+                        fontSize='16px'
+                        fontWeight='400'
+                        color='#000'
+                    >
+                        {recipe.title}
                     </BreadcrumbLink>
                 </BreadcrumbItem>
             )}

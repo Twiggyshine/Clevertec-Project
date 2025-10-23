@@ -35,7 +35,7 @@ const CookingRecipeHeader = ({
             <Flex direction='column'>
                 <Flex gap='10px' wrap='wrap' mb='10px' justify='space-between'>
                     {category.map((path) => {
-                        const iconPath = getCategoryIconByPath(path); // теперь это string | undefined
+                        const iconPath = getCategoryIconByPath(path);
                         return (
                             <Tag key={path} backgroundColor='#ffffd3'>
                                 <HStack spacing='8px'>
