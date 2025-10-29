@@ -1,0 +1,846 @@
+[
+    {
+        "id": "1",
+        "title": "Солянка с грибами",
+        "description": "Как раз после праздников, когда мясные продукты еще остались, но никто их уже не хочет, время варить солянку.",
+        "category": ["first-dish"],
+        "subcategory": ["soups"],
+        "image": "FirstDishIcon",
+        "bookmarks": 1,
+        "likes": 1,
+        "date": "2024-03-15T00:00:00Z",
+        "time": "45 минут",
+        "portions": 4,
+        "nutritionValue": {
+            "calories": 180,
+            "proteins": 8,
+            "fats": 6,
+            "carbohydrates": 25
+        },
+        "ingredients": [
+            { "title": "грибы", "count": "300", "measureUnit": "г" },
+            { "title": "лук", "count": "1", "measureUnit": "шт." },
+            { "title": "оливки", "count": "50", "measureUnit": "г" },
+            { "title": "томатная паста", "count": "2", "measureUnit": "ст. л." },
+            { "title": "специи", "count": "0", "measureUnit": "по вкусу" }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Обжарить лук и грибы до золотистого цвета.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Добавить томатную пасту и обжарить 2 минуты.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Залить водой, добавить оливки и специи.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 4,
+                "description": "Варить на медленном огне 30 минут.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "2",
+        "title": "Капустные котлеты",
+        "description": "Капустные котлеты по этому рецепту получаются необычайно пышными и невероятно вкусными. Мягкий вкус и лёгкая пряная нотка наверняка помогут сделать эти чудесные котлеты из капусты одним из ваших любимых овощных блюд.",
+        "category": ["vegan"],
+        "subcategory": ["second-dish", "snacks"],
+        "image": "VeganIcon",
+        "bookmarks": 1,
+        "likes": 2,
+        "date": "2024-03-10T00:00:00Z",
+        "time": "35 минут",
+        "portions": 4,
+        "nutritionValue": {
+            "calories": 150,
+            "proteins": 5,
+            "fats": 4,
+            "carbohydrates": 20
+        },
+        "ingredients": [
+            { "title": "капуста", "count": "300", "measureUnit": "г" },
+            { "title": "мука", "count": "50", "measureUnit": "г" },
+            { "title": "специи", "count": "0", "measureUnit": "по вкусу" }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Нарезать капусту и отварить.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Смешать с мукой и сформировать котлеты.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Обжарить до золотистой корочки.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "3",
+        "title": "Оладьи на кефире 'Пышные'",
+        "description": "Очень вкусные и нежные оладьи на кефире. Настоятельно рекомендую пышные кефирные оладьи на завтрак.",
+        "category": ["desserts"],
+        "subcategory": ["baking"],
+        "image": "DesertsIcon",
+        "bookmarks": 1,
+        "likes": 0,
+        "date": "2024-03-12T00:00:00Z",
+        "time": "25 минут",
+        "portions": 3,
+        "nutritionValue": {
+            "calories": 220,
+            "proteins": 6,
+            "fats": 8,
+            "carbohydrates": 35
+        },
+        "ingredients": [
+            { "title": "кефир", "count": "250", "measureUnit": "мл" },
+            { "title": "мука", "count": "200", "measureUnit": "г" },
+            { "title": "яйцо", "count": "1", "measureUnit": "шт." },
+            { "title": "сахар", "count": "2", "measureUnit": "ст. л." },
+            { "title": "сода", "count": "0.5", "measureUnit": "ч. л." }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Смешать кефир с яйцом и сахаром.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Добавить муку и соду, тщательно перемешать.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Жарить на разогретой сковороде с двух сторон.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "41",
+        "title": "Салат Здоровье",
+        "description": "Сельдерей очень полезен для здоровья, пора набираться витаминов. Не салат, а сплошное удовольствие:) Вкусный, необычный, а главное быстрый.",
+        "category": ["salads"],
+        "subcategory": ["vegetables"],
+        "image": "SalatIcon",
+        "bookmarks": 0,
+        "likes": 0,
+        "date": "2024-03-08T00:00:00Z",
+        "time": "15 минут",
+        "portions": 2,
+        "nutritionValue": {
+            "calories": 120,
+            "proteins": 3,
+            "fats": 5,
+            "carbohydrates": 15
+        },
+        "ingredients": [
+            { "title": "сельдерей", "count": "200", "measureUnit": "г" },
+            { "title": "морковь", "count": "1", "measureUnit": "шт." },
+            { "title": "яблоко", "count": "1", "measureUnit": "шт." },
+            { "title": "оливковое масло", "count": "2", "measureUnit": "ст. л." }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Натереть сельдерей и морковь на терке.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Нарезать яблоко кубиками.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Заправить оливковым маслом и перемешать.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "42",
+        "title": "Салат Здоровье",
+        "description": "Сельдерей очень полезен для здоровья, пора набираться витаминов. Не салат, а сплошное удовольствие:) Вкусный, необычный, а главное быстрый.",
+        "category": ["salads"],
+        "subcategory": ["vegetables"],
+        "image": "SalatIcon",
+        "bookmarks": 0,
+        "likes": 0,
+        "date": "2024-03-08T00:00:00Z",
+        "time": "15 минут",
+        "portions": 2,
+        "nutritionValue": {
+            "calories": 120,
+            "proteins": 3,
+            "fats": 5,
+            "carbohydrates": 15
+        },
+        "ingredients": [
+            { "title": "сельдерей", "count": "200", "measureUnit": "г" },
+            { "title": "морковь", "count": "1", "measureUnit": "шт." },
+            { "title": "яблоко", "count": "1", "measureUnit": "шт." },
+            { "title": "оливковое масло", "count": "2", "measureUnit": "ст. л." }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Натереть сельдерей и морковь на терке.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Нарезать яблоко кубиками.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Заправить оливковым маслом и перемешать.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "5",
+        "title": "Кнели со спагетти",
+        "description": "Как раз после праздников, когда мясные продукты еще остались, но никто их уже не хочет, время варить солянку.",
+        "category": ["second-dish"],
+        "subcategory": ["pasta"],
+        "image": "SecondDishIcon",
+        "bookmarks": 152,
+        "likes": 85,
+        "date": "2024-03-14T00:00:00Z",
+        "time": "35 минут",
+        "portions": 3,
+        "nutritionValue": {
+            "calories": 320,
+            "proteins": 18,
+            "fats": 12,
+            "carbohydrates": 40
+        },
+        "ingredients": [
+            { "title": "спагетти", "count": "200", "measureUnit": "г" },
+            { "title": "фарш куриный", "count": "300", "measureUnit": "г" },
+            { "title": "лук", "count": "1", "measureUnit": "шт." },
+            { "title": "специи", "count": "0", "measureUnit": "по вкусу" }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Приготовить фарш с луком и специями.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Сформировать кнели и отварить их.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Отварить спагетти до готовности.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 4,
+                "description": "Подавать кнели с спагетти.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "6",
+        "title": "Пряная ветчина по итальянски",
+        "description": "Как раз после праздников, когда мясные продукты еще остались, но никто их уже не хочет, время варить солянку.",
+        "category": ["second-dish"],
+        "subcategory": ["meat"],
+        "image": "SecondDishIcon",
+        "bookmarks": 257,
+        "likes": 159,
+        "date": "2024-03-13T00:00:00Z",
+        "time": "50 минут",
+        "portions": 4,
+        "nutritionValue": {
+            "calories": 280,
+            "proteins": 22,
+            "fats": 15,
+            "carbohydrates": 12
+        },
+        "ingredients": [
+            { "title": "ветчина", "count": "400", "measureUnit": "г" },
+            { "title": "пряные травы", "count": "2", "measureUnit": "ст. л." },
+            { "title": "чеснок", "count": "3", "measureUnit": "зубчиков" },
+            { "title": "оливковое масло", "count": "3", "measureUnit": "ст. л." }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Натереть ветчину чесноком и травами.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Обжарить на оливковом масле до румяной корочки.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Запекать в духовке 25 минут.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "7",
+        "title": "Лапша с курицей и шафраном",
+        "description": "Как раз после праздников, когда мясные продукты еще остались, но никто их уже не хочет, время варить солянку.",
+        "category": ["second-dish"],
+        "subcategory": ["pasta", "poultry-dish"],
+        "image": "https://i.ibb.co/TB6sv778/noodles.jpg",
+        "bookmarks": 342,
+        "likes": 258,
+        "date": "2024-03-08T00:00:00Z",
+        "time": "40 минут",
+        "portions": 4,
+        "nutritionValue": {
+            "calories": 400,
+            "proteins": 30,
+            "fats": 15,
+            "carbohydrates": 50
+        },
+        "ingredients": [
+            { "title": "лапша", "count": "200", "measureUnit": "г" },
+            { "title": "курица", "count": "300", "measureUnit": "г" },
+            { "title": "шафран", "count": "1", "measureUnit": "ч. л." },
+            { "title": "лук", "count": "1", "measureUnit": "шт." }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Отварить лапшу.",
+                "image": "https://i.ibb.co/G3MFRQBp/1.jpg"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Обжарить курицу с луком и шафраном.",
+                "image": "https://i.ibb.co/hJhKWRgm/2.jpg"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Смешать лапшу с курицей и подавать.",
+                "image": "https://i.ibb.co/BVYxST5s/3.jpg"
+            }
+        ]
+    },
+    {
+        "id": "8",
+        "title": "Том-ям с капустой кимчи",
+        "description": "Как раз после праздников, когда мясные продукты еще остались, но никто их уже не хочет, время варить солянку.",
+        "category": ["national"],
+        "subcategory": ["soups", "asian"],
+        "image": "NationalIcon",
+        "bookmarks": 324,
+        "likes": 124,
+        "date": "2024-03-11T00:00:00Z",
+        "time": "35 минут",
+        "portions": 3,
+        "nutritionValue": {
+            "calories": 180,
+            "proteins": 8,
+            "fats": 6,
+            "carbohydrates": 22
+        },
+        "ingredients": [
+            { "title": "капуста кимчи", "count": "200", "measureUnit": "г" },
+            { "title": "креветки", "count": "150", "measureUnit": "г" },
+            { "title": "кокосовое молоко", "count": "200", "measureUnit": "мл" },
+            { "title": "лимонная трава", "count": "2", "measureUnit": "стеблей" }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Приготовить бульон с лимонной травой.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Добавить кимчи и креветки.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Влить кокосовое молоко и варить 15 минут.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "9",
+        "title": "Картошка, тушенная с болгарским перцем и фасолью в томатном соусе",
+        "description": "Картошка, тушенная с болгарским перцем, фасолью, морковью и луком, - вариант сытного блюда на каждый день. Фасоль в данном случае заменяет мясо, делая рагу сытным и питательным. Чтобы сократить время приготовления, возьмём консервированную фасоль. Блюдо хоть и простое, но в полной мере наполнено ароматами и имеет выразительный вкус за счёт добавления томатной пасты",
+        "category": ["vegan", "second-dish"],
+        "subcategory": ["vegetables"],
+        "image": "SecondDishIcon",
+        "bookmarks": 1,
+        "likes": 1,
+        "date": "2024-03-09T00:00:00Z",
+        "time": "40 минут",
+        "portions": 2,
+        "nutritionValue": {
+            "calories": 250,
+            "proteins": 5,
+            "fats": 8,
+            "carbohydrates": 40
+        },
+        "ingredients": [
+            { "title": "картошка", "count": "4", "measureUnit": "шт." },
+            { "title": "болгарский перец", "count": "2", "measureUnit": "шт." },
+            { "title": "фасоль", "count": "200", "measureUnit": "г" },
+            { "title": "томатный соус", "count": "200", "measureUnit": "мл" }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Нарезать картошку и перец.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Обжарить овощи до мягкости.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Добавить фасоль и томатный соус, тушить 30 минут.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "10",
+        "title": "Картошка, тушенная с болгарским перцем и фасолью в томатном соусе",
+        "description": "Картошка, тушенная с болгарским перцем, фасолью, морковью и луком, - вариант сытного блюда на каждый день. Фасоль в данном случае заменяет мясо, делая рагу сытным и питательным. Чтобы сократить время приготовления, возьмём консервированную фасоль. Блюдо хоть и простое, но в полной мере наполнено ароматами и имеет выразительный вкус за счёт добавления томатной пасты",
+        "category": ["national"],
+        "subcategory": ["vegetables"],
+        "image": "NationalIcon",
+        "bookmarks": 152,
+        "likes": 85,
+        "date": "2024-03-07T00:00:00Z",
+        "time": "40 минут",
+        "portions": 2,
+        "nutritionValue": {
+            "calories": 250,
+            "proteins": 5,
+            "fats": 8,
+            "carbohydrates": 40
+        },
+        "ingredients": [
+            { "title": "картошка", "count": "4", "measureUnit": "шт." },
+            { "title": "болгарский перец", "count": "2", "measureUnit": "шт." },
+            { "title": "фасоль", "count": "200", "measureUnit": "г" },
+            { "title": "томатный соус", "count": "200", "measureUnit": "мл" }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Нарезать картошку и перец.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Обжарить овощи до мягкости.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Добавить фасоль и томатный соус, тушить 30 минут.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "11",
+        "title": "Картофельные рулетики с грибами",
+        "description": "Рекомендую всем приготовить постное блюдо из картофеля и грибов. Готовится это блюдо без яиц, без мяса и без сыра, из самых простых ингредиентов, а получается очень вкусно и сытно. Постный рецепт картофельных рулетиков с грибами",
+        "category": ["children"],
+        "subcategory": ["snacks"],
+        "image": "ChildrenIcon",
+        "bookmarks": 152,
+        "likes": 85,
+        "date": "2024-03-06T00:00:00Z",
+        "time": "30 минут",
+        "portions": 2,
+        "nutritionValue": {
+            "calories": 180,
+            "proteins": 4,
+            "fats": 6,
+            "carbohydrates": 28
+        },
+        "ingredients": [
+            { "title": "картошка", "count": "3", "measureUnit": "шт." },
+            { "title": "грибы", "count": "200", "measureUnit": "г" },
+            { "title": "мука", "count": "100", "measureUnit": "г" }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Отварить картошку и сделать пюре.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Обжарить грибы до готовности.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Сформировать рулетики и обжарить.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "12",
+        "title": "Том-ям с капустой кимчи",
+        "description": "Как раз после праздников, когда мясные продукты еще остались, но никто их уже не хочет, время варить солянку.",
+        "category": ["second-dish"],
+        "subcategory": ["soups", "asian"],
+        "image": "NationalIcon",
+        "bookmarks": 324,
+        "likes": 124,
+        "date": "2024-03-05T00:00:00Z",
+        "time": "35 минут",
+        "portions": 3,
+        "nutritionValue": {
+            "calories": 180,
+            "proteins": 8,
+            "fats": 6,
+            "carbohydrates": 22
+        },
+        "ingredients": [
+            { "title": "капуста кимчи", "count": "200", "measureUnit": "г" },
+            { "title": "креветки", "count": "150", "measureUnit": "г" },
+            { "title": "кокосовое молоко", "count": "200", "measureUnit": "мл" }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Приготовить бульон.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Добавить кимчи и креветки.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Влить кокосовое молоко и варить 15 минут.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "13",
+        "title": "Овощная лазанья из лаваша",
+        "description": "Большое, сытное блюдо для ценителей блюд без мяса! Такая лазанья готовится с овощным соусом и соусом бешамель, а вместо листов для лазаньи используется тонкий лаваш.",
+        "category": ["grill"],
+        "subcategory": ["baking", "vegetables"],
+        "image": "GrillIcon",
+        "bookmarks": 152,
+        "likes": 85,
+        "date": "2024-03-04T00:00:00Z",
+        "time": "1 час",
+        "portions": 1,
+        "nutritionValue": {
+            "calories": 300,
+            "proteins": 12,
+            "fats": 8,
+            "carbohydrates": 45
+        },
+        "ingredients": [
+            { "title": "лаваш", "count": "3", "measureUnit": "листов" },
+            { "title": "овощной соус", "count": "300", "measureUnit": "мл" },
+            { "title": "соус бешамель", "count": "200", "measureUnit": "мл" }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Приготовить соусы.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Сложить слои лазаньи.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Запекать 30 минут.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "14",
+        "title": "Тефтели из булгура и чечевицы, запечённые в томатном соусе",
+        "description": "Тефтели из булгура и чечевицы – яркие и питательные, отлично подходят для постного и вегетарианского меню. Тефтели получаются нежными, а также сочными и ароматными благодаря использованию томатного соуса и душистых пряностей.",
+        "category": ["second-dish"],
+        "subcategory": ["vegetables"],
+        "image": "SecondDishIcon",
+        "bookmarks": 152,
+        "likes": 85,
+        "date": "2024-03-03T00:00:00Z",
+        "time": "50 минут",
+        "portions": 4,
+        "nutritionValue": {
+            "calories": 200,
+            "proteins": 10,
+            "fats": 5,
+            "carbohydrates": 30
+        },
+        "ingredients": [
+            { "title": "булгур", "count": "150", "measureUnit": "г" },
+            { "title": "чечевица", "count": "100", "measureUnit": "г" },
+            { "title": "томатный соус", "count": "200", "measureUnit": "мл" }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Смешать булгур и чечевицу.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Сформировать тефтели и запечь.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Подавать с соусом.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "15",
+        "title": "Тефтели из булгура и чечевицы, запечённые в томатном соусе",
+        "description": "Тефтели из булгура и чечевицы – яркие и питательные, отлично подходят для постного и вегетарианского меню. Тефтели получаются нежными, а также сочными и ароматными благодаря использованию томатного соуса и душистых пряностей.",
+        "category": ["second-dish"],
+        "subcategory": ["vegetables"],
+        "image": "SecondDishIcon",
+        "bookmarks": 152,
+        "likes": 85,
+        "date": "2024-03-02T00:00:00Z",
+        "time": "50 минут",
+        "portions": 4,
+        "nutritionValue": {
+            "calories": 200,
+            "proteins": 10,
+            "fats": 5,
+            "carbohydrates": 30
+        },
+        "ingredients": [
+            { "title": "булгур", "count": "150", "measureUnit": "г" },
+            { "title": "чечевица", "count": "100", "measureUnit": "г" },
+            { "title": "томатный соус", "count": "200", "measureUnit": "мл" }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Смешать булгур и чечевицу.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Сформировать тефтели и запечь.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Подавать с соусом.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "16",
+        "title": "Чесночная картошка",
+        "description": "Такая картошечка украсит любой семейный обед! Все будут в полном восторге, очень вкусно! Аромат чеснока, хрустящая корочка на картошечке - просто объедение! Отличная идея для обеда или ужина, готовится просто!",
+        "category": ["national"],
+        "subcategory": ["side-dishes", "vegetables"],
+        "image": "NationalIcon",
+        "bookmarks": 324,
+        "likes": 124,
+        "date": "2024-03-01T00:00:00Z",
+        "time": "30 минут",
+        "portions": 2,
+        "nutritionValue": {
+            "calories": 220,
+            "proteins": 4,
+            "fats": 7,
+            "carbohydrates": 35
+        },
+        "ingredients": [
+            { "title": "картошка", "count": "6", "measureUnit": "шт." },
+            { "title": "чеснок", "count": "5", "measureUnit": "зубчиков" },
+            { "title": "масло", "count": "50", "measureUnit": "мл" }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Очистить и нарезать картошку.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Обжарить с чесноком.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Подавать горячей.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "17",
+        "title": "Пури",
+        "description": "Пури - это индийские жареные лепешки, которые готовятся из пресного теста. Рецепт лепешек пури требует самых доступных ингредиентов, и времени на приготовление хрустящих лепешек уйдет мало.",
+        "category": ["national"],
+        "subcategory": ["baking"],
+        "image": "NationalIcon",
+        "bookmarks": 324,
+        "likes": 124,
+        "date": "2024-02-28T00:00:00Z",
+        "time": "25 минут",
+        "portions": 4,
+        "nutritionValue": {
+            "calories": 180,
+            "proteins": 4,
+            "fats": 6,
+            "carbohydrates": 30
+        },
+        "ingredients": [
+            { "title": "мука", "count": "250", "measureUnit": "г" },
+            { "title": "вода", "count": "150", "measureUnit": "мл" },
+            { "title": "соль", "count": "0.5", "measureUnit": "ч. л." },
+            { "title": "масло", "count": "2", "measureUnit": "ст. л." }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Замесить тесто из муки, воды и соли.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Сформировать лепешки.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Обжарить в масле до золотистого цвета.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "18",
+        "title": "Бананово-молочное желе",
+        "description": "Молочное желе – это просто, вкусно и полезно, ведь для его приготовления в качестве основы используется молоко.",
+        "category": ["children"],
+        "subcategory": ["desserts"],
+        "image": "ChildrenIcon",
+        "bookmarks": 1,
+        "likes": 1,
+        "date": "2024-02-27T00:00:00Z",
+        "time": "20 минут",
+        "portions": 3,
+        "nutritionValue": {
+            "calories": 150,
+            "proteins": 4,
+            "fats": 3,
+            "carbohydrates": 25
+        },
+        "ingredients": [
+            { "title": "молоко", "count": "250", "measureUnit": "мл" },
+            { "title": "банан", "count": "2", "measureUnit": "шт." },
+            { "title": "желатин", "count": "10", "measureUnit": "г" },
+            { "title": "сахар", "count": "2", "measureUnit": "ст. л." }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Развести желатин в теплом молоке.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Добавить банан и сахар.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Разлить по формам и охладить.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "19",
+        "title": "Нежный сливочно-сырный крем для кексов",
+        "description": "Сливочно-сырным кремом можно украсить кексы, либо другую выпечку, а также этим кремом можно наполнить заварные пирожные.",
+        "category": ["children"],
+        "subcategory": ["desserts"],
+        "image": "ChildrenIcon",
+        "bookmarks": 1,
+        "likes": 2,
+        "date": "2024-02-26T00:00:00Z",
+        "time": "15 минут",
+        "portions": 6,
+        "nutritionValue": {
+            "calories": 280,
+            "proteins": 4,
+            "fats": 18,
+            "carbohydrates": 25
+        },
+        "ingredients": [
+            { "title": "сливочный сыр", "count": "200", "measureUnit": "г" },
+            { "title": "сливки", "count": "100", "measureUnit": "мл" },
+            { "title": "сахарная пудра", "count": "50", "measureUnit": "г" }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Взбить сливочный сыр с сахарной пудрой.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Добавить сливки и взбить до пышности.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Использовать для украшения выпечки.",
+                "image": "url"
+            }
+        ]
+    }
+]

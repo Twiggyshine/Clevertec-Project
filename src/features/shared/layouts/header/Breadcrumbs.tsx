@@ -8,6 +8,8 @@ import { RootState } from '../../../../store/configure-store';
 const Breadcrumbs = () => {
     const location = useLocation();
     const pathParts = location.pathname.split('/').filter(Boolean);
+
+    const [category, subcategory, id] = pathParts;
     const recipe = useSelector((state: RootState) =>
         state.recipes.recipes.find((r) => r.id.toString() === id),
     );
@@ -16,7 +18,6 @@ const Breadcrumbs = () => {
     if (location.pathname === '/') return null;
 
     // ищем категорию и подкатегорию из menuData
-    const [category, subcategory, id] = pathParts;
 
     const isJuicyPage = category === 'theJuciestPage';
 

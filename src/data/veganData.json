@@ -325,7 +325,11 @@
         "ingredients": [
             { "title": "лапша", "count": "200", "measureUnit": "г" },
             { "title": "курица", "count": "300", "measureUnit": "г" },
-            { "title": "шафран", "count": "1", "measureUnit": "ч. л." },
+            {
+                "title": "шафран",
+                "count": "1",
+                "measureUnit": "                                                     ч. л."
+            },
             { "title": "лук", "count": "1", "measureUnit": "шт." }
         ],
         "steps": [
