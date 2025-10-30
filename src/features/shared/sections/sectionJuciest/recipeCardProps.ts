@@ -4,10 +4,11 @@ export interface RecommendedBy {
 }
 
 export interface RecipeCardProps {
-    id: number;
+    id: string;
     title: string;
     description: string;
-    category: string;
+    category: string[];
+    subcategory: string[];
     likesCount?: number;
     favCount?: number;
     imgUrl: string;

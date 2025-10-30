@@ -7,7 +7,6 @@ import { BadgeWithIcon } from '../../../shared/ui/customBadge/customBadge';
 import RecipeStats from '../../../shared/ui/recipeStatus/recipeStatus';
 
 export const RecipeCard = ({
-    id,
     title,
     description,
     category,
@@ -38,7 +37,7 @@ export const RecipeCard = ({
         >
             <Box position='relative'>
                 <Image
-                    src={`/recipies/${id}.jpg`}
+                    src={imgUrl}
                     alt={title}
                     objectFit='cover'
                     height='100%'
@@ -47,7 +46,7 @@ export const RecipeCard = ({
                 />
                 {hideBadge && (
                     <Box position='absolute' top='10px' left='10px'>
-                        <BadgeWithIcon category={category} imgUrl={imgUrl} />
+                        <BadgeWithIcon category={category.join(', ')} imgUrl={imgUrl} />
                     </Box>
                 )}
                 {recommendedBy && (
@@ -68,7 +67,7 @@ export const RecipeCard = ({
                 flexDirection='column'
             >
                 <Flex justify='space-between' align='flex-start'>
-                    {showBadge && <BadgeWithIcon category={category} imgUrl={imgUrl} />}
+                    {showBadge && <BadgeWithIcon category={category.join(', ')} imgUrl={imgUrl} />}
 
                     <RecipeStats likesCount={likesCount} favCount={favCount} />
                 </Flex>
