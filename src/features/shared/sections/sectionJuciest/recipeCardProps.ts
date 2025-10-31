@@ -8,7 +8,7 @@ export interface RecipeCardProps {
     title: string;
     description: string;
     category: string[];
-    subcategory: string[];
+    subcategory?: string[];
     likesCount?: number;
     favCount?: number;
     imgUrl: string;
