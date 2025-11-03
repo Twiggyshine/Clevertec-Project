@@ -1,13 +1,33 @@
 import { Box, Flex, Grid, GridItem, Heading } from '@chakra-ui/react';
 import { Link as RouterLink } from 'react-router';
 
-import recipesData from '~/data/recipes-data.json';
+import recipesData from '~/data/recipiesData.json';
 
+import { Recipe } from '../../../../features/recipes/components/RecipeDetails/CookingSectionProops';
 import { RecipeCard } from '../../../recipes/components/recipeCard/recipeCard';
+import { RecipeCardProps } from '../../../shared/sections/sectionJuciest/recipeCardProps';
 import JuicyButton from '../../ui/buttonSelection/buttonSelection';
 
+// Функция для получения самых популярных рецептов по лайкам
+const getMostLikedRecipes = (recipes: Recipe[], minLikes = 100, limit = 4): RecipeCardProps[] =>
+    recipes
+        .filter((recipe) => recipe.likes >= minLikes)
+        .sort((a, b) => b.likes - a.likes)
+        .slice(0, limit)
+        .map((recipe) => ({
+            id: recipe.id,
+            title: recipe.title,
+            description: recipe.description,
+            category: recipe.category,
+            subcategory: recipe.subcategory,
+            imgUrl: recipe.imgUrl,
+            likesCount: recipe.likes,
+            favCount: recipe.bookmarks,
+        }));
+
 export const JuicyRecipesSection = () => {
-    const featuredRecipes = recipesData.theJuciest;
+    // Получаем самые популярные рецепты (4 штуки с минимум 100 лайков)
+    const featuredRecipes = getMostLikedRecipes(recipesData, 100, 4);
 
     return (
         <Box mb='40px' w='100%'>
@@ -46,11 +66,17 @@ export const JuicyRecipesSection = () => {
                 ))}
             </Grid>
             <Flex justifyContent='center'>
-                <JuicyButton test='juiciest-link-mobile' display={{ lg: 'none', base: 'flex' }}>
+                <JuicyButton
+                    test='juiciest-link-mobile'
+                    display={{ lg: 'none', base: 'flex' }}
+                    as={RouterLink}
+                    to='/theJuciestPage'
+                >
                     Вся подборка
                 </JuicyButton>
             </Flex>
         </Box>
     );
 };
+
 export default JuicyRecipesSection;

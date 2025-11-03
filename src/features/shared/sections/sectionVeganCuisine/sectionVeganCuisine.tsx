@@ -5,6 +5,8 @@ import { CustomCard } from '~/features/recipes/components/sliderCard/SliderCard'
 
 import { CustomInput } from './CookingElement';
 
+// сделать рандомные рецепты
+
 const VeganKitchenSection = ({
     headingText = 'Веганская кухня',
     descriptionText = 'Интересны не только убеждённым вегетарианцам, но и тем, кто хочет попробовать вегетарианскую диету и готовить вкусные вегетарианские блюда',
