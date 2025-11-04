@@ -32,7 +32,7 @@ const JuciestCards: React.FC = () => {
                 mb='16px'
             >
                 {jucRecipes.map((recipe) => (
-                    <GridItem key={recipe.id}>
+                    <GridItem>
                         <RecipeCard {...recipe} />
                     </GridItem>
                 ))}

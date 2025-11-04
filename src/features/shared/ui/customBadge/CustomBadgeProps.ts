@@ -1,5 +1,5 @@
 export interface BadgeWithIconProps {
-    category?: string;
+    category?: string | string[];
     imgUrl: string;
     bgColor?: string;
 }

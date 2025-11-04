@@ -1,9 +1,11 @@
-export interface RecipeCardProps {
-    id: number;
+export interface Recipe {
+    id: string;
     title: string;
     description: string;
-    category: string;
-    likesCount?: number;
-    favCount?: number;
+    category: string[];
+    bookmarks?: number;
+    likes?: number;
     imgUrl: string;
+    date: string;
+    time: string;
 }

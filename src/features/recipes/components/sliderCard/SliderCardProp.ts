@@ -1,9 +1,9 @@
-export interface CustomCardProps {
+export interface Recipe {
     title: string;
     description?: string;
-    category?: string;
-    likesCount?: number;
-    favCount?: number;
+    category?: string[] | string;
+    bookmarks?: number;
+    likes?: number;
     imgUrl: string;
     badgeColor?: string;
 }

@@ -1,9 +1,9 @@
 import { Box, Image, useBreakpointValue, VStack } from '@chakra-ui/react';
 
-import { Recipe } from '../../../../features/recipes/components/RecipeDetails/CookingSectionProops';
 import { BadgeWithIcon } from '../../../shared/ui/customBadge/customBadge';
 import { CustomCard } from './SliderCard';
-const SliderCards = ({ id, title, description, category, bookmarks, likes, imgUrl }: Recipe) => {
+import { Recipe } from './SliderCardProp';
+const SliderCards = ({ title, description, category, bookmarks, likes, imgUrl }: Recipe) => {
     const showDescription = useBreakpointValue({ xl: true, sm: false });
 
     const showBadge = useBreakpointValue({ base: true, '2xl': false });
@@ -12,7 +12,7 @@ const SliderCards = ({ id, title, description, category, bookmarks, likes, imgUr
         <VStack borderWidth='1px' borderRadius='10px' mb='40px'>
             <Box position='relative'>
                 <Image
-                    src={`../../../public/recipies/${id}.jpg`}
+                    src={imgUrl}
                     alt={title}
                     objectFit='cover'
                     width='100%'

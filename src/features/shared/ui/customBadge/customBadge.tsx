@@ -13,7 +13,7 @@ export const BadgeWithIcon = ({ category, imgUrl, bgColor = '#ffffd3' }: BadgeWi
         fontWeight='400'
     >
         <Flex align='center' gap='8px'>
-            <Image src={ImgCards[imgUrl as keyof typeof ImgCards]} alt={category} boxSize='16px' />
+            <Image src={ImgCards[imgUrl as keyof typeof ImgCards]} boxSize='16px' />
             <Text>{category}</Text>
         </Flex>
     </Badge>
