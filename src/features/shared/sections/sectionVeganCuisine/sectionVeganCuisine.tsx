@@ -1,7 +1,7 @@
 import { Box, Flex, Grid, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 
 import recipesData from '~/data/recipes-data.json';
-import { CustomCard } from '~/features/recipes/components/sliderCard/SliderCard';
+import { SliderCard } from '~/features/recipes/components/sliderCard/SliderCard';
 
 import { CustomInput } from './CookingElement';
 
@@ -60,7 +60,7 @@ const VeganKitchenSection = ({
             gap={{ '3xl': '24px', '2xl': '16px', sm: '12px' }}
         >
             {recipes.map((recipe) => (
-                <CustomCard
+                <SliderCard
                     key={recipe.id}
                     title={recipe.title}
                     description={recipe.description}

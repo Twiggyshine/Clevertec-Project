@@ -24,7 +24,7 @@ const menuData: MenuItem[] = [
             { name: 'Сыроедческие блюда', path: 'raw-food' },
             { name: 'Напитки', path: 'beverages' },
         ],
-        icon: NavIcons.SalatIcon,
+        icon: NavIcons.SaladsIcon,
     },
     {
         category: 'Закуски',
@@ -84,7 +84,7 @@ const menuData: MenuItem[] = [
             { name: 'Сыроедческие блюда', path: 'raw-food' },
             { name: 'Напитки', path: 'beverages' },
         ],
-        icon: NavIcons.DesertsIcon,
+        icon: NavIcons.DessertsIcon,
     },
     {
         category: 'Блюда на гриле',

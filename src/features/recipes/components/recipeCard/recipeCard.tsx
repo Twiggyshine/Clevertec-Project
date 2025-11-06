@@ -48,7 +48,7 @@ export const RecipeCard = ({
                     <Box position='absolute' top='10px' left='10px'>
                         <BadgeWithIcon
                             category={
-                                Array.isArray(category) ? category.join(', ') : category || ''
+                                Array.isArray(category) ? category : [category].filter(Boolean)
                             }
                             imgUrl={imgUrl}
                         />
@@ -75,7 +75,7 @@ export const RecipeCard = ({
                     {showBadge && (
                         <BadgeWithIcon
                             category={
-                                Array.isArray(category) ? category.join(', ') : category || ''
+                                Array.isArray(category) ? category : [category].filter(Boolean)
                             }
                             imgUrl={imgUrl}
                         />
