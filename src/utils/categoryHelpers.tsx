@@ -37,11 +37,11 @@ export const getCategoryNameByPath = (path: string): string => {
 
 export const getCategoryIconByPath = (path: CategoryPath): string | undefined => {
     const iconMap: Record<CategoryPath, string> = {
-        salats: NavIcons.SalatIcon,
+        salats: NavIcons.SaladsIcon,
         appetizers: NavIcons.SnakesIcon,
         'first-dish': NavIcons.FirstDishIcon,
         'second-dish': NavIcons.SecondDishIcon,
-        'desserts-bakery': NavIcons.DesertsIcon,
+        'desserts-bakery': NavIcons.DessertsIcon,
         'grilled-dishes': NavIcons.GrillIcon,
         'vegan-cuisine': NavIcons.VeganIcon,
         'Children-dish': NavIcons.ChildrenIcon,

@@ -1,6 +1,6 @@
 import { VStack } from '@chakra-ui/react';
 
-import recipesData from '../data/recipes-data.json';
+import recipesData from '../data/recipiesData.json';
 import NavPanel from '../features/shared/layouts/nav/NavPanel';
 import VegetarianCuisineCards from '../features/shared/layouts/pageComponents/veganCuisineCards';
 import VeganKitchenSection from '../features/shared/sections/sectionVeganCuisine/sectionVeganCuisine';
@@ -21,10 +21,7 @@ function veganCuisinePage() {
                 firstInputText='Домашние сырные палочки'
                 secondInputText='Панкейки'
                 thirdInputText='Воздушное банановое печенье на сковороде'
-                recipes={[
-                    ...recipesData.VeganCuisine.filter((recipe) => recipe.id === 9),
-                    ...recipesData.newRecipies.filter((recipe) => recipe.id === 2),
-                ]}
+                recipes={recipesData.filter((recipe) => recipe.id === '9' || recipe.id === '2')}
                 firstInputIcon={<img src='../../public/menuIcons/children.svg' alt='new icon' />}
                 secondInputIcon={<img src='../../public/menuIcons/national.svg' alt='new icon' />}
                 thirdInputIcon={<img src='../../public/menuIcons/vegan.svg' alt='new icon' />}

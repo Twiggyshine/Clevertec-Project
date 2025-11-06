@@ -1,11 +1,9 @@
 import { Box, Flex, Grid, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 
-import recipesData from '~/data/recipes-data.json';
+import recipesData from '~/data/recipiesData.json';
 import { SliderCard } from '~/features/recipes/components/sliderCard/SliderCard';
 
 import { CustomInput } from './CookingElement';
-
-// сделать рандомные рецепты
 
 const VeganKitchenSection = ({
     headingText = 'Веганская кухня',
@@ -16,10 +14,7 @@ const VeganKitchenSection = ({
     firstInputIcon = <img src='../../../public/menuIcons/second dish.svg' alt='search' />,
     secondInputIcon = <img src='../../../public/menuIcons/second dish.svg' alt='search' />,
     thirdInputIcon = <img src='../../../public/menuIcons/first dish.svg' alt='search' />,
-    recipes = [
-        ...recipesData.VeganCuisine.filter((recipe) => recipe.id === 9),
-        ...recipesData.newRecipies.filter((recipe) => recipe.id === 2),
-    ],
+    recipes = recipesData.filter((recipe) => recipe.id === '9' || recipe.id === '2'),
 }) => (
     <Box mb={{ sm: '100px', lg: '16px' }}>
         <Grid
@@ -66,8 +61,8 @@ const VeganKitchenSection = ({
                     description={recipe.description}
                     category={recipe.category}
                     imgUrl={recipe.imgUrl}
-                    bookmarks={recipe.likesCount}
-                    likes={recipe.favCount}
+                    bookmarks={recipe.bookmarks}
+                    likes={recipe.likes}
                     alwaysShowBadge={true}
                     border='1px solid #E6E6E6'
                     borderRadius='8px'

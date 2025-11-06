@@ -3,7 +3,7 @@
         "id": "1",
         "title": "Солянка с грибами",
         "description": "Как раз после праздников, когда мясные продукты еще остались, но никто их уже не хочет, время варить солянку.",
-        "category": ["first-dish"],
+        "category": ["first-dish", "vegan"],
         "subcategory": ["soups"],
         "imgUrl": "https://i.ibb.co/JLwp9fc/44.jpg",
         "bookmarks": 1,

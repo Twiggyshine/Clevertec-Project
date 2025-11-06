@@ -15,8 +15,15 @@ const categoryIcons: Record<string, keyof typeof ImgCards> = {
 };
 
 export const BadgeWithIcon = ({ category, bgColor = '#ffffd3' }: BadgeWithIconProps) => {
-    const categoriesArray = Array.isArray(category) ? category : [category];
-    const categories = categoriesArray.filter((cat): cat is string => !!cat);
+    console.log(
+        'DEBUG category:',
+        category,
+        'type:',
+        typeof category,
+        'isArray:',
+        Array.isArray(category),
+    );
+    const categories = category?.filter(Boolean) || [];
 
     if (categories.length === 0) return null;
 
