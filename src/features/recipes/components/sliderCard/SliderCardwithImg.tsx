@@ -1,7 +1,7 @@
 import { Box, Image, useBreakpointValue, VStack } from '@chakra-ui/react';
 
 import { BadgeWithIcon } from '../../../shared/ui/customBadge/customBadge';
-import { CustomCard } from './SliderCard';
+import { SliderCard } from './SliderCard';
 import { Recipe } from './SliderCardProp';
 const SliderCards = ({ title, description, category, bookmarks, likes, imgUrl }: Recipe) => {
     const showDescription = useBreakpointValue({ xl: true, sm: false });
@@ -24,12 +24,12 @@ const SliderCards = ({ title, description, category, bookmarks, likes, imgUrl }:
                     </Box>
                 )}
             </Box>
-            <CustomCard
+            <SliderCard
                 title={title}
                 description={showDescription ? description : undefined}
                 category={category}
-                likesCount={bookmarks}
-                favCount={likes}
+                bookmarks={bookmarks}
+                likes={likes}
                 imgUrl={imgUrl}
                 badgeColor='#d7ff94'
                 p={{ '3xl': '16px 24px 20px 24px', sm: '8px 8px 4px 8px', lg: '12px' }}

@@ -7,7 +7,7 @@ import { Navigation } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
 import recipesData from '~/data/recipiesData.json';
-import SliderCards from '~/features/recipes/components/sliderCard/SliderCardwithPic';
+import SliderCards from '~/features/recipes/components/sliderCard/SliderCardwithImg';
 
 import { Recipe } from './RecipeCardProps';
 

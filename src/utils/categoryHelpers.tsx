@@ -54,3 +54,5 @@ export const getCategoryIconByPath = (path: CategoryPath): string | undefined =>
 
     return iconMap[path];
 };
+
+// поменять
