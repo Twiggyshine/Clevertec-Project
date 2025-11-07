@@ -46,12 +46,7 @@ export const RecipeCard = ({
                 />
                 {hideBadge && (
                     <Box position='absolute' top='10px' left='10px'>
-                        <BadgeWithIcon
-                            category={
-                                Array.isArray(category) ? category : [category].filter(Boolean)
-                            }
-                            imgUrl={imgUrl}
-                        />
+                        <BadgeWithIcon category={category} imgUrl={imgUrl} />
                     </Box>
                 )}
                 {recommendedBy && (
@@ -72,14 +67,7 @@ export const RecipeCard = ({
                 flexDirection='column'
             >
                 <Flex justify='space-between' align='flex-start'>
-                    {showBadge && (
-                        <BadgeWithIcon
-                            category={
-                                Array.isArray(category) ? category : [category].filter(Boolean)
-                            }
-                            imgUrl={imgUrl}
-                        />
-                    )}
+                    {showBadge && <BadgeWithIcon category={category} imgUrl={imgUrl} />}
 
                     <RecipeStats likesCount={likesCount} favCount={favCount} />
                 </Flex>

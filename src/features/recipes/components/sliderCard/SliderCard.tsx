@@ -13,6 +13,7 @@ export const SliderCard = chakra(
         likes,
         badgeColor,
         alwaysShowBadge = false,
+        imgUrl,
         ...props
     }: Recipe & { alwaysShowBadge?: boolean }) => {
         const showBadge = useBreakpointValue({

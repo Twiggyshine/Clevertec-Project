@@ -6,15 +6,15 @@ import CookingSteps from '../cookingSteps/cookingSteps';
 import IngredientsTable from '../IngredientsTable/ingridTable';
 import Banner from './../AutorsBanner/banner';
 import RecipeHeader from './CookingRecipeHeader';
-import { CookingSectionProps } from './CookingSectionProops';
+import { Recipe as RecipeType } from './CookingSectionProops';
 import SectionCalories from './sectionCal/sectionCalories';
 
-const CookingSection = ({ recipe }: CookingSectionProps) => {
+const CookingSection = ({ recipe }: { recipe: RecipeType }) => {
     if (!recipe) return null;
     const {
         title,
         description,
-        image,
+        imgUrl,
         category,
         likes,
         bookmarks,
@@ -28,7 +28,7 @@ const CookingSection = ({ recipe }: CookingSectionProps) => {
             <RecipeHeader
                 title={title}
                 description={description}
-                image={image}
+                image={imgUrl}
                 category={category as CategoryPath[]}
                 likesCount={likes}
                 favCount={bookmarks}

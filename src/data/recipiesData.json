@@ -3,7 +3,7 @@
         "id": "1",
         "title": "Солянка с грибами",
         "description": "Как раз после праздников, когда мясные продукты еще остались, но никто их уже не хочет, время варить солянку.",
-        "category": ["first-dish", "vegan"],
+        "category": ["first-dish"],
         "subcategory": ["soups"],
         "imgUrl": "https://i.ibb.co/JLwp9fc/44.jpg",
         "bookmarks": 1,
@@ -839,6 +839,204 @@
             {
                 "stepNumber": 3,
                 "description": "Использовать для украшения выпечки.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "20",
+        "title": "Грибной крем-суп с трюфельным маслом",
+        "description": "Нежный и ароматный крем-суп из лесных грибов с ноткой трюфеля, который согреет в холодный день и поразит изысканным вкусом.",
+        "category": ["first-dish"],
+        "subcategory": ["soups", "cream-soups"],
+        "imgUrl": "https://i.ibb.co/8gLZz5Q/mushroom-cream-soup.jpg",
+        "bookmarks": 3,
+        "likes": 5,
+        "date": "2024-03-20T00:00:00Z",
+        "time": "35 минут",
+        "portions": 4,
+        "nutritionValue": {
+            "calories": 210,
+            "proteins": 6,
+            "fats": 12,
+            "carbohydrates": 18
+        },
+        "ingredients": [
+            { "title": "шампиньоны", "count": "400", "measureUnit": "г" },
+            { "title": "лук репчатый", "count": "1", "measureUnit": "шт." },
+            { "title": "чеснок", "count": "2", "measureUnit": "зубчика" },
+            { "title": "сливки 20%", "count": "200", "measureUnit": "мл" },
+            { "title": "картофель", "count": "2", "measureUnit": "шт." },
+            { "title": "оливковое масло", "count": "2", "measureUnit": "ст. л." },
+            { "title": "трюфельное масло", "count": "1", "measureUnit": "ч. л." },
+            { "title": "соль", "count": "0", "measureUnit": "по вкусу" },
+            { "title": "перец черный", "count": "0", "measureUnit": "по вкусу" },
+            { "title": "зелень петрушки", "count": "0", "measureUnit": "для подачи" }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Лук и чеснок мелко нарезать, грибы нарезать пластинками.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "В кастрюле разогреть оливковое масло, обжарить лук и чеснок до прозрачности 3-4 минуты.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Добавить грибы и обжаривать до золотистого цвета 7-8 минут.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 4,
+                "description": "Картофель очистить, нарезать кубиками и добавить к грибам. Залить 1 литром воды, посолить и варить 15 минут до мягкости картофеля.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 5,
+                "description": "Погружным блендером измельчить суп до кремовой консистенции.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 6,
+                "description": "Добавить сливки и трюфельное масло, прогреть 2-3 минуты не доводя до кипения.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 7,
+                "description": "Подавать, украсив свежей петрушкой и сбрызнув трюфельным маслом.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "21",
+        "title": "Шоколадный мусс с малиной",
+        "description": "Воздушный шоколадный мусс с яркой кислинкой свежей малины - идеальный десерт для настоящих гурманов.",
+        "category": ["desserts"],
+        "subcategory": ["mousses", "chocolate"],
+        "imgUrl": "https://i.ibb.co/8c6L8v9/chocolate-mousse.jpg",
+        "bookmarks": 7,
+        "likes": 12,
+        "date": "2024-03-18T00:00:00Z",
+        "time": "30 минут + охлаждение",
+        "portions": 4,
+        "nutritionValue": {
+            "calories": 280,
+            "proteins": 5,
+            "fats": 18,
+            "carbohydrates": 25
+        },
+        "ingredients": [
+            { "title": "горький шоколад", "count": "150", "measureUnit": "г" },
+            { "title": "сливки 33%", "count": "200", "measureUnit": "мл" },
+            { "title": "яйцо", "count": "2", "measureUnit": "шт." },
+            { "title": "сахар", "count": "50", "measureUnit": "г" },
+            { "title": "малина свежая", "count": "150", "measureUnit": "г" },
+            { "title": "сахарная пудра", "count": "0", "measureUnit": "для украшения" }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Шоколад растопить на водяной бане, дать немного остыть.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "Отделить белки от желтков. Белки взбить с сахаром в крепкую пену.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Сливки взбить до мягких пиков.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 4,
+                "description": "Аккуратно смешать растопленный шоколад с желтками, затем со взбитыми сливками и белками.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 5,
+                "description": "Разлить по креманкам и охладить 4 часа.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 6,
+                "description": "Подавать украшенным свежей малиной и сахарной пудрой.",
+                "image": "url"
+            }
+        ]
+    },
+    {
+        "id": "22",
+        "title": "Карри с нутом и шпинатом",
+        "description": "Ароматное и сытное веганское карри с нутом, шпинатом и кокосовым молоком, богатое белком и специями.",
+        "category": ["vegan"],
+        "subcategory": ["main-dish", "asian", "curry"],
+        "imgUrl": "https://i.ibb.co/8c6L8v9/chickpea-curry.jpg",
+        "bookmarks": 89,
+        "likes": 156,
+        "date": "2024-03-28T00:00:00Z",
+        "time": "25 минут",
+        "portions": 3,
+        "nutritionValue": {
+            "calories": 210,
+            "proteins": 9,
+            "fats": 8,
+            "carbohydrates": 28
+        },
+        "ingredients": [
+            { "title": "нут консервированный", "count": "400", "measureUnit": "г" },
+            { "title": "шпинат свежий", "count": "200", "measureUnit": "г" },
+            { "title": "кокосовое молоко", "count": "200", "measureUnit": "мл" },
+            { "title": "лук репчатый", "count": "1", "measureUnit": "шт." },
+            { "title": "чеснок", "count": "2", "measureUnit": "зубчика" },
+            { "title": "имбирь свежий", "count": "1", "measureUnit": "см" },
+            { "title": "помидор", "count": "2", "measureUnit": "шт." },
+            { "title": "куркума", "count": "1", "measureUnit": "ч. л." },
+            { "title": "зира", "count": "1", "measureUnit": "ч. л." },
+            { "title": "кориандр молотый", "count": "1", "measureUnit": "ч. л." },
+            { "title": "оливковое масло", "count": "2", "measureUnit": "ст. л." },
+            { "title": "соль", "count": "0", "measureUnit": "по вкусу" },
+            { "title": "перец чили", "count": "0", "measureUnit": "по вкусу" }
+        ],
+        "steps": [
+            {
+                "stepNumber": 1,
+                "description": "Лук, чеснок и имбирь мелко нарезать. Помидоры нарезать кубиками.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 2,
+                "description": "В глубокой сковороде разогреть оливковое масло, обжарить лук до прозрачности 3-4 минуты.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 3,
+                "description": "Добавить чеснок, имбирь и специи, обжаривать 1 минуту до аромата.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 4,
+                "description": "Добавить помидоры и готовить 5 минут до мягкости.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 5,
+                "description": "Влить кокосовое молоко, добавить нут и тушить 10 минут.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 6,
+                "description": "Добавить шпинат и готовить 2-3 минуты до увядания.",
+                "image": "url"
+            },
+            {
+                "stepNumber": 7,
+                "description": "Подавать с рисом или лепешкой, украсив свежей кинзой.",
                 "image": "url"
             }
         ]
