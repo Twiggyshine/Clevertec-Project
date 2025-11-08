@@ -28,6 +28,9 @@ export const SliderCard = chakra(
                 flex='1'
                 justify='space-between'
                 transition='all 0.3s ease'
+                border='1px solid #E6E6E6'
+                borderRadius='8px'
+                p={{ '3xl': '24px 24px 20px 24px', md: '16px', sm: '12px' }}
                 _hover={{
                     boxShadow:
                         '0 2px 4px -1px rgba(32, 126, 0, 0.06), 0 4px 6px -1px rgba(32, 126, 0, 0.1)',

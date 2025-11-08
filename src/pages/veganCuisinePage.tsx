@@ -1,6 +1,5 @@
 import { VStack } from '@chakra-ui/react';
 
-import recipesData from '../data/recipiesData.json';
 import NavPanel from '../features/shared/layouts/nav/NavPanel';
 import VegetarianCuisineCards from '../features/shared/layouts/pageComponents/veganCuisineCards';
 import VeganKitchenSection from '../features/shared/sections/sectionVeganCuisine/sectionVeganCuisine';
@@ -15,17 +14,7 @@ function veganCuisinePage() {
             />
             <VeganMenu />
             <VegetarianCuisineCards />
-            <VeganKitchenSection
-                headingText='Десерты, выпечка'
-                descriptionText='Без них невозможно представить себе ни современную, ни традиционную  кулинарию. Пироги и печенья, блины, пончики, вареники и, конечно, хлеб - рецепты изделий из теста многообразны и невероятно популярны.'
-                firstInputText='Домашние сырные палочки'
-                secondInputText='Панкейки'
-                thirdInputText='Воздушное банановое печенье на сковороде'
-                recipes={recipesData.filter((recipe) => recipe.id === '9' || recipe.id === '2')}
-                firstInputIcon={<img src='../../public/menuIcons/children.svg' alt='new icon' />}
-                secondInputIcon={<img src='../../public/menuIcons/national.svg' alt='new icon' />}
-                thirdInputIcon={<img src='../../public/menuIcons/vegan.svg' alt='new icon' />}
-            />
+            <VeganKitchenSection />
         </VStack>
     );
 }

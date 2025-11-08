@@ -110,9 +110,10 @@ const RandomKitchenSection = () => {
 
     // ✅ Рандом для CustomInput
     const randomInputs = useMemo(() => {
-        if (!filteredRecipes.length) return [];
-        return [...filteredRecipes].sort(() => Math.random() - 0.5).slice(0, 3);
-    }, [filteredRecipes]);
+        const categoryRecipes = recipesData.filter((r) => r.category.includes(category));
+
+        return [...categoryRecipes].sort(() => Math.random() - 0.5).slice(0, 3); // ✅ именно 3
+    }, [category]);
 
     if (!category) return null; // пока грузится категория
 
