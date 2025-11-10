@@ -123,7 +123,7 @@ const RandomKitchenSection = () => {
             <Grid
                 templateColumns={{
                     xl: '1fr 1fr 2fr',
-                    lg: '1fr 2fr 3fr',
+                    lg: '1fr 1fr 3fr',
                     md: '1fr 1fr 2fr',
                     sm: '1fr',
                 }}
@@ -135,7 +135,7 @@ const RandomKitchenSection = () => {
                     as='h1'
                     fontSize={{ '2xl': '48px', md: '36px', sm: '24px' }}
                     fontWeight='500'
-                    gridColumn={{ '3xl': '1 / 2', '2xl': '1 / 2', md: '1 / 2', sm: '1 / 2' }}
+                    gridColumn={{ sm: '1 / 2' }}
                 >
                     {categoryHeadings[category]}
                 </Heading>
@@ -145,7 +145,7 @@ const RandomKitchenSection = () => {
                     fontWeight='500'
                     color='rgba(0, 0, 0, 0.64)'
                     lineHeight='150%'
-                    gridColumn={{ xl: '3 / 4' }}
+                    gridColumn={{ '3xl': '3 / 4', lg: '3 / 4', sm: '1   / 4' }}
                     mb={{ sm: '16px', xl: '0px' }}
                     whiteSpace='normal'
                     overflow='visible'
