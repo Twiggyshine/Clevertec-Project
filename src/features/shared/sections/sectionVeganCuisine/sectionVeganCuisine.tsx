@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, SimpleGrid, Text } from '@chakra-ui/react';
+import { Box, Flex, Grid, Heading, SimpleGrid, Text } from '@chakra-ui/react';
 // const VeganKitchenSection = ({
 //     headingText = 'Веганская кухня',
 //     descriptionText = 'Интересны не только убеждённым вегетарианцам, но и тем, кто хочет попробовать вегетарианскую диету и готовить вкусные вегетарианские блюда',
@@ -88,10 +88,11 @@ const categoryHeadings: Record<string, string> = {
 };
 
 const categoryDescriptions: Record<string, string> = {
-    vegan: 'Вкусные рецепты без продуктов животного происхождения',
+    vegan: 'Интересны не только убеждённым вегетарианцам, но и тем, кто хочет  попробовать вегетарианскую диету и готовить вкусные  вегетарианские блюда.',
     'second-dish': 'Горячие и сытные блюда на каждый день',
     'first-dish': 'Супы и бульоны на любой вкус',
-    desserts: 'Сладкие рецепты для удовольствия',
+    desserts:
+        'Без них невозможно представить себе ни современную, ни традиционную  кулинарию. Пироги и печенья, блины, пончики, вареники и, конечно, хлеб - рецепты изделий из теста многообразны и невероятно популярны.',
 };
 
 const RandomKitchenSection = () => {
@@ -115,21 +116,59 @@ const RandomKitchenSection = () => {
         return [...categoryRecipes].sort(() => Math.random() - 0.5).slice(0, 3); // ✅ именно 3
     }, [category]);
 
-    if (!category) return null; // пока грузится категория
+    if (!category) return null;
 
     return (
-        <Box mb='100px'>
-            <Heading fontSize='48px' fontWeight='500'>
-                {categoryHeadings[category]}
-            </Heading>
+        <Box mb={{ sm: '100px', lg: '16px' }}>
+            <Grid
+                templateColumns={{
+                    xl: '1fr 1fr 2fr',
+                    lg: '1fr 2fr 3fr',
+                    md: '1fr 1fr 2fr',
+                    sm: '1fr',
+                }}
+                gap='24px'
+                alignItems='center'
+                mb='24px'
+            >
+                <Heading
+                    as='h1'
+                    fontSize={{ '2xl': '48px', md: '36px', sm: '24px' }}
+                    fontWeight='500'
+                    gridColumn={{ '3xl': '1 / 2', '2xl': '1 / 2', md: '1 / 2', sm: '1 / 2' }}
+                >
+                    {categoryHeadings[category]}
+                </Heading>
 
-            <Text color='rgba(0,0,0,.64)' mb='24px'>
-                {categoryDescriptions[category]}
-            </Text>
+                <Text
+                    fontSize='16px'
+                    fontWeight='500'
+                    color='rgba(0, 0, 0, 0.64)'
+                    lineHeight='150%'
+                    gridColumn={{ xl: '3 / 4' }}
+                    mb={{ sm: '16px', xl: '0px' }}
+                    whiteSpace='normal'
+                    overflow='visible'
+                    textOverflow='initial'
+                >
+                    {categoryDescriptions[category]}
+                </Text>
+            </Grid>
 
-            <SimpleGrid columns={{ md: 3 }} gap='16px'>
+            <SimpleGrid
+                templateColumns={{ '3xl': '1fr 1fr 2fr', md: '1fr 1fr 1fr' }}
+                gap={{ '3xl': '24px', '2xl': '16px', sm: '12px' }}
+            >
                 {filteredRecipes.map((recipe) => (
-                    <SliderCard key={recipe.id} {...recipe} />
+                    <SliderCard
+                        key={recipe.id}
+                        {...recipe}
+                        alwaysShowBadge={true}
+                        border='1px solid #E6E6E6'
+                        borderRadius='8px'
+                        badgeColor='#ffffd3'
+                        p={{ '3xl': '24px 24px 20px 24px', md: '16px', sm: '12px' }}
+                    />
                 ))}
 
                 <Flex direction='column' gap='12px'>
