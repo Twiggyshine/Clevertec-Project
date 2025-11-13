@@ -1,6 +1,5 @@
 import { Box, VStack } from '@chakra-ui/react';
 
-import type { CategoryPath } from '../../../../utils/categoryHelpers';
 import RecipesSlider from '../../../shared/sections/sectionNewRecipies/Slider';
 import CookingSteps from '../cookingSteps/cookingSteps';
 import IngredientsTable from '../IngredientsTable/ingridTable';
@@ -28,8 +27,8 @@ const CookingSection = ({ recipe }: { recipe: RecipeType }) => {
             <RecipeHeader
                 title={title}
                 description={description}
-                image={imgUrl}
-                category={category as CategoryPath[]}
+                imgUrl={imgUrl}
+                category={category}
                 likesCount={likes}
                 favCount={bookmarks}
             />

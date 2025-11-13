@@ -12,10 +12,11 @@ import SliderCards from '~/features/recipes/components/sliderCard/SliderCardwith
 import { Recipe } from './RecipeCardProps';
 
 const getNewestRecipes = (recipes: Recipe[], limit = 8) =>
-    recipes.sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()).slice(0, limit);
+    [...recipes]
+        .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
+        .slice(0, limit);
 
 const RecipesSlider = () => {
-    // Получаем 8 самых новых рецептов
     const newRecipes = getNewestRecipes(recipesData, 8);
     const isDesktop = useBreakpointValue({ base: false, xl: true });
 

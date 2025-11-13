@@ -4,7 +4,7 @@ import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Route, Routes } from 'react-router';
 
-import recipesData from '../data/veganData.json';
+import recipesData from '../data/recipiesData.json';
 import MainLayout from '../features/shared/layouts/pageComponents/mainLayout';
 import HomePage from '../pages/mainPage';
 import RecipePage from '../pages/recipePage';

@@ -1,3 +1,4 @@
+import { Box } from '@chakra-ui/react';
 import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 
@@ -18,7 +19,7 @@ const RecipePage = () => {
         ),
     );
 
-    return <CookingSection recipe={recipe} />;
+    return recipe ? <CookingSection recipe={recipe} /> : <Box>Recipe not found</Box>;
 };
 
 export default RecipePage;
