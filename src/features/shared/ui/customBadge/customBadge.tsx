@@ -14,6 +14,17 @@ const categoryIcons: Record<string, keyof typeof ImgCards> = {
     grill: 'GrillIcon',
 };
 
+const categoryTitles: Record<string, string> = {
+    'first-dish': 'Первые блюда',
+    'second-dish': 'Вторые блюда',
+    vegan: 'Веганские блюда',
+    desserts: 'Десерты',
+    salads: 'Салаты',
+    national: 'Национальные блюда',
+    children: 'Детское меню',
+    grill: 'Гриль',
+};
+
 export const BadgeWithIcon = ({ category, bgColor = '#ffffd3' }: BadgeWithIconProps) => {
     const categories = category?.filter(Boolean) || [];
 
@@ -24,6 +35,8 @@ export const BadgeWithIcon = ({ category, bgColor = '#ffffd3' }: BadgeWithIconPr
             {categories.map((cat) => {
                 const iconKey = categoryIcons[cat];
                 const iconSrc = iconKey ? ImgCards[iconKey] : null;
+
+                const title = categoryTitles[cat] || cat;
 
                 return (
                     <Badge
@@ -38,7 +51,7 @@ export const BadgeWithIcon = ({ category, bgColor = '#ffffd3' }: BadgeWithIconPr
                     >
                         <Flex align='center' gap='8px'>
                             {iconSrc && <Image src={iconSrc} boxSize='16px' />}
-                            <Text>{cat}</Text>
+                            <Text>{title}</Text>
                         </Flex>
                     </Badge>
                 );

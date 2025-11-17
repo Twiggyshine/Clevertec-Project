@@ -1,15 +1,33 @@
-import { Box, Flex, Grid, GridItem } from '@chakra-ui/react';
+import { Box, Flex, Grid, GridItem, Heading } from '@chakra-ui/react';
+import { Link as RouterLink } from 'react-router';
 
 import recipesData from '~/data/recipiesData.json';
 
-import { Recipe } from '../../../../features/recipes/components/RecipeDetails/CookingSectionProops';
 import { RecipeCard } from '../../../recipes/components/recipeCard/recipeCard';
 import { RecipeCardProps } from '../../../shared/sections/sectionJuciest/recipeCardProps';
 import JuicyButton from '../../ui/buttonSelection/buttonSelection';
-const getMostLikedRecipes = (recipes: Recipe[], minLikes = 100): RecipeCardProps[] =>
+
+interface RawRecipeData {
+    id: string;
+    title: string;
+    description: string;
+    category: string[];
+    subcategory?: string[];
+    imgUrl: string;
+    likes: number;
+    bookmarks: number;
+}
+
+// Функция для получения самых популярных рецептов по лайкам
+const getMostLikedRecipes = (
+    recipes: RawRecipeData[],
+    minLikes = 100,
+    limit = 4,
+): RecipeCardProps[] =>
     recipes
-        .filter((recipe) => recipe.likes > minLikes)
+        .filter((recipe) => recipe.likes >= minLikes)
         .sort((a, b) => b.likes - a.likes)
+        .slice(0, limit)
         .map((recipe) => ({
             id: recipe.id,
             title: recipe.title,
@@ -21,28 +39,58 @@ const getMostLikedRecipes = (recipes: Recipe[], minLikes = 100): RecipeCardProps
             favCount: recipe.bookmarks,
         }));
 
-const JuciestCards: React.FC = () => {
-    const jucRecipes = getMostLikedRecipes(recipesData, 100);
+export const JuicyRecipesSection = () => {
+    // Получаем самые популярные рецепты (4 штуки с минимум 100 лайков)
+    const featuredRecipes = getMostLikedRecipes(recipesData as RawRecipeData[], 100, 4);
 
     return (
-        <Box mb='40px'>
+        <Box mb='40px' w='100%'>
+            <Flex justify='space-between' align='center'>
+                <Heading
+                    fontWeight={500}
+                    fontSize={{ '2xl': '48px', md: '36px', sm: '24px' }}
+                    mb={8}
+                >
+                    Самое сочное
+                </Heading>
+                <JuicyButton
+                    test='juiciest-link'
+                    display={{ lg: 'flex', base: 'none' }}
+                    as={RouterLink}
+                    to='/theJuciestPage'
+                >
+                    Вся подборка
+                </JuicyButton>
+            </Flex>
+
             <Grid
-                templateColumns={{ '3xl': 'repeat(2, 1fr)', '2xl': 'repeat(1, 1fr)' }}
+                templateColumns={{
+                    '3xl': 'repeat(2, 1fr)',
+                    xl: 'repeat(1, 1fr)',
+                    md: 'repeat(2, 1fr)',
+                    sm: 'repeat(1, 1fr)',
+                }}
                 gap={8}
-                mb='16px'
+                mb='12px'
             >
-                {jucRecipes.map((recipe) => (
-                    <GridItem>
+                {featuredRecipes.map((recipe) => (
+                    <GridItem key={recipe.id}>
                         <RecipeCard {...recipe} />
                     </GridItem>
                 ))}
             </Grid>
-
             <Flex justifyContent='center'>
-                <JuicyButton icon={null}>Загрузить ещё</JuicyButton>
+                <JuicyButton
+                    test='juiciest-link-mobile'
+                    display={{ lg: 'none', base: 'flex' }}
+                    as={RouterLink}
+                    to='/theJuciestPage'
+                >
+                    Вся подборка
+                </JuicyButton>
             </Flex>
         </Box>
     );
 };
 
-export default JuciestCards;
+export default JuicyRecipesSection;

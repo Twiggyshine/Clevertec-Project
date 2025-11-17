@@ -6,4 +6,5 @@ export interface Recipe {
     likes?: number;
     imgUrl: string;
     badgeColor?: string;
+    alwaysShowBadge?: boolean;
 }
