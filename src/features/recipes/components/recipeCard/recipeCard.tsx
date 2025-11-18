@@ -7,6 +7,7 @@ import { BadgeWithIcon } from '../../../shared/ui/customBadge/customBadge';
 import RecipeStats from '../../../shared/ui/recipeStatus/recipeStatus';
 
 export const RecipeCard = ({
+    id,
     title,
     description,
     category,
@@ -20,6 +21,8 @@ export const RecipeCard = ({
     const hideRecommendsBadge = useBreakpointValue({ xl: true, sm: false });
     const showBadge = useBreakpointValue({ xl: true, base: false });
     const hideBadge = useBreakpointValue({ xl: false, base: true });
+
+    const recommendedIds = ['1', '8', '9'];
 
     return (
         <Flex
@@ -49,7 +52,7 @@ export const RecipeCard = ({
                         <BadgeWithIcon category={category} imgUrl={imgUrl} />
                     </Box>
                 )}
-                {recommendedBy && (
+                {recommendedIds.includes(id) && recommendedBy && (
                     <Box position='absolute' bottom='4' left='4'>
                         {hideRecommendsBadge && (
                             <RecommendsBadge

@@ -14,6 +14,7 @@ import {
     Thead,
     Tr,
 } from '@chakra-ui/react';
+import { useState } from 'react';
 
 interface Ingredient {
     title: string;
@@ -26,6 +27,8 @@ interface IngredientsTableProps {
 }
 
 const IngredientsTable = ({ ingredients }: IngredientsTableProps) => {
+    const [servings, setServings] = useState(1);
+
     if (!ingredients || ingredients.length === 0) {
         return (
             <Box>
@@ -61,7 +64,14 @@ const IngredientsTable = ({ ingredients }: IngredientsTableProps) => {
                             >
                                 ПОРЦИЙ:
                             </Text>
-                            <NumberInput defaultValue={1} min={0} max={10} size='sm'>
+
+                            <NumberInput
+                                min={1}
+                                max={10}
+                                size='sm'
+                                value={servings}
+                                onChange={(value) => setServings(Number(value))}
+                            >
                                 <NumberInputField
                                     width='70px'
                                     height='32px'
@@ -89,7 +99,9 @@ const IngredientsTable = ({ ingredients }: IngredientsTableProps) => {
                     {ingredients.map((ingredient, index) => (
                         <Tr key={index}>
                             <Td>{ingredient.title}</Td>
-                            <Td isNumeric>{ingredient.count}</Td>
+
+                            <Td isNumeric>{Number(ingredient.count) * servings}</Td>
+
                             <Td>{ingredient.measureUnit}</Td>
                         </Tr>
                     ))}
