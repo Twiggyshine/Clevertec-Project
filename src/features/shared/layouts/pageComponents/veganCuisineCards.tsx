@@ -1,4 +1,5 @@
 import { Box, Flex, Grid, GridItem } from '@chakra-ui/react';
+import { useState } from 'react';
 
 import recipesData from '~/data/recipiesData.json';
 
@@ -10,6 +11,12 @@ const VegetarianCuisineCards = () => {
         (recipe) => recipe.category.includes('vegan') || recipe.subcategory.includes('vegetables'),
     );
 
+    const [visibleCount, setVisibleCount] = useState(8);
+
+    const loadMore = () => {
+        setVisibleCount((prev) => prev + 8);
+    };
+
     return (
         <Box mb='40px'>
             <Grid
@@ -20,7 +27,7 @@ const VegetarianCuisineCards = () => {
                 gap={8}
                 mb='16px'
             >
-                {vegRecipes.map((recipe) => (
+                {vegRecipes.slice(0, visibleCount).map((recipe) => (
                     <GridItem key={recipe.id}>
                         <RecipeCard
                             id={recipe.id}
@@ -31,14 +38,19 @@ const VegetarianCuisineCards = () => {
                             imgUrl={recipe.imgUrl}
                             likesCount={recipe.likes}
                             favCount={recipe.bookmarks}
+                            recommendedBy={recipe.recommendedBy}
                         />
                     </GridItem>
                 ))}
             </Grid>
 
-            <Flex justifyContent='center'>
-                <JuicyButton icon={null}>Загрузить ещё</JuicyButton>
-            </Flex>
+            {visibleCount < vegRecipes.length && (
+                <Flex justifyContent='center'>
+                    <JuicyButton icon={null} onClick={loadMore}>
+                        Загрузить ещё
+                    </JuicyButton>
+                </Flex>
+            )}
         </Box>
     );
 };

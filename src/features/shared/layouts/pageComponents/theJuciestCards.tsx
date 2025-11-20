@@ -16,13 +16,17 @@ interface RawRecipeData {
     imgUrl: string;
     likes: number;
     bookmarks: number;
+    recommendedBy?: {
+        name: string;
+        avatarSrc: string;
+    };
 }
-
+// импортировать из RecipeCardProps
 // Функция для получения самых популярных рецептов по лайкам
 const getMostLikedRecipes = (
     recipes: RawRecipeData[],
     minLikes = 100,
-    limit = 4,
+    limit = 8,
 ): RecipeCardProps[] =>
     recipes
         .filter((recipe) => recipe.likes >= minLikes)
@@ -37,11 +41,12 @@ const getMostLikedRecipes = (
             imgUrl: recipe.imgUrl,
             likesCount: recipe.likes,
             favCount: recipe.bookmarks,
+            recommendedBy: recipe.recommendedBy,
         }));
 
 export const JuicyRecipesSection = () => {
-    // Получаем самые популярные рецепты (4 штуки с минимум 100 лайков)
-    const featuredRecipes = getMostLikedRecipes(recipesData as RawRecipeData[], 100, 4);
+    // Получаем самые популярные рецепты (8 штук с минимум 100 лайков)
+    const featuredRecipes = getMostLikedRecipes(recipesData as RawRecipeData[], 100, 8);
 
     return (
         <Box mb='40px' w='100%'>

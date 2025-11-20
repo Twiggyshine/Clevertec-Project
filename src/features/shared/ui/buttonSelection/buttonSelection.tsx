@@ -9,6 +9,7 @@ interface JuicyButtonProps {
     display?: { lg: string; base: string };
     as?: ElementType;
     to?: string;
+    onClick?: () => void;
 }
 
 const JuicyButton = ({
@@ -35,6 +36,7 @@ const JuicyButton = ({
     test,
     as,
     to,
+    onClick,
 }: JuicyButtonProps) => (
     <Button
         as={as}
@@ -47,6 +49,7 @@ const JuicyButton = ({
         display={display}
         fontSize='18px'
         data-test-id={test || ''}
+        onClick={onClick}
     >
         {children}
         {icon}

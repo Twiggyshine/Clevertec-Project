@@ -1,8 +1,3 @@
-export interface RecommendedBy {
-    name: string;
-    avatarSrc: string;
-}
-
 export interface RecipeCardProps {
     id: string;
     title: string;

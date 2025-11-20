@@ -7,7 +7,6 @@ import { BadgeWithIcon } from '../../../shared/ui/customBadge/customBadge';
 import RecipeStats from '../../../shared/ui/recipeStatus/recipeStatus';
 
 export const RecipeCard = ({
-    id,
     title,
     description,
     category,
@@ -18,11 +17,9 @@ export const RecipeCard = ({
     buttons,
 }: RecipeCardProps) => {
     const showDescription = useBreakpointValue({ lg: true, sm: false });
-    const hideRecommendsBadge = useBreakpointValue({ xl: true, sm: false });
+    const showRecommendsBadge = useBreakpointValue({ xl: true, sm: false });
     const showBadge = useBreakpointValue({ xl: true, base: false });
     const hideBadge = useBreakpointValue({ xl: false, base: true });
-
-    const recommendedIds = ['1', '8', '9'];
 
     return (
         <Flex
@@ -47,14 +44,16 @@ export const RecipeCard = ({
                     width='auto'
                     maxW={{ base: '158px', xl: '100%' }}
                 />
+
                 {hideBadge && (
                     <Box position='absolute' top='10px' left='10px'>
                         <BadgeWithIcon category={category} imgUrl={imgUrl} />
                     </Box>
                 )}
-                {recommendedIds.includes(id) && recommendedBy && (
+
+                {recommendedBy && (
                     <Box position='absolute' bottom='4' left='4'>
-                        {hideRecommendsBadge && (
+                        {showRecommendsBadge && (
                             <RecommendsBadge
                                 name={recommendedBy.name}
                                 avatarSrc={recommendedBy.avatarSrc}
@@ -71,9 +70,9 @@ export const RecipeCard = ({
             >
                 <Flex justify='space-between' align='flex-start'>
                     {showBadge && <BadgeWithIcon category={category} imgUrl={imgUrl} />}
-
                     <RecipeStats likesCount={likesCount} favCount={favCount} />
                 </Flex>
+
                 <Box>
                     <Text
                         fontSize={{ '3xl': '24px', sm: '16px', xl: '18px' }}

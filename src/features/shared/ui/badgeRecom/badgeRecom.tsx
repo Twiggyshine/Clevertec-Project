@@ -9,7 +9,7 @@ const RecommendsBadge = ({ name, avatarSrc }: RecommendsBadgeProps) => (
         gap='2'
         borderRadius='4px'
         p='4px 8px'
-        bg='#d7ff94;'
+        bg='#d7ff94'
         fontWeight='400'
         fontSize='14px'
         color='#000'

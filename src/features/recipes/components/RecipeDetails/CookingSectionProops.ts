@@ -10,6 +10,10 @@ export interface Recipe {
     date: string;
     time: string;
     portions: number;
+    recommendedBy?: {
+        name: string;
+        avatarSrc: string;
+    };
     nutritionValue: {
         calories: number;
         proteins: number;

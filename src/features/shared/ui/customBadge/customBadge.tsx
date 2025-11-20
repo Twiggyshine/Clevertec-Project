@@ -17,10 +17,10 @@ const categoryIcons: Record<string, keyof typeof ImgCards> = {
 const categoryTitles: Record<string, string> = {
     'first-dish': 'Первые блюда',
     'second-dish': 'Вторые блюда',
-    vegan: 'Веганские блюда',
+    vegan: 'Веганские',
     desserts: 'Десерты',
     salads: 'Салаты',
-    national: 'Национальные блюда',
+    national: 'Национальные',
     children: 'Детское меню',
     grill: 'Гриль',
 };

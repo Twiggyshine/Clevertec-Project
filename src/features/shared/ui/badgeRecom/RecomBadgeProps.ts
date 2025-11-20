@@ -1,4 +1,4 @@
 export interface RecommendsBadgeProps {
-    name: string;
-    avatarSrc: string;
+    name?: string;
+    avatarSrc?: string;
 }

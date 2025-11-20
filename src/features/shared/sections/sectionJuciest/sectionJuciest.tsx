@@ -8,7 +8,6 @@ import { RecipeCard } from '../../../recipes/components/recipeCard/recipeCard';
 import { RecipeCardProps } from '../../../shared/sections/sectionJuciest/recipeCardProps';
 import JuicyButton from '../../ui/buttonSelection/buttonSelection';
 
-// Функция для получения самых популярных рецептов по лайкам
 const getMostLikedRecipes = (recipes: Recipe[], minLikes = 100, limit = 4): RecipeCardProps[] =>
     recipes
         .filter((recipe) => recipe.likes >= minLikes)
@@ -23,6 +22,7 @@ const getMostLikedRecipes = (recipes: Recipe[], minLikes = 100, limit = 4): Reci
             imgUrl: recipe.imgUrl,
             likesCount: recipe.likes,
             favCount: recipe.bookmarks,
+            recommendedBy: recipe.recommendedBy,
         }));
 
 export const JuicyRecipesSection = () => {
