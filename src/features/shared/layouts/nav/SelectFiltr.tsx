@@ -1,3 +1,4 @@
+import { ChevronDownIcon } from '@chakra-ui/icons';
 import {
     Button,
     Checkbox,
@@ -11,6 +12,8 @@ import {
     Tag,
     VStack,
 } from '@chakra-ui/react';
+
+import { SearchInput } from './SearchInput';
 
 interface DietSelectProps {
     excludeAllergens: boolean;
@@ -27,6 +30,7 @@ const StyledCheckbox = (props: CheckboxProps) => (
                 borderRadius: '2px',
                 p: 2,
                 colorScheme: 'red',
+                border: '1px solid #b1ff2e',
             },
         }}
     />
@@ -35,59 +39,76 @@ const StyledCheckbox = (props: CheckboxProps) => (
 export default function SelectFiltr({ excludeAllergens, value, onChange }: DietSelectProps) {
     return (
         <Menu closeOnSelect={false}>
-            <MenuButton
-                as={Button}
-                id='diet-filter'
-                w='100%'
-                minH='40px'
-                h='auto'
-                border='1px solid rgba(0, 0, 0, 0.48)'
-                borderRadius='6px'
-                bg='#fff'
-                color='rgba(0, 0, 0, 0.64)'
-                isDisabled={!excludeAllergens}
-                textAlign='left'
-            >
-                {value.length === 0 ? (
-                    'Выберите из списка...'
-                ) : (
-                    <HStack wrap='wrap' spacing={2} alignItems='flex-start' w='100%'>
-                        {value.map((item) => (
-                            <Tag
-                                key={item}
-                                lineHeight='133%'
-                                fontWeight='500'
-                                fontSize='12px'
-                                textColor='#2db100'
-                                border='1px solid #b1ff2e'
-                                padding='0px 8px'
-                                h='20px'
-                            >
-                                {item}
-                            </Tag>
-                        ))}
-                    </HStack>
-                )}
-            </MenuButton>
-            <Portal>
-                <MenuList minW='100%'>
-                    <CheckboxGroup value={value} onChange={onChange}>
-                        <VStack align='start' spacing={2}>
-                            <StyledCheckbox value='Молочные продукты'>
-                                Молочные продукты
-                            </StyledCheckbox>
-                            <StyledCheckbox value='Яйцо'>Яйцо</StyledCheckbox>
-                            <StyledCheckbox value='Рыба'>Рыба</StyledCheckbox>
-                            <StyledCheckbox value='Моллюски'>Моллюски</StyledCheckbox>
-                            <StyledCheckbox value='Орехи'>Орехи</StyledCheckbox>
-                            <StyledCheckbox value='Томат'>Томат(помидор)</StyledCheckbox>
-                            <StyledCheckbox value='Цитрусовые'>Цитрусовые</StyledCheckbox>
-                            <StyledCheckbox value='Клубника'>Клубника(ягоды)</StyledCheckbox>
-                            <StyledCheckbox value='Шоколад'>Шоколад</StyledCheckbox>
-                        </VStack>
-                    </CheckboxGroup>
-                </MenuList>
-            </Portal>
+            {({ isOpen }) => (
+                <>
+                    <MenuButton
+                        as={Button}
+                        // id='diet-filter'
+                        w='100%'
+                        minH='40px'
+                        h='auto'
+                        border='1px solid rgba(0, 0, 0, 0.48)'
+                        borderRadius='6px'
+                        bg='#fff'
+                        color='rgba(0, 0, 0, 0.64)'
+                        isDisabled={!excludeAllergens}
+                        textAlign='left'
+                        _hover={{ bg: '#fff' }}
+                        _active={{ bg: '#fff' }}
+                        rightIcon={
+                            <ChevronDownIcon
+                                transform={isOpen ? 'rotate(180deg)' : 'rotate(0)'}
+                                transition='transform 0.2s ease-in-out'
+                                boxSize={5}
+                            />
+                        }
+                    >
+                        {value.length === 0 ? (
+                            'Выберите из списка...'
+                        ) : (
+                            <HStack wrap='wrap' spacing={2} alignItems='flex-start' w='100%'>
+                                {value.map((item) => (
+                                    <Tag
+                                        key={item}
+                                        lineHeight='133%'
+                                        fontWeight='500'
+                                        fontSize='12px'
+                                        textColor='#2db100'
+                                        border='1px solid #b1ff2e'
+                                        padding='0px 8px'
+                                        h='20px'
+                                        bg='#FFF'
+                                    >
+                                        {item}
+                                    </Tag>
+                                ))}
+                            </HStack>
+                        )}
+                    </MenuButton>
+                    <Portal>
+                        <MenuList w='320px'>
+                            <CheckboxGroup value={value} onChange={onChange}>
+                                <VStack align='start' spacing='12px' p='16px'>
+                                    <StyledCheckbox value='Молочные продукты'>
+                                        Молочные продукты
+                                    </StyledCheckbox>
+                                    <StyledCheckbox value='Яйцо'>Яйцо</StyledCheckbox>
+                                    <StyledCheckbox value='Рыба'>Рыба</StyledCheckbox>
+                                    <StyledCheckbox value='Моллюски'>Моллюски</StyledCheckbox>
+                                    <StyledCheckbox value='Орехи'>Орехи</StyledCheckbox>
+                                    <StyledCheckbox value='Томат'>Томат(помидор)</StyledCheckbox>
+                                    <StyledCheckbox value='Цитрусовые'>Цитрусовые</StyledCheckbox>
+                                    <StyledCheckbox value='Клубника'>
+                                        Клубника(ягоды)
+                                    </StyledCheckbox>
+                                    <StyledCheckbox value='Шоколад'>Шоколад</StyledCheckbox>
+                                </VStack>
+                            </CheckboxGroup>
+                            <SearchInput />
+                        </MenuList>
+                    </Portal>
+                </>
+            )}
         </Menu>
     );
 }
