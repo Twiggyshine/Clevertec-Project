@@ -12,6 +12,7 @@ import {
     Tag,
     VStack,
 } from '@chakra-ui/react';
+import { useState } from 'react';
 
 import { SearchInput } from './SearchInput';
 
@@ -20,6 +21,18 @@ interface DietSelectProps {
     value: string[];
     onChange: (values: string[]) => void;
 }
+
+const defaultAllergens = [
+    'Молочные продукты',
+    'Яйцо',
+    'Рыба',
+    'Моллюски',
+    'Орехи',
+    'Томат',
+    'Цитрусовые',
+    'Клубника',
+    'Шоколад',
+];
 
 const StyledCheckbox = (props: CheckboxProps) => (
     <Checkbox
@@ -37,13 +50,36 @@ const StyledCheckbox = (props: CheckboxProps) => (
 );
 
 export default function SelectFiltr({ excludeAllergens, value, onChange }: DietSelectProps) {
+    const [allergens, setAllergens] = useState<string[]>(defaultAllergens);
+    const [inputValue, setInputValue] = useState('');
+
+    const addNewAllergen = () => {
+        const trimmed = inputValue.trim();
+
+        if (!trimmed) return;
+        if (allergens.includes(trimmed)) {
+            // Если такой аллерген уже есть — просто выбрать его
+            onChange([...value, trimmed]);
+            setInputValue('');
+            return;
+        }
+
+        // Добавляем в начало массива пользовательский аллерген
+        const updated = [trimmed, ...allergens];
+        setAllergens(updated);
+
+        // Добавить в выбранные
+        onChange([...value, trimmed]);
+
+        setInputValue('');
+    };
+
     return (
         <Menu closeOnSelect={false}>
             {({ isOpen }) => (
                 <>
                     <MenuButton
                         as={Button}
-                        // id='diet-filter'
                         w='100%'
                         minH='40px'
                         h='auto'
@@ -85,26 +121,24 @@ export default function SelectFiltr({ excludeAllergens, value, onChange }: DietS
                             </HStack>
                         )}
                     </MenuButton>
+
                     <Portal>
                         <MenuList w='320px'>
                             <CheckboxGroup value={value} onChange={onChange}>
                                 <VStack align='start' spacing='12px' p='16px'>
-                                    <StyledCheckbox value='Молочные продукты'>
-                                        Молочные продукты
-                                    </StyledCheckbox>
-                                    <StyledCheckbox value='Яйцо'>Яйцо</StyledCheckbox>
-                                    <StyledCheckbox value='Рыба'>Рыба</StyledCheckbox>
-                                    <StyledCheckbox value='Моллюски'>Моллюски</StyledCheckbox>
-                                    <StyledCheckbox value='Орехи'>Орехи</StyledCheckbox>
-                                    <StyledCheckbox value='Томат'>Томат(помидор)</StyledCheckbox>
-                                    <StyledCheckbox value='Цитрусовые'>Цитрусовые</StyledCheckbox>
-                                    <StyledCheckbox value='Клубника'>
-                                        Клубника(ягоды)
-                                    </StyledCheckbox>
-                                    <StyledCheckbox value='Шоколад'>Шоколад</StyledCheckbox>
+                                    {allergens.map((element) => (
+                                        <StyledCheckbox key={element} value={element}>
+                                            {element}
+                                        </StyledCheckbox>
+                                    ))}
                                 </VStack>
                             </CheckboxGroup>
-                            <SearchInput />
+
+                            <SearchInput
+                                value={inputValue}
+                                onChange={setInputValue}
+                                onAdd={addNewAllergen}
+                            />
                         </MenuList>
                     </Portal>
                 </>
