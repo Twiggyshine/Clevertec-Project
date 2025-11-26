@@ -34,7 +34,7 @@ const defaultAllergens = [
     'Шоколад',
 ];
 
-const StyledCheckbox = (props: CheckboxProps) => (
+export const StyledCheckbox = (props: CheckboxProps) => (
     <Checkbox
         {...props}
         sx={{

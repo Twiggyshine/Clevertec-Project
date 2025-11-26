@@ -1,7 +1,7 @@
 import {
     Box,
     Button,
-    Checkbox,
+    // Checkbox,
     CheckboxGroup,
     Drawer,
     DrawerBody,
@@ -19,6 +19,7 @@ import {
 } from '@chakra-ui/react';
 
 import SelectFiltr from './SelectFiltr';
+import { StyledCheckbox } from './SelectFiltr';
 
 interface DrawerAllergensProps {
     excludeAllergens: boolean;
@@ -78,11 +79,11 @@ const DrawerAllergens = ({
                                 </Text>
                                 <CheckboxGroup>
                                     <VStack align='start' spacing={2}>
-                                        <Checkbox value='chicken'>Курица</Checkbox>
-                                        <Checkbox value='pork'>Свинина</Checkbox>
-                                        <Checkbox value='beef'>Говядина</Checkbox>
-                                        <Checkbox value='turkey'>Индейка</Checkbox>
-                                        <Checkbox value='duck'>Утка</Checkbox>
+                                        <StyledCheckbox value='chicken'>Курица</StyledCheckbox>
+                                        <StyledCheckbox value='pork'>Свинина</StyledCheckbox>
+                                        <StyledCheckbox value='beef'>Говядина</StyledCheckbox>
+                                        <StyledCheckbox value='turkey'>Индейка</StyledCheckbox>
+                                        <StyledCheckbox value='duck'>Утка</StyledCheckbox>
                                     </VStack>
                                 </CheckboxGroup>
                             </Box>
@@ -93,14 +94,16 @@ const DrawerAllergens = ({
                                 </Text>
                                 <CheckboxGroup>
                                     <VStack align='start' spacing={2}>
-                                        <Checkbox value='potato'>Картошка</Checkbox>
-                                        <Checkbox value='buckwheat'>Гречка</Checkbox>
-                                        <Checkbox value='pasta'>Паста</Checkbox>
-                                        <Checkbox value='spaghetti'>Спагетти</Checkbox>
-                                        <Checkbox value='rice'>Рис</Checkbox>
-                                        <Checkbox value='cabbage'>Капуста</Checkbox>
-                                        <Checkbox value='beans'>Фасоль</Checkbox>
-                                        <Checkbox value='other_vegetables'>Другие овощи</Checkbox>
+                                        <StyledCheckbox value='potato'>Картошка</StyledCheckbox>
+                                        <StyledCheckbox value='buckwheat'>Гречка</StyledCheckbox>
+                                        <StyledCheckbox value='pasta'>Паста</StyledCheckbox>
+                                        <StyledCheckbox value='spaghetti'>Спагетти</StyledCheckbox>
+                                        <StyledCheckbox value='rice'>Рис</StyledCheckbox>
+                                        <StyledCheckbox value='cabbage'>Капуста</StyledCheckbox>
+                                        <StyledCheckbox value='beans'>Фасоль</StyledCheckbox>
+                                        <StyledCheckbox value='other_vegetables'>
+                                            Другие овощи
+                                        </StyledCheckbox>
                                     </VStack>
                                 </CheckboxGroup>
                             </Box>
