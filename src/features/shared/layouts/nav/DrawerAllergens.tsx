@@ -1,15 +1,38 @@
 import {
+    Box,
     Button,
+    Checkbox,
+    CheckboxGroup,
     Drawer,
     DrawerBody,
     DrawerCloseButton,
     DrawerContent,
+    DrawerFooter,
     DrawerHeader,
     DrawerOverlay,
+    Flex,
+    Input,
+    Switch,
+    Text,
     useDisclosure,
+    VStack,
 } from '@chakra-ui/react';
 
-const DrawerAllergens = () => {
+import SelectFiltr from './SelectFiltr';
+
+interface DrawerAllergensProps {
+    excludeAllergens: boolean;
+    setExcludeAllergens: (value: boolean) => void;
+    diets: string[];
+    setDiets: (value: string[]) => void;
+}
+
+const DrawerAllergens = ({
+    excludeAllergens,
+    setExcludeAllergens,
+    diets,
+    setDiets,
+}: DrawerAllergensProps) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
@@ -36,13 +59,96 @@ const DrawerAllergens = () => {
                 </svg>
             </Button>
 
-            <Drawer placement='left' onClose={onClose} isOpen={isOpen}>
+            <Drawer placement='left' onClose={onClose} isOpen={isOpen} size='sm'>
                 <DrawerOverlay />
                 <DrawerContent>
                     <DrawerCloseButton />
                     <DrawerHeader>Фильтр</DrawerHeader>
 
-                    <DrawerBody>навигация и фильтры</DrawerBody>
+                    <DrawerBody>
+                        <VStack spacing={6} align='stretch'>
+                            <VStack spacing={3}>
+                                <Input placeholder='Категория' />
+                                <Input placeholder='Поиск по автору' />
+                            </VStack>
+
+                            <Box>
+                                <Text fontWeight='bold' mb={2}>
+                                    Тип мяса:
+                                </Text>
+                                <CheckboxGroup>
+                                    <VStack align='start' spacing={2}>
+                                        <Checkbox value='chicken'>Курица</Checkbox>
+                                        <Checkbox value='pork'>Свинина</Checkbox>
+                                        <Checkbox value='beef'>Говядина</Checkbox>
+                                        <Checkbox value='turkey'>Индейка</Checkbox>
+                                        <Checkbox value='duck'>Утка</Checkbox>
+                                    </VStack>
+                                </CheckboxGroup>
+                            </Box>
+
+                            <Box>
+                                <Text fontWeight='bold' mb={2}>
+                                    Тип гарнира:
+                                </Text>
+                                <CheckboxGroup>
+                                    <VStack align='start' spacing={2}>
+                                        <Checkbox value='potato'>Картошка</Checkbox>
+                                        <Checkbox value='buckwheat'>Гречка</Checkbox>
+                                        <Checkbox value='pasta'>Паста</Checkbox>
+                                        <Checkbox value='spaghetti'>Спагетти</Checkbox>
+                                        <Checkbox value='rice'>Рис</Checkbox>
+                                        <Checkbox value='cabbage'>Капуста</Checkbox>
+                                        <Checkbox value='beans'>Фасоль</Checkbox>
+                                        <Checkbox value='other_vegetables'>Другие овощи</Checkbox>
+                                    </VStack>
+                                </CheckboxGroup>
+                            </Box>
+
+                            <VStack spacing={2} align='start'>
+                                <Flex alignItems='center' gap='12px'>
+                                    <Text fontWeight='bold' mb={2}>
+                                        Исключить аллергены
+                                    </Text>
+                                    <Switch
+                                        id='allergens-toggle-drawer'
+                                        colorScheme='green'
+                                        size='lg'
+                                        mr='12px'
+                                        isChecked={excludeAllergens}
+                                        onChange={(event) =>
+                                            setExcludeAllergens(event.target.checked)
+                                        }
+                                    />
+                                </Flex>
+                                <SelectFiltr
+                                    excludeAllergens={excludeAllergens}
+                                    value={diets}
+                                    onChange={setDiets}
+                                />
+                            </VStack>
+                        </VStack>
+                    </DrawerBody>
+
+                    <DrawerFooter display='flex' justifyContent='center' gap='12px'>
+                        <Button
+                            w='205px'
+                            variant='outline'
+                            borderColor='rgba(0, 0, 0, 0.48)'
+                            fontSize='14px'
+                        >
+                            Очистить фильтр
+                        </Button>
+                        <Button
+                            w='172px'
+                            bg='black'
+                            color='white'
+                            _hover={{ bg: 'gray.700' }}
+                            fontSize='14px'
+                        >
+                            Найти рецепт
+                        </Button>
+                    </DrawerFooter>
                 </DrawerContent>
             </Drawer>
         </>

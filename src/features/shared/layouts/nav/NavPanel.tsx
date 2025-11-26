@@ -1,6 +1,5 @@
 import { SearchIcon } from '@chakra-ui/icons';
 import {
-    // Button,
     Flex,
     FormControl,
     FormLabel,
@@ -68,7 +67,12 @@ const NavPanel: React.FC<NavPanelProps> = ({
                     gap='12px'
                     w={{ lg: '518px', md: '448px', sm: '328px' }}
                 >
-                    <DrawerAllergens />
+                    <DrawerAllergens
+                        excludeAllergens={excludeAllergens}
+                        setExcludeAllergens={setExcludeAllergens}
+                        diets={diets}
+                        setDiets={setDiets}
+                    />
 
                     <InputGroup>
                         <Input
@@ -100,7 +104,7 @@ const NavPanel: React.FC<NavPanelProps> = ({
                         <FormLabel
                             htmlFor='allergens-toggle'
                             fontWeight='500'
-                            fontSize='16px'
+                            fontSize='12px'
                             lineHeight='150%'
                             color='#000'
                         >
