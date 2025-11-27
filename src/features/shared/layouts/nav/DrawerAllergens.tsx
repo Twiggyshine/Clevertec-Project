@@ -1,7 +1,6 @@
 import {
     Box,
     Button,
-    // Checkbox,
     CheckboxGroup,
     Drawer,
     DrawerBody,
@@ -18,8 +17,8 @@ import {
     VStack,
 } from '@chakra-ui/react';
 
-import SelectFiltr from './SelectFiltr';
-import { StyledCheckbox } from './SelectFiltr';
+import SelectFiltr from './SelectAllergen';
+import { StyledCheckbox } from './SelectAllergen';
 
 interface DrawerAllergensProps {
     excludeAllergens: boolean;
@@ -63,7 +62,14 @@ const DrawerAllergens = ({
             <Drawer placement='left' onClose={onClose} isOpen={isOpen} size='sm'>
                 <DrawerOverlay />
                 <DrawerContent>
-                    <DrawerCloseButton />
+                    <DrawerCloseButton
+                        bg='black'
+                        color='white'
+                        borderRadius='50%'
+                        boxSize='24px'
+                        _hover={{ bg: 'gray.800' }}
+                        _active={{ bg: 'gray.900' }}
+                    />
                     <DrawerHeader>Фильтр</DrawerHeader>
 
                     <DrawerBody>
@@ -124,6 +130,7 @@ const DrawerAllergens = ({
                                         }
                                     />
                                 </Flex>
+
                                 <SelectFiltr
                                     excludeAllergens={excludeAllergens}
                                     value={diets}
