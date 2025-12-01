@@ -10,15 +10,16 @@ import {
     DrawerHeader,
     DrawerOverlay,
     Flex,
-    Input,
     Switch,
     Text,
     useDisclosure,
     VStack,
 } from '@chakra-ui/react';
+import { useState } from 'react';
 
+import BaseSelect from './BaseSelect';
 import SelectFiltr from './SelectAllergen';
-import { StyledCheckbox } from './SelectAllergen';
+import { StyledCheckbox } from './StyledCheckbox';
 
 interface DrawerAllergensProps {
     excludeAllergens: boolean;
@@ -34,6 +35,9 @@ const DrawerAllergens = ({
     setDiets,
 }: DrawerAllergensProps) => {
     const { isOpen, onOpen, onClose } = useDisclosure();
+
+    const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
+    const [selectedAuthors, setSelectedAuthors] = useState<string[]>([]);
 
     return (
         <>
@@ -74,10 +78,19 @@ const DrawerAllergens = ({
 
                     <DrawerBody>
                         <VStack spacing={6} align='stretch'>
-                            <VStack spacing={3}>
-                                <Input placeholder='Категория' />
-                                <Input placeholder='Поиск по автору' />
-                            </VStack>
+                            <BaseSelect
+                                label='Категория'
+                                options={['Категория 1', 'Категория 2', 'Категория 3']}
+                                value={selectedCategories}
+                                onChange={setSelectedCategories}
+                            />
+
+                            <BaseSelect
+                                label='Автор'
+                                options={['Высоцкая', 'Обломов', 'Ивлев']}
+                                value={selectedAuthors}
+                                onChange={setSelectedAuthors}
+                            />
 
                             <Box>
                                 <Text fontWeight='bold' mb={2}>
