@@ -14,7 +14,7 @@ import {
 import React, { useState } from 'react';
 
 import DrawerAllergens from './DrawerAllergens';
-import SelectFiltr from './SelectAllergen';
+import SelectFiltr from './SelectAllergens';
 
 interface NavPanelProps {
     headingText?: string;

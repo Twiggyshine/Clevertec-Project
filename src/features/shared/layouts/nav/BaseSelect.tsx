@@ -9,9 +9,9 @@ import {
     PopoverContent,
     PopoverTrigger,
     Tag,
+    useDisclosure,
     VStack,
 } from '@chakra-ui/react';
-import { useState } from 'react';
 
 import { StyledCheckbox } from './StyledCheckbox';
 
@@ -26,10 +26,10 @@ export default function BaseSelect({
     value: string[];
     onChange: (v: string[]) => void;
 }) {
-    const [isOpen, setIsOpen] = useState(false);
+    const { isOpen, onOpen, onClose } = useDisclosure();
 
     return (
-        <Popover isOpen={isOpen} onOpen={() => setIsOpen(true)} onClose={() => setIsOpen(false)}>
+        <Popover isOpen={isOpen} onOpen={onOpen} onClose={onClose}>
             <PopoverTrigger>
                 <Button
                     w='100%'

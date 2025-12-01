@@ -9,9 +9,9 @@ import {
     PopoverContent,
     PopoverTrigger,
     Tag,
+    useDisclosure,
     VStack,
 } from '@chakra-ui/react';
-import { useDisclosure } from '@chakra-ui/react';
 import { useState } from 'react';
 
 import { SearchInput } from './SearchInput';
@@ -84,9 +84,9 @@ export default function SelectAllergen({ excludeAllergens, value, onChange }: Di
                         'Выберите из списка...'
                     ) : (
                         <HStack wrap='wrap' spacing={2} alignItems='flex-start' w='100%'>
-                            {value.map((item) => (
+                            {value.map((el) => (
                                 <Tag
-                                    key={item}
+                                    key={el}
                                     lineHeight='133%'
                                     fontWeight='500'
                                     fontSize='12px'
@@ -96,7 +96,7 @@ export default function SelectAllergen({ excludeAllergens, value, onChange }: Di
                                     h='20px'
                                     bg='#FFF'
                                 >
-                                    {item}
+                                    {el}
                                 </Tag>
                             ))}
                         </HStack>
