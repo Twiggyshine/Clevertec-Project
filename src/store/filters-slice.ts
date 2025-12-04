@@ -7,6 +7,7 @@ export interface FiltersState {
     sides: string[];
     excludeAllergens: boolean;
     diets: string[];
+    applied: boolean;
 }
 
 const initialState: FiltersState = {
@@ -16,6 +17,7 @@ const initialState: FiltersState = {
     sides: [],
     excludeAllergens: false,
     diets: [],
+    applied: false,
 };
 
 const filtersSlice = createSlice({
@@ -40,6 +42,9 @@ const filtersSlice = createSlice({
         setDiets: (state, action: PayloadAction<string[]>) => {
             state.diets = action.payload;
         },
+        applyFilters(state) {
+            state.applied = true;
+        },
         resetFilters: () => initialState,
     },
 });
@@ -52,6 +57,7 @@ export const {
     setExcludeAllergens,
     setDiets,
     resetFilters,
+    applyFilters,
 } = filtersSlice.actions;
 
 export default filtersSlice.reducer;
