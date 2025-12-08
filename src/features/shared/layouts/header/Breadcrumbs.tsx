@@ -11,7 +11,7 @@ const Breadcrumbs = () => {
 
     const [category, subcategory, id] = pathParts;
     const recipe = useSelector((state: RootState) =>
-        state.recipes.recipes.find((r) => r.id.toString() === id),
+        state.recipes.data.find((r) => r.id.toString() === id),
     );
 
     // если на главной — ничего не показываем
@@ -68,7 +68,6 @@ const Breadcrumbs = () => {
                 },
             }}
         >
-            {/* Главная */}
             <BreadcrumbItem>
                 <BreadcrumbLink
                     as={Link}
@@ -81,7 +80,6 @@ const Breadcrumbs = () => {
                 </BreadcrumbLink>
             </BreadcrumbItem>
 
-            {/* Категория */}
             {categoryData && (
                 <BreadcrumbItem>
                     <BreadcrumbLink
@@ -96,7 +94,6 @@ const Breadcrumbs = () => {
                 </BreadcrumbItem>
             )}
 
-            {/* Подкатегория */}
             {subcategoryData && (
                 <BreadcrumbItem>
                     <BreadcrumbLink
@@ -111,7 +108,6 @@ const Breadcrumbs = () => {
                 </BreadcrumbItem>
             )}
 
-            {/* Название рецепта */}
             {recipe && (
                 <BreadcrumbItem isCurrentPage>
                     <BreadcrumbLink

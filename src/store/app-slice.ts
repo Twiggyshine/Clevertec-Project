@@ -3,11 +3,15 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Recipe } from '../features/recipes/components/RecipeDetails/CookingSectionProops';
 
 export interface RecipesState {
-    recipes: Recipe[];
+    data: Recipe[];
+    loading: boolean;
+    error?: string;
 }
 
 const initialState: RecipesState = {
-    recipes: [],
+    data: [],
+    loading: false,
+    error: undefined,
 };
 
 const recipesSlice = createSlice({
@@ -15,7 +19,7 @@ const recipesSlice = createSlice({
     initialState,
     reducers: {
         setRecipes(state, action: PayloadAction<Recipe[]>) {
-            state.recipes = action.payload;
+            state.data = action.payload;
         },
     },
 });

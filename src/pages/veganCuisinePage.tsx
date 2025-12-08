@@ -2,7 +2,7 @@ import { VStack } from '@chakra-ui/react';
 
 import NavPanel from '../features/shared/layouts/nav/NavPanel';
 import VegetarianCuisineCards from '../features/shared/layouts/pageComponents/veganCuisineCards';
-import RandomKitchenSection from '../features/shared/sections/sectionVeganCuisine/randomKitchenSection';
+import RandomKitchenSection from '../features/shared/sections/sectionRandom/randomKitchenSection';
 import { VeganMenu } from '../features/shared/ui/menuVeganCuisinePage/MenuVegan';
 
 function veganCuisinePage() {

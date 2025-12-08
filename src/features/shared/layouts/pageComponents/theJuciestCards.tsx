@@ -1,8 +1,9 @@
 import { Box, Flex, Grid, GridItem, Heading } from '@chakra-ui/react';
+import { useSelector } from 'react-redux';
 import { Link as RouterLink } from 'react-router';
 
-import recipesData from '~/data/recipiesData.json';
-
+// import recipesData from '~/data/recipiesData.json';
+import { selectFilteredRecipes } from '../../../../store/selectors';
 import { RecipeCard } from '../../../recipes/components/recipeCard/recipeCard';
 import { RecipeCardProps } from '../../../shared/sections/sectionJuciest/recipeCardProps';
 import JuicyButton from '../../ui/buttonSelection/buttonSelection';
@@ -21,8 +22,7 @@ interface RawRecipeData {
         avatarSrc: string;
     };
 }
-// импортировать из RecipeCardProps
-// Функция для получения самых популярных рецептов по лайкам
+
 const getMostLikedRecipes = (
     recipes: RawRecipeData[],
     minLikes = 100,
@@ -45,8 +45,8 @@ const getMostLikedRecipes = (
         }));
 
 export const JuicyRecipesSection = () => {
-    // Получаем самые популярные рецепты (8 штук с минимум 100 лайков)
-    const featuredRecipes = getMostLikedRecipes(recipesData as RawRecipeData[], 100, 8);
+    const recipes = useSelector(selectFilteredRecipes);
+    const featuredRecipes = getMostLikedRecipes(recipes as RawRecipeData[], 100, 8);
 
     return (
         <Box mb='40px' w='100%'>
@@ -58,6 +58,7 @@ export const JuicyRecipesSection = () => {
                 >
                     Самое сочное
                 </Heading>
+
                 <JuicyButton
                     test='juiciest-link'
                     display={{ lg: 'flex', base: 'none' }}
@@ -84,6 +85,24 @@ export const JuicyRecipesSection = () => {
                     </GridItem>
                 ))}
             </Grid>
+
+            <Grid
+                templateColumns={{
+                    '3xl': 'repeat(2, 1fr)',
+                    xl: 'repeat(1, 1fr)',
+                    md: 'repeat(2, 1fr)',
+                    sm: 'repeat(1, 1fr)',
+                }}
+                gap={8}
+                mb='12px'
+            >
+                {featuredRecipes.map((recipe) => (
+                    <GridItem key={recipe.id}>
+                        <RecipeCard {...recipe} />
+                    </GridItem>
+                ))}
+            </Grid>
+
             <Flex justifyContent='center'>
                 <JuicyButton
                     test='juiciest-link-mobile'
