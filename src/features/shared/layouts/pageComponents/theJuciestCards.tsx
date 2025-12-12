@@ -86,23 +86,6 @@ export const JuicyRecipesSection = () => {
                 ))}
             </Grid>
 
-            <Grid
-                templateColumns={{
-                    '3xl': 'repeat(2, 1fr)',
-                    xl: 'repeat(1, 1fr)',
-                    md: 'repeat(2, 1fr)',
-                    sm: 'repeat(1, 1fr)',
-                }}
-                gap={8}
-                mb='12px'
-            >
-                {featuredRecipes.map((recipe) => (
-                    <GridItem key={recipe.id}>
-                        <RecipeCard {...recipe} />
-                    </GridItem>
-                ))}
-            </Grid>
-
             <Flex justifyContent='center'>
                 <JuicyButton
                     test='juiciest-link-mobile'

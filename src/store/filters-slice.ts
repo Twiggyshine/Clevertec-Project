@@ -8,6 +8,7 @@ export interface FiltersState {
     excludeAllergens: boolean;
     diets: string[];
     applied: boolean;
+    allergens: string[];
 }
 
 const initialState: FiltersState = {
@@ -18,6 +19,7 @@ const initialState: FiltersState = {
     excludeAllergens: false,
     diets: [],
     applied: false,
+    allergens: [],
 };
 
 const filtersSlice = createSlice({
