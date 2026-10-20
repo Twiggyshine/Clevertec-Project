@@ -1,4 +1,3 @@
-// RecipeStats.tsx
 import { Flex, IconButton, Text } from '@chakra-ui/react';
 
 import { CustomHeartIcon, CustomSmileIcon } from '~/assets/customIcon/CustomIcon'; // укажите правильный путь
