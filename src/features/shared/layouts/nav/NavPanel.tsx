@@ -12,9 +12,7 @@ import {
     Text,
     useBreakpointValue,
 } from '@chakra-ui/react';
-
-
-import React, { useEffect, useState } 
+import React, { useEffect, useState } from 'react';
 
 import { setAllergens, setExcludeAllergens, setSearch } from '~/store/filters-slice';
 import { useAppDispatch, useAppSelector } from '~/store/hooks';
@@ -37,8 +35,7 @@ const NavPanel: React.FC<NavPanelProps> = ({
     const { excludeAllergens, allergens } = useAppSelector((state) => state.filters);
     const showFormControl = useBreakpointValue({ lg: true, sm: false });
 
-
-        const [searchText, setSearchText] = useState('');
+    const [searchText, setSearchText] = useState('');
     const isSearchReady = searchText.trim().length >= 3;
 
     useEffect(
@@ -94,38 +91,37 @@ const NavPanel: React.FC<NavPanelProps> = ({
                     w={{ lg: '518px', md: '448px', sm: '328px' }}
                 >
                     <DrawerAllergens />
-{searchable && (
-    <InputGroup>
-        <Input
-            placeholder='Название рецепта...'
-            borderRadius='6px'
-            border='1px solid rgba(0, 0, 0, 0.48)'
-            name='search-input'
-            h={{ md: '48px', sm: '32px' }}
-            fontSize={{ md: '18px', sm: '14px' }}
-            _placeholder={{ color: '#134b00' }}
-            value={searchText}
-            onChange={(e) => handleSearchChange(e.target.value)}
-            onKeyDown={(e) => {
-                if (e.key === 'Enter') {
-                    e.preventDefault();
-                    handleSearch();
-                }
-            }}
-        />
-        <InputRightElement h={{ md: '48px', sm: '32px' }}>
-            <IconButton
-                aria-label='Найти рецепт'
-                icon={<SearchIcon />}
-                variant='ghost'
-                size='sm'
-                onClick={handleSearch}
-                isDisabled={!isSearchReady}
-            />
-        </InputRightElement>
-    </InputGroup>
-)}
-
+                    {searchable && (
+                        <InputGroup>
+                            <Input
+                                placeholder='Название рецепта...'
+                                borderRadius='6px'
+                                border='1px solid rgba(0, 0, 0, 0.48)'
+                                name='search-input'
+                                h={{ md: '48px', sm: '32px' }}
+                                fontSize={{ md: '18px', sm: '14px' }}
+                                _placeholder={{ color: '#134b00' }}
+                                value={searchText}
+                                onChange={(e) => handleSearchChange(e.target.value)}
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter') {
+                                        e.preventDefault();
+                                        handleSearch();
+                                    }
+                                }}
+                            />
+                            <InputRightElement h={{ md: '48px', sm: '32px' }}>
+                                <IconButton
+                                    aria-label='Найти рецепт'
+                                    icon={<SearchIcon />}
+                                    variant='ghost'
+                                    size='sm'
+                                    onClick={handleSearch}
+                                    isDisabled={!isSearchReady}
+                                />
+                            </InputRightElement>
+                        </InputGroup>
+                    )}
                 </Flex>
 
                 {showFormControl && (

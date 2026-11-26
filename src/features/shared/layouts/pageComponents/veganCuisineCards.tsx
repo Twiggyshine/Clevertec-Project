@@ -1,13 +1,14 @@
 import { Box, Flex, Grid, GridItem } from '@chakra-ui/react';
 import { useState } from 'react';
 
-import recipesData from '~/data/recipiesData.json';
-
+import { useAppSelector } from '../../../../store/hooks';
+import { selectSearchedRecipes } from '../../../../store/selectors';
 import { RecipeCard } from '../../../recipes/components/recipeCard/recipeCard';
 import JuicyButton from '../../ui/buttonSelection/buttonSelection';
 
 const VegetarianCuisineCards = () => {
-    const vegRecipes = recipesData.filter(
+    const searchedRecipes = useAppSelector(selectSearchedRecipes);
+    const vegRecipes = searchedRecipes.filter(
         (recipe) => recipe.category.includes('vegan') || recipe.subcategory.includes('vegetables'),
     );
 

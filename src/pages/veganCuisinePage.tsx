@@ -9,6 +9,7 @@ function veganCuisinePage() {
     return (
         <VStack w='100%' p={{ xl: '0 24px', base: '0 20px' }} justifyContent='center'>
             <NavPanel
+                searchable
                 headingText='Веганская кухня'
                 subHeadingText='Интересны не только убеждённым вегетарианцам, но и тем, кто хочет  попробовать вегетарианскую диету и готовить вкусные  вегетарианские блюда.'
             />

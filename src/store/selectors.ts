@@ -54,3 +54,14 @@ export const selectFilteredRecipes = createSelector(
         });
     },
 );
+const selectSearch = (state: RootState) => state.filters.search;
+
+export const selectSearchedRecipes = createSelector(
+    [selectFilteredRecipes, selectSearch],
+    (recipes, search) => {
+        const query = search.trim().toLowerCase();
+        if (!query) return recipes;
+
+        return recipes.filter((recipe) => recipe.title.toLowerCase().includes(query));
+    },
+);

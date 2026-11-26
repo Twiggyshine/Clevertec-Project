@@ -9,6 +9,7 @@ export interface FiltersState {
     diets: string[];
     applied: boolean;
     allergens: string[];
+    search: string;
 }
 
 const initialState: FiltersState = {
@@ -20,6 +21,7 @@ const initialState: FiltersState = {
     diets: [],
     applied: false,
     allergens: [],
+    search: '',
 };
 
 const filtersSlice = createSlice({
@@ -47,6 +49,9 @@ const filtersSlice = createSlice({
         setAllergens: (state, action: PayloadAction<string[]>) => {
             state.allergens = action.payload;
         },
+        setSearch: (state, action: PayloadAction<string>) => {
+            state.search = action.payload;
+        },
         applyFilters(state) {
             state.applied = true;
         },
@@ -62,6 +67,7 @@ export const {
     setExcludeAllergens,
     setDiets,
     setAllergens,
+    setSearch,
     resetFilters,
     applyFilters,
 } = filtersSlice.actions;
